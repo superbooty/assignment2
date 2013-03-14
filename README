@@ -1,1 +1,28 @@
-This file was created by JetBrains WebStorm 5.0.4 for binding GitHub repository
+
+Backbone application file: application.js
+This file must be including in the index.html file after all files which support this file are included.  See the follogin structure
+
+<head>
+    <meta charset="utf-8">
+    <title>TV Finder</title>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="lib/backbone.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="templates.js"></script>
+    <script src="application.js"></script>
+    <link rel="stylesheet" media="screen" href="styles/tvfinder.css">
+</head>
+
+index.html - contains the entry point into the application.  When this file loads it will call the backbone application and do stuff
+
+Here is my take on the structure.
+
+root -> contains the index.htm 
+templates -> This directory contains the handlebar templates and potentially the handlebars compiled js code
+img -> this is the root for all image files (local assets).  you can further structure that just remember to follow 
+the proper path when you want to get at the assets from your html files.
+lib -> This directory will house all of the framework(s) or third party javascript files 
+js -> This directory houses javascript files that developers create for the application
+styles -> This directory houses the stylesheets that will be used by the application.
