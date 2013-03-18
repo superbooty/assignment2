@@ -57,16 +57,26 @@ body {
 
 }
 
-.product-rating-container {
+.product-rating-container, .product-price-container {
     width:750px;
     display:inline-block;
-    padding:0 0 20px
+    padding:0 0 0px;
 
 }
 
-.product-rating {
+.product-price-container {
+    padding:0 0 40px;
+}
+
+.product-rating, .product-price {
     padding:0 43px;
     float:left;
+}
+
+.product-price span {
+    font-family: 'Sintony',sans-serif;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .product-rating .gray, .product-rating .gold {

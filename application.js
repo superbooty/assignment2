@@ -32,6 +32,10 @@ $(function () {
             return this.productData[0].itemAttributes;
         },
 
+        getItemPrice: function(){
+            return this.productData[0].sellers[0].currentItemPrice;
+        },
+
         getProductName: function(){
             return this.productData[0].genericContent.itemName;
         },
@@ -64,7 +68,7 @@ $(function () {
 
         render:function () {
             //console.log(productModel.getAlternateImages());
-            this.$el.html(this.options.template({name:productModel.getProductName(), waitImg:productModel.get('waitImg')}));
+            this.$el.html(this.options.template({name:productModel.getProductName(), price:productModel.getItemPrice()}));
             $('.header').html(this.el);
             //return this;
         }

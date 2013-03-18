@@ -88,25 +88,18 @@ function program1(depth0,data) {
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n            ";
-  return buffer;
-  }
-
-function program3(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                <p><img src=\"";
-  if (stack1 = helpers.waitImg) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.waitImg; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" /></p>\n        ";
+    + "</p>\n        ";
   return buffer;
   }
 
   buffer += "\n<section class=\"product-header\">\n    <section class=\"product-name\">\n        ";
-  stack1 = helpers['if'].call(depth0, depth0.name, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  stack1 = helpers['if'].call(depth0, depth0.name, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        <img src=\"/img/close-panel.png\" alt=\"close\" />\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-rating-container\">\n        <div class=\"product-rating\" >\n            <span class=\"gray\">\n                <span class=\"gold\">\n                </span>\n            </span>\n        </div>\n        <span class=\"product-review-links\" id=\"review-links\">&nbsp;&nbsp;109 Reviews  |  <a href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n        <div class=\"clear\"></div>\n    </section>\n</section>";
+  buffer += "\n        <img src=\"/img/close-panel.png\" alt=\"close\" />\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-rating-container\">\n        <div class=\"product-rating\" >\n            <span class=\"gray\">\n                <span class=\"gold\">\n                </span>\n            </span>\n        </div>\n        <span class=\"product-review-links\" id=\"review-links\">&nbsp;&nbsp;109 Reviews  |  <a href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-price-container\">\n        <section class=\"product-price\">\n            <span>$";
+  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n        </section>\n    </section>\n</section>";
   return buffer;
   });
 templates['index'] = template(function (Handlebars,depth0,helpers,partials,data) {
