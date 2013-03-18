@@ -12,26 +12,6 @@
     <script src="templates.js"></script>
     <script src="application.js"></script>
     <script src="lib/jquery.tinycarousel.min.js"></script>
-    <script>
-        $(document).ready(function(){
-
-            $('.qty-button').bind( {
-                click: function(event) {
-                    console.log(event);
-                },
-                select: function(event) {
-
-                    event.stopPropagation();
-                },
-                mouseleave:function(event) {
-
-                    event.stopPropagation();
-                }
-
-            });
-
-        });
-    </script>
     <link rel="stylesheet" media="screen" href="styles/jquery-ui.css">
     <link rel="stylesheet" media="screen" href="styles/product.css">
     <link rel="stylesheet" media="screen" href="styles/carousel.css">
