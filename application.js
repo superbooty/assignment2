@@ -134,7 +134,6 @@ $(function () {
 
     // cart options (qty and add to cart buttons)
     var CartOptionsView = Backbone.View.extend({
-
         events:{
             'click .add-to-cart': 'click'
         },
@@ -157,5 +156,32 @@ $(function () {
         template:Handlebars.templates['cart-options']
     });
     cartOptionsView.render();
+
+    // Buying Options
+    var BuyingOptionsModel = Backbone.Model.extend({
+        defaults: {
+            listEntry1: {label:'Find This Product Locally', img:'../img/find-icon.png'},
+            listEntry2: {label:'Calculate Arrival Date', img:'../img/arrival-icon.png'},
+            listEntry3: {label:'Share With a Friend', img:'../img/share-icon.png'}
+        }
+    });
+
+    var buyingOptionsModel = new BuyingOptionsModel();
+
+    var BuyingOptionsView = Backbone.View.extend({
+
+        render:function () {
+            console.log(this.model);
+            this.$el.html(this.options.template({listValues:this.model.attributes}));
+            $('.buying-options-container').html(this.el);
+            return this;
+        }
+    });
+
+    var buyingOptionsView = new BuyingOptionsView({
+        template:Handlebars.templates['buying-options'],
+        model: buyingOptionsModel
+    });
+    buyingOptionsView.render();
 
 });

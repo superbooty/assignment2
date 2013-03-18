@@ -13,6 +13,27 @@ helpers = helpers || Handlebars.helpers; data = data || {};
     + "\n    </div>\n</section>";
   return buffer;
   });
+templates['buying-options'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<section class=\"buying-options\">\n    <ul>\n        <li>\n            <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.listValues),stack1 == null || stack1 === false ? stack1 : stack1.listEntry1)),stack1 == null || stack1 === false ? stack1 : stack1.img)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/>"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.listValues),stack1 == null || stack1 === false ? stack1 : stack1.listEntry1)),stack1 == null || stack1 === false ? stack1 : stack1.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n        </li>\n        <li>\n            <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.listValues),stack1 == null || stack1 === false ? stack1 : stack1.listEntry2)),stack1 == null || stack1 === false ? stack1 : stack1.img)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/>"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.listValues),stack1 == null || stack1 === false ? stack1 : stack1.listEntry2)),stack1 == null || stack1 === false ? stack1 : stack1.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n        </li>\n        <li>\n            <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.listValues),stack1 == null || stack1 === false ? stack1 : stack1.listEntry3)),stack1 == null || stack1 === false ? stack1 : stack1.img)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/>"
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = depth0.listValues),stack1 == null || stack1 === false ? stack1 : stack1.listEntry2)),stack1 == null || stack1 === false ? stack1 : stack1.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n        </li>\n    </ul>\n</section>";
+  return buffer;
+  });
 templates['carousel'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
@@ -139,7 +160,7 @@ function program1(depth0,data) {
   var buffer = "", stack1, stack2, options;
   buffer += "\n        <div class=\"test\">\n            ";
   options = {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data};
-  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, depth0.first_name, "Nick", options) : helperMissing.call(depth0, "equal", depth0.first_name, "Nick", options));
+  stack2 = ((stack1 = helpers.equal),stack1 ? stack1.call(depth0, data.index, 0, options) : helperMissing.call(depth0, "equal", data.index, 0, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n        </div>\n        ";
   return buffer;
