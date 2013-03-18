@@ -2,9 +2,11 @@
 
     <section>
         This is how we roll...
-        <section>Id: {{id}}</section>
-        <section><a href="#">Name: {{name}}</a></section>
-        <section>Phone: {{phone}}</section>
+        {{#each items}}
+        <section>name: {{name}}</section>
+        <section><a href="#">{{org}}</a></section>
+        <section>role: {{role}}</section>
+        {{/each}}
     </section>
 
 </div>

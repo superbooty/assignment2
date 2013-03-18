@@ -1,0 +1,100 @@
+<script src="../js/tab.js"></script>
+<div class="product-details">
+
+    <div class="wrapper">
+        <h2>
+            Product Details
+        </h2>
+        <div id="v-nav" >
+            <ul>
+                <li tab="tab1" class="first current"><span class="product-detail-tab-name">Description</span></li>
+                <li tab="tab2"><span class="product-detail-tab-name">Specifications</span></li>
+                <li tab="tab3"><span class="product-detail-tab-name">Warranty</span></li>
+                <li tab="tab4"><span class="product-detail-tab-name">Financing</span></li>
+                <li tab="tab5" class="last"><span class="product-detail-tab-name">Gifting</span></li>
+            </ul>
+
+            <div class="tab-content" style="display:block">
+                {{{details.description}}}
+            </div>
+
+            <div class="tab-content">
+                <table class="spec-table">
+                    <colgroup><col width="40%">
+                        <col width="60%">
+                    </colgroup><tbody>
+                {{#each details.specifications}}
+                <tr>
+                    <td class="LightRowHead">
+                        {{attributeName}}
+                    </td>
+                    <td class="LightRow">
+                        {{attributeValue}}
+                    </td>
+                </tr>
+                {{/each}}
+                </tbody></table>
+            </div>
+
+            <div class="tab-content">
+                <div class="ItemSectionContent">
+                    <div class="WarrantyService BodyXL">
+                        <div>
+                            <strong>Product warranty:</strong>
+                            <a onclick="s_objectID=&quot;javascript:void(0);_15&quot;;return this.s_oc?this.s_oc(e):true" href="javascript:void(0);">See details</a>
+                        </div>
+                        <!-- Start: if service plans available -->
+                        <!-- End: if service plans available -->
+                    </div>
+                    <!--start of modify-->
+                    <div class="WarrantyServiceMain BodyL">
+                        <div class="multiCol greybar-box">
+                            <div class="greybar-noheader">
+                                <div class="tl mainSpriteBKG">
+                                    <div class="tr mainSpriteBKG">
+                                        <div class="tc mainSpriteBKG"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="greybar-body clearfix">
+                                <img width="110px" height="105px" border="0" src="http://i.walmartimages.com/i/p/00/02/95/15/40/0002951540080_100X100.jpg" class="picleft" alt="Protect it">
+                                <div class="Summary"><strong>Walmart Product Care Plans</strong>
+                                    <p>A limited product warranty is included free for most items. With an optional Walmart Care Plan you can extend coverage up to 3 additional years. Walmart Care Plan Extended Warranties cover 100% of the cost for repair or replacement, including shipping charges for the exchange. <a onclick="s_objectID=&quot;javascript:void(0);_16&quot;;return this.s_oc?this.s_oc(e):true" href="javascript:void(0);">See Details</a></p>
+                                    <p class="mt20">We'll show you extended warranty options and pricing at checkout if applicable.</p>
+                                </div>
+                            </div>
+                            <div class="greybar-footer">
+                                <div class="bl mainSpriteBKG"><div class="br mainSpriteBKG"><div class="bc"></div></div></div>
+                            </div>
+                        </div>
+                        <span>If you made your purchase in a Walmart store and would like to purchase a warranty <a title="Warranty &amp; Installation Plans" href="http://see.walmart.com/walmart/protection-plans/" onclick="s_objectID=&quot;http://see.walmart.com/walmart/protection-plans/_1&quot;;return this.s_oc?this.s_oc(e):true">Click Here</a></span>
+                    </div>
+                    <!--start of modify-->
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <div class="BodyXL ItemSectionContent PaymentOptions">
+                    <!-- Start: if Bill Me Later applies -->
+                    <h4 style="font-family:Verdana,sans-serif;" class="BodyXLBold">Enjoy Great Financing!</h4>
+                    <img width="91" height="51" src="http://i2.walmartimages.com/i/spacer.gif" class="CreditCardImg mainSpriteICN sprite-a111_WMCC_91x51" alt="">
+                    <div class="CreditOffer">Make the most of your shopping experience with the Walmart Discover<sup>&reg;</sup> or Walmart Credit Card.</div>
+                    <!-- Commented for the new instant credit card offers :19/Dec Svenkataraman-->
+                    <p>Open a Walmart Credit Card, Spend $100 Today and Get $20 Back*</p>
+                    <p>*Offer subject to credit approval</p>
+                    <p><a onclick="s_objectID=&quot;http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=447772_1&quot;;return this.s_oc?this.s_oc(e):true" href="/cservice/contextual_help_popup.gsp?modId=447772">Learn More</a> or <a href="/instantcredit" onclick="s_objectID=&quot;http://www.walmart.com/instantcredit_1&quot;;return this.s_oc?this.s_oc(e):true">Apply Now</a></p>
+                    <div class="BodyXLBold NoPayOffer">No Payments + No Interest <span class="BodyXL">if Paid in Full in 6 Months!</span></div>
+                    <img width="100" height="25" src="http://i2.walmartimages.com/i/spacer.gif" class="mainSpriteICN sprite-a112_BMLR" alt="">
+                    <div class="BuyNow">Enjoy no payments for 6 months. You'll have 6 months with no payments, and no interest if paid in full within 6 months on orders over $250. Otherwise, interest will be charged from the original date of purchase. Bill Me Later is the quick, easy, secure way to buy online without using your credit card. Simply select Bill Me Later at checkout. Subject to credit approval.</div>
+                    <p class="clear"><!-- --></p>
+                    <p><a onclick="s_objectID=&quot;https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=28A27SUA&amp;content=/bmlweb_1&quot;;return this.s_oc?this.s_oc(e):true" href="https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=28A27SUA&amp;content=/bmlweb/np90drollingiw.html">See Terms</a></p>
+                </div>
+            </div>
+            <div class="tab-content">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

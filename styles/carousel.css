@@ -1,0 +1,102 @@
+
+.carousel-container {
+    width:100%;
+    text-algin:center;
+}
+
+
+#slider-code {
+    height: 345px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 530px;
+}
+
+#slider-code .viewport { float: left; width: 430px; height: 330px; overflow: hidden; position: relative; }
+#slider-code .buttons { display: block; margin: 30px 10px 0 0; float: left; }
+#slider-code .buttons {
+    background: url("../img/arrow-right.png") no-repeat scroll 0 -38px transparent;
+    display: block;
+    float: left;
+    height: 52px;
+    margin: 30px 10px 0 0;
+    overflow: hidden;
+    position: relative;
+    text-indent: -999em;
+    width: 39px;
+}
+
+
+
+#slider-code .next {
+    background: url("../img/arrow-right.png") no-repeat scroll 0 -38px transparent;
+    background-position: 0 0;
+    margin: 130px 0 0 10px;
+}
+
+#slider-code .prev {
+    background: url("../img/arrow-left.png") no-repeat scroll 0 -38px transparent;
+    background-position: 0 0;
+    margin: 130px 10px 0 0;
+}
+
+#slider-code .disable {  }
+#slider-code .overview {
+    left: 0;
+    list-style: none outside none;
+    margin: auto;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+}
+
+#slider-code .overview li {
+    float: left;
+    height: 350px;
+    margin: 0 20px 0 0;
+    padding: 1px;
+    width: 425px;
+}
+
+#slider-code .poverview li {
+    float: left;
+    height: 12px;
+    margin: 0 2px 0 0;
+    padding: 1px;
+    width: 12px;
+}
+
+#slider-code .pager {
+    clear: both;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 50%;
+}
+
+#slider-code .pager li { float: left; }
+
+#slider-code .pagenum {
+    background: url("../img/current-position.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: inline-block;
+    height: 12px;
+    margin: 0 2px;
+    text-indent: -9999px;
+    width: 12px;
+}
+
+#slider-code .active { color: #fff; background-color:  #555555; }
+
+#slider-code .pagenum {
+    background: url("../img/current-position.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    display: inline-block;
+    height: 22px;
+    margin: 0 2px;
+    text-indent: -9999px;
+    width: 22px;
+}
+#slider-code .active {
+    background-position: 0 -22px;
+}

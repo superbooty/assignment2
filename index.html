@@ -2,37 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>TV Finder</title>
+    <title>Product Page</title>
     <script src="lib/jquery.js"></script>
+    <script src="lib/jquery-ui-1.10.2.custom.min.js"></script>
     <script src="lib/underscore.js"></script>
     <script src="lib/handlebars.js"></script>
     <script src="lib/backbone.js"></script>
     <script src="lib/bootstrap.js"></script>
     <script src="templates.js"></script>
     <script src="application.js"></script>
-    <link rel="stylesheet" media="screen" href="styles/tvfinder.css">
+    <script src="lib/jquery.tinycarousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.qty-button').bind( {
+                click: function(event) {
+                    console.log(event);
+                },
+                select: function(event) {
+
+                    event.stopPropagation();
+                },
+                mouseleave:function(event) {
+
+                    event.stopPropagation();
+                }
+
+            });
+
+        });
+    </script>
+    <link rel="stylesheet" media="screen" href="styles/jquery-ui.css">
     <link rel="stylesheet" media="screen" href="styles/product.css">
+    <link rel="stylesheet" media="screen" href="styles/carousel.css">
+    <link rel="stylesheet" media="screen" href="styles/tabs.css">
+    <link rel="stylesheet" media="screen" href="styles/googlefonts.css">
+
+
 </head>
 <body>
 <section class="handlebars-header">
-    <section class="product-header">
-        <section class="product-name">Samsung 46" LCD</section>
-        <section class="product-reviews-container">
-            <section class="product-start-ratings"></section>
-            <section class="product-reviews-menu>"></section>
-        </section>
+    <section class="header"></section>
+
+</section>
+
+<section class="carousel-container"></section>
+
+
+<section class="product-main">
+    <section class="about-container">
+
     </section>
+    <section class="cart-options-container">
 
+    </section>
+    <section class="buying-options">
+        <ul>
+            <li>
+                Find This Product Locally
+            </li>
+            <li>
+                Calculate Arrival Date
+            </li>
+            <li>
+                Share With a Friend
+            </li>
+        </ul>
+    </section>
 </section>
-
-
-<section class="test-user" >
-
-</section>
-
-<section class="img-carousel">
+<div class="clear"></div>
+<section class="product-details-container">
 
 </section>
 
 </body>
+
 </html>

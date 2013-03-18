@@ -1,7 +1,22 @@
+
 <section class="product-header">
-    <section class="product-name">Samsung 46" LCD</section>
-    <section class="product-reviews-container">
-        <section class="product-start-ratings"></section>
-        <section class="product-reviews-menu>"></section>
+    <section class="product-name">
+        {{#if name}}
+            <p class="product-name">{{name}}</p>
+            {{else}}
+                <p><img src="{{waitImg}}" /></p>
+        {{/if}}
+        <img src="/img/close-panel.png" alt="close" />
+        <div class="clear"></div>
+    </section>
+    <section class="product-rating-container">
+        <div class="product-rating" >
+            <span class="gray">
+                <span class="gold">
+                </span>
+            </span>
+        </div>
+        <span class="product-review-links" id="review-links">&nbsp;&nbsp;109 Reviews  |  <a href="#">Write a Review</a>  | <a href="#">Ask a Question</a></span>
+        <div class="clear"></div>
     </section>
 </section>

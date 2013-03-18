@@ -1,12 +1,231 @@
 
+body {
+    width: 750px;
+    border-style:solid;
+    border-width:1px;
+    border-color: #d9d9d9
+}
+
 .product-header {
     width: 750px;
 }
 
-.product-start-rating {
+.product-main {
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-bottom-color: #F5F5F5;
+    display:inline-block;
+    padding:20px 0;
+}
+
+.product-name, .product-reviews-container {
+    padding:0 0 0 43px;
+}
+
+.product-name p {
+    color: rgba(44, 44, 44, 0.94);
+    float: left;
+    font-family: 'Sintony',sans-serif;
+    font-size: 25px;
+    margin-bottom: 0;
+    padding: 6px 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    width:500px;
+}
+
+.product-name img {
+    display: inline-block;
+    float: right;
+    padding: 30px 40px 15px;
+    width: 25px;
+}
+
+.clear {
+    clear:both;
+}
+
+
+.product-star-rating {
+    background:url("../img/stars.png") repeat-x scroll 0 0 ;
     float:left;
 }
 
 .product-review-menu {
 
+}
+
+.product-rating-container {
+    width:750px;
+    display:inline-block;
+    padding:0 0 20px
+
+}
+
+.product-rating {
+    padding:0 43px;
+    float:left;
+}
+
+.product-rating .gray, .product-rating .gold {
+    background: url("../img/stars.png") repeat-x scroll 0 0 transparent;
+    display: inline-block;
+    height: 20px;
+    width: 100px;
+}
+
+.product-rating .gold {
+    background-position: 0 -20px;
+}
+
+.product-review-links {
+    padding: 2px 0 0 0;
+    color: #4d8ec6;
+    float: left;
+    font-weight: bold;
+    font-family: 'Sintony', sans-serif;
+    font-size: 14px;
+}
+
+.about-container {
+    float: left;
+    padding: 60px 0 0 43px;
+    width: 330px;
+
+}
+
+.about-header {
+    float:left;
+    padding: 6px 0 0 0;
+    font-family: 'Sintony', sans-serif;
+    font-size: 24px;
+    color: #444444;
+
+
+}
+
+.about-data {
+    color: #8E8E8E;
+    float: left;
+    font: 16px/25px sans-serif;
+    padding: 6px 0 0;
+}
+
+.cart-options-container {
+    display: inline-block;
+    float: left;
+    padding: 85px 0 0 43px;
+    width: 330px;
+}
+
+.add-to-cart {
+    background: -moz-linear-gradient(center bottom , #EA901E 0%, #F8A93C 100%) repeat scroll 0 0 transparent;
+    border: 2px solid #FEB31B;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    float: right;
+    font: bold 20px 'trebuchet ms',helvetica,sans-serif;
+    height: 60px;
+    margin: 20px 30px 0 0;
+    padding: 10px 20px;
+    width: 185px;
+}
+
+.product-details-container {
+    width:750px;
+}
+
+.product-details h2 {
+    padding:10px 0 0 43px;
+    font-family: 'Sintony', sans-serif;
+    font-size: 24px;
+    color: #444444;
+}
+
+.product-details-tabs {
+    width:750px;
+}
+
+
+button, input[type="submit"], input[type="button"], input[type="reset"] {
+    cursor: pointer;
+    line-height: normal;
+}
+
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="tel"], textarea, select {
+    border: 1px solid #D8D8D8;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.filter {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+}
+
+.filter .qty-button {
+    background: linear-gradient(to bottom, rgba(219, 219, 219, 0) 0%, rgba(219, 219, 219, 0.65) 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    color: #666666;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Verdana;
+    font-size: 16px;
+    height: 37px;
+    margin: 0 0 5px 0;
+    padding: 10px 50px 10px 10px;
+    position: relative;
+    text-align: left;
+    width: 30px;
+}
+
+.filter .options {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    left: -1px;
+    min-width: 100%;
+    position: absolute;
+    top: -1px;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.filter .qty-button-arrow {
+    border-color: #333333 transparent transparent;
+    border-style: solid;
+    border-width: 8px;
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 0;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+.buying-options ul {
+    margin: 0 0 0 0;
+    padding:10px 0 ;
+}
+
+.product-main .buying-options {
+    display: inline-block;
+    width: 330px;
+}
+
+.product-main .buying-options ul li {
+    list-style-type: none;
+    padding: 15px 0 0 43px;
+    color: #4d8ec6;
+    float: left;
+    font: 18px sans-serif;
+    width:330px;
 }

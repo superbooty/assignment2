@@ -1,62 +1,161 @@
 window.Application = {};
 
 Application.View = Backbone.View.extend({
-  render: function() {
-    var context = this.model ? this.model.attributes : {},
-        output = this.options.template(context);
-    this.$el.html(output);
-  }
+    render:function () {
+        var context = this.model ? this.model.attributes : {},
+            output = this.options.template(context);
+            console.log(output);
+        this.$el.html(output);
+    }
 });
 
 
-$(function() {
-  var model = new Backbone.Model({
-    greeting: 'Hello'
-  });
-  var indexView = new Application.View({
-    template: Handlebars.templates['index'],
-    model: model
-  });
-  indexView.render();
-  $('body').append(indexView.$el);
-});
+$(function () {
 
-$(function() {
-    var userModel = new Backbone.Model({
-        id: '12345',
-        name: '@sshole',
-        phone: '555 555 5555'
+    // The model
+    var ProductModel = Backbone.Model.extend({
+
+        defaults:{
+            waitImg: 'http://www.walmart.com/js/jquery/ui/theme/walmart/images/updating.gif'
+        },
+
+        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=21311919",
+
+        productData: {},
+
+        parse:function (data) {
+            this.productData = data;
+            return data;
+        },
+
+        getItemAttributes: function(){
+            return this.productData[0].itemAttributes;
+        },
+
+        getProductName: function(){
+            return this.productData[0].genericContent.itemName;
+        },
+
+        getAlternateImages: function(){
+            return this.productData[0].alternateImageData;
+        },
+
+        getProductMainData: function(){
+            return this.productData[0].genericContent.shortDescription;
+        },
+
+        getProductDetails: function(){
+            var productDetails = {};
+            productDetails.description = this.productData[0].genericContent.longDescription;
+            productDetails.specifications = this.productData[0].itemAttributes;
+            return productDetails;
+        }
+
     });
 
-    var userCollection = Backbone.Collection.extend({
-        model: userModel,
-        url: '/some/ajax/url',
+    var productModel = new ProductModel();
+    productModel.fetch();
 
-        parse: function(data) {
-            this.page=data.page;
-            return data.items;
+    // The header
+    var HeaderView = Backbone.View.extend({
+        initialize:function () {
+            this.listenTo(productModel, 'change', this.render);
+        },
+
+        render:function () {
+            //console.log(productModel.getAlternateImages());
+            this.$el.html(this.options.template({name:productModel.getProductName(), waitImg:productModel.get('waitImg')}));
+            $('.header').html(this.el);
+            //return this;
         }
     });
 
-    var userView = new Application.View({
-        template: Handlebars.templates['user'],
-        model: userModel
-    });
-    userView.render();
-    $('.test-user').append(userView.el);
-});
-
-$(function() {
-    var headerModel = new Backbone.Model({
-        first: "firstNav",
-        second: "secondNav"
+    var headerView = new HeaderView({
+        template:Handlebars.templates['header']
     });
 
+    // The carousel
+    var CarouselView = Backbone.View.extend({
 
-    var headerView = new Application.View({
-        template: Handlebars.templates['header'],
-        model: headerModel
+        initialize:function () {
+            this.listenTo(productModel, 'change', this.render);
+        },
+
+        render:function () {
+            //console.log(productModel.getAlternateImages());
+            this.$el.html(this.options.template({images:productModel.getAlternateImages()}));
+            $('.carousel-container').html(this.el);
+            //return this;
+        }
     });
-    headerView.render();
-    $('.header').append(headerView.el);
+
+    var carouselView = new CarouselView({
+        template:Handlebars.templates['carousel']
+    });
+
+    // Main
+    var ProductMainView = Backbone.View.extend({
+
+        initialize:function () {
+            this.listenTo(productModel, 'change', this.render);
+        },
+
+        render:function () {
+            console.log(productModel.getProductMainData());
+            this.$el.html(this.options.template({about:productModel.getProductMainData()}));
+            $('.about-container').html(this.el);
+            //return this;
+        }
+    });
+
+    var productMainView = new ProductMainView({
+        template:Handlebars.templates['about']
+    });
+
+
+    // Product details
+    var ProductDetails = Backbone.View.extend({
+
+        initialize:function () {
+            this.listenTo(productModel, 'change', this.render);
+        },
+
+        render:function () {
+            console.log(productModel.getProductDetails());
+            this.$el.html(this.options.template({details:productModel.getProductDetails()}));
+            $('.product-details-container').html(this.el);
+            return this;
+        }
+    });
+
+    var productDetails = new ProductDetails({
+        template:Handlebars.templates['product-details']
+    });
+
+    // cart options (qty and add to cart buttons)
+    var CartOptionsView = Backbone.View.extend({
+
+        events:{
+            'click .add-to-cart': 'click'
+        },
+
+        click: function(){
+            console.log("you clicked add to cart button");
+            offset = this.offset();
+            $('.add-to-cart-confirm').show();
+            $('.add-to-cart-confirm').position({top:50, left:200})
+        },
+
+        render:function () {
+            this.$el.html(this.options.template());
+            $('.cart-options-container').html(this.el);
+            return this;
+        }
+    });
+
+    var cartOptionsView = new CartOptionsView({
+        template:Handlebars.templates['cart-options']
+    });
+    cartOptionsView.render();
+
 });

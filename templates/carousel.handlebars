@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#slider-code').tinycarousel({pager:true, controls:true});
+    });
+</script>
+<div id="slider-code">
+    <a class="buttons prev" href="#">left</a>
+    <div class="viewport">
+        <ul class="overview">
+            {{#each images}}
+            <li><img src="{{lgImageSrc}}" width="400" height="325" /></li>
+            {{/each}}
+
+        </ul>
+    </div>
+    <a class="buttons next" href="#">right</a>
+    <ul class="pager">
+        <ul class="poverview">
+            {{#each images}}
+                <li><a rel="{{@index}}" class="pagenum" href="#"></a></li>
+            {{/each}}
+
+        </ul>
+    </ul>
+</div>
