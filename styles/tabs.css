@@ -99,6 +99,10 @@
     border-bottom: 1px solid #DDD;
 }
 
+.current .product-detail-tab-name {
+    color: #383838;
+}
+
 #v-nav >ul >li.last
 {
     border-bottom: none;

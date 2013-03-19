@@ -11,6 +11,7 @@ Application.View = Backbone.View.extend({
 
 
 $(function () {
+    console.log($(location).attr('href'));
 
     // The model
     var ProductModel = Backbone.Model.extend({
@@ -57,7 +58,7 @@ $(function () {
 
     });
 
-    var productModel = new ProductModel();
+    var productModel = new ProductModel({id:21311919});
     productModel.fetch();
 
     // The header

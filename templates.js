@@ -62,7 +62,7 @@ function program3(depth0,data) {
   buffer += "<script type=\"text/javascript\">\n    $(document).ready(function(){\n        $('#slider-code').tinycarousel({pager:true, controls:true});\n    });\n</script>\n<div id=\"slider-code\">\n    <a class=\"buttons prev\" href=\"#\">left</a>\n    <div class=\"viewport\">\n        <ul class=\"overview\">\n            ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        </ul>\n    </div>\n    <a class=\"buttons next\" href=\"#\">right</a>\n    <ul class=\"pager\">\n        <ul class=\"poverview\">\n            ";
+  buffer += "\n\n        </ul>\n    </div>\n    <a class=\"buttons next\" href=\"#\">right</a>\n    <div class=\"clear\"></div>\n    <ul class=\"pager\">\n        <ul class=\"poverview\">\n            ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n\n        </ul>\n    </ul>\n</div>";
@@ -74,7 +74,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   
 
 
-  return "<div class=\"filter\">\n    <div class=\"qty-button\">\n        <span class=\"text\">Qty</span><b class=\"qty-button-arrow\"></b>\n        <div class=\"options\"><a class=\"opt\">1</a><a class=\"opt\">2</a><a class=\"opt\">3</a></div>\n    </div>\n</div>\n<input class=\"add-to-cart\" type=\"button\" value=\"Add to Cart\">\n<div class=\"add-to-cart-confirm\" style=\"position:absolute; display:none; width:300px; height:300px; border-style:solid; border-width:1px; border-color:#F3F3F3\">\n       Adding item to Cart\n</div>";
+  return "<div class=\"filter\">\n    <div class=\"qty-button\">\n        <span class=\"text\">Qty</span><b class=\"qty-button-arrow\"></b>\n        <div class=\"options\">\n            <ul>\n                <li class=\"opt\">1</li>\n                <li class=\"opt\">2</li>\n                <li class=\"opt\">3</li>\n            </ul>\n\n        </div>\n    </div>\n</div>\n<input class=\"add-to-cart\" type=\"button\" value=\"Add to Cart\">\n<div class=\"add-to-cart-confirm\" style=\"position:absolute; display:none; width:300px; height:300px; border-style:solid; border-width:1px; border-color:#F3F3F3\">\n       Adding item to Cart\n</div>";
   });
 templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
