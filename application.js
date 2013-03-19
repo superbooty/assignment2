@@ -11,7 +11,13 @@ Application.View = Backbone.View.extend({
 
 
 $(function () {
-    console.log($(location).attr('href'));
+
+    var values = splitUri($(location).attr('href'));
+    console.log(values);
+    var productId = 21311919;
+    if(values.fragment != null){
+        productId = values.fragment;
+    }
 
     // The model
     var ProductModel = Backbone.Model.extend({
@@ -20,7 +26,7 @@ $(function () {
             waitImg: 'http://www.walmart.com/js/jquery/ui/theme/walmart/images/updating.gif'
         },
 
-        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids=21311919",
+        url:"http://aguevara-linux.corp.walmart.com/search/catalog/itemIds.ems?itemids="+productId,
 
         productData: {},
 
@@ -39,6 +45,10 @@ $(function () {
 
         getProductName: function(){
             return this.productData[0].genericContent.itemName;
+        },
+
+        getCustomerRating: function(){
+            return this.productData[0].customerRatingRaw;
         },
 
         getAlternateImages: function(){
@@ -69,7 +79,7 @@ $(function () {
 
         render:function () {
             //console.log(productModel.getAlternateImages());
-            this.$el.html(this.options.template({name:productModel.getProductName(), price:productModel.getItemPrice()}));
+            this.$el.html(this.options.template({crr:productModel.getCustomerRating(), name:productModel.getProductName(), price:productModel.getItemPrice()}));
             $('.header').html(this.el);
             //return this;
         }
