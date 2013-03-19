@@ -17,3 +17,13 @@ $(document).ready(function() {
         return (crrVal * 20)+"px";
     });
 });
+
+$(document).ready(function() {
+    Handlebars.registerHelper('rawText', function(text, options) {
+        var regex = /(<([^>]+)>)/ig;
+        var result = text.replace(regex, "");
+        return result.substring(0, 300);
+
+    });
+});
+

@@ -47,11 +47,19 @@ $(function () {
             return this.productData[0].genericContent.itemName;
         },
 
-        getCustomerRating: function(){
-            return this.productData[0].customerRatingRaw;
+        getCRR: function(){
+            return {rating:this.productData[0].customerRatingRaw, count:this.productData[0].crrcount};
         },
 
         getAlternateImages: function(){
+            if(this.productData[0].alternateImageData == null){
+                this.productData[0].alternateImageData = new Array();
+                var mainImage = {"imageSrc":this.productData[0].productThumbnailURL,
+                    "lgImageSrc": this.productData[0].productImageUrl,
+                    "name":null};
+                this.productData[0].alternateImageData.push(mainImage);
+            }
+
             return this.productData[0].alternateImageData;
         },
 
@@ -79,7 +87,7 @@ $(function () {
 
         render:function () {
             //console.log(productModel.getAlternateImages());
-            this.$el.html(this.options.template({crr:productModel.getCustomerRating(), name:productModel.getProductName(), price:productModel.getItemPrice()}));
+            this.$el.html(this.options.template({crr:productModel.getCRR(), name:productModel.getProductName(), price:productModel.getItemPrice()}));
             $('.header').html(this.el);
             //return this;
         }

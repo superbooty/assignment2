@@ -3,14 +3,13 @@
 templates['about'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
   buffer += "\n<section class=\"about\">\n    <header class=\"about-header\">\n        About\n    </header>\n    <div class=\"clear\"></div>\n    <div class=\"about-data\">\n        ";
-  if (stack1 = helpers.about) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.about; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\n    </div>\n</section>";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.about, options) : helperMissing.call(depth0, "rawText", depth0.about, options)))
+    + "...<a href=\"#\">read more</a>\n    </div>\n</section>";
   return buffer;
   });
 templates['buying-options'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -97,8 +96,10 @@ function program1(depth0,data) {
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        <img src=\"/img/close-panel.png\" alt=\"close\" />\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-rating-container\">\n        <div class=\"product-rating\" >\n            <span class=\"gray\">\n                <span class=\"gold\" style=\"width:";
   options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, depth0.crr, options) : helperMissing.call(depth0, "crr", depth0.crr, options)))
-    + "\">\n                </span>\n            </span>\n        </div>\n        <span class=\"product-review-links\" id=\"review-links\">&nbsp;&nbsp;109 Reviews  |  <a href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-price-container\">\n        <section class=\"product-price\">\n            <span>$";
+  buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, ((stack1 = depth0.crr),stack1 == null || stack1 === false ? stack1 : stack1.rating), options) : helperMissing.call(depth0, "crr", ((stack1 = depth0.crr),stack1 == null || stack1 === false ? stack1 : stack1.rating), options)))
+    + "\">\n                </span>\n            </span>\n        </div>\n        <span class=\"product-review-links\" id=\"review-links\">&nbsp;&nbsp;"
+    + escapeExpression(((stack1 = ((stack1 = depth0.crr),stack1 == null || stack1 === false ? stack1 : stack1.count)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " Reviews  |  <a href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-price-container\">\n        <section class=\"product-price\">\n            <span>$";
   if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.price; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
