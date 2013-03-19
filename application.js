@@ -12,12 +12,22 @@ Application.View = Backbone.View.extend({
 
 $(function () {
 
-    var values = splitUri($(location).attr('href'));
-    console.log(values);
     var productId = 21311919;
-    if(values.fragment != null){
-        productId = values.fragment;
-    }
+
+    var ProductRouter = Backbone.Router.extend({
+        routes: {
+            ":id": "getProduct"
+        },
+
+        getProduct: function(id){
+            productId = id;
+        }
+
+    });
+
+    var productRouter = new ProductRouter;
+
+    Backbone.history.start();
 
     // The model
     var ProductModel = Backbone.Model.extend({
@@ -79,6 +89,7 @@ $(function () {
     var productModel = new ProductModel({id:21311919});
     productModel.fetch();
 
+
     // The header
     var HeaderView = Backbone.View.extend({
         initialize:function () {
@@ -124,7 +135,7 @@ $(function () {
         },
 
         render:function () {
-            console.log(productModel.getProductMainData());
+            //console.log(productModel.getProductMainData());
             this.$el.html(this.options.template({about:productModel.getProductMainData()}));
             $('.about-container').html(this.el);
             //return this;
@@ -144,7 +155,7 @@ $(function () {
         },
 
         render:function () {
-            console.log(productModel.getProductDetails());
+            //console.log(productModel.getProductDetails());
             this.$el.html(this.options.template({details:productModel.getProductDetails()}));
             $('.product-details-container').html(this.el);
             return this;
@@ -194,7 +205,7 @@ $(function () {
     var BuyingOptionsView = Backbone.View.extend({
 
         render:function () {
-            console.log(this.model);
+            //console.log(this.model);
             this.$el.html(this.options.template({listValues:this.model.attributes}));
             $('.buying-options-container').html(this.el);
             return this;
