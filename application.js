@@ -13,7 +13,7 @@ Application.View = Backbone.View.extend({
 $(function () {
 
     var productId = 21311919;
-
+    // Router for loading a different item
     var ProductRouter = Backbone.Router.extend({
         routes: {
             ":id": "getProduct"
@@ -24,9 +24,7 @@ $(function () {
         }
 
     });
-
     var productRouter = new ProductRouter;
-
     Backbone.history.start();
 
     // The model
@@ -217,5 +215,33 @@ $(function () {
         model: buyingOptionsModel
     });
     buyingOptionsView.render();
+
+    // People who viewed
+    var PeopleViewedModel= Backbone.Model.extend({
+        url: "json/products.json",
+        parse: function(response) {
+            return response;
+        }
+    });
+    var peopleViewedModel = new PeopleViewedModel();
+
+    var peopleViewedListView = Backbone.View.extend({
+        render:function(){
+            var data = this.model.toJSON();
+            console.log(data);
+            this.$el.html(this.options.template(data));
+            $('.people-who').append(this.el);
+        }
+
+    });
+
+    var peopleViewedView = new peopleViewedListView({
+        template: Handlebars.templates['people-who-viewed'],
+        model: peopleViewedModel
+    });
+
+    peopleViewedModel.fetch({success:function(data){
+        peopleViewedView.render();
+    }});
 
 });

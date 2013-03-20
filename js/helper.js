@@ -27,3 +27,24 @@ $(document).ready(function() {
     });
 });
 
+
+/**
+ * If Greater Than
+ * if_gt this compare=that
+ */
+Handlebars.registerHelper('if_gt', function(context, options) {
+    if (context > options.hash.compare)
+        return options.fn(this);
+    return options.inverse(this);
+});
+
+/**
+ * If Less Than
+ * if_lt this compare=that
+ */
+Handlebars.registerHelper('if_lt', function(context, options) {
+    if (context < options.hash.compare)
+        return options.fn(this);
+    return options.inverse(this);
+});
+

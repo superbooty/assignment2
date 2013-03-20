@@ -8,7 +8,6 @@
 #slider-code {
     height: 345px;
     margin: 0 auto;
-    overflow: hidden;
     width: 530px;
 }
 
@@ -98,4 +97,10 @@
 #slider-code .active {
     background-position: 0 -22px;
     background: url("../img/current-position.png") no-repeat scroll 0 0 transparent;
+}
+
+.separator {
+    display: inline-block;
+    height: 20px;
+    width: 530px;
 }
