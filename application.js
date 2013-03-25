@@ -12,6 +12,20 @@ Application.View = Backbone.View.extend({
 
 $(function () {
 
+    var myCart = new com.wm.Cart();
+    var cartData = null;
+    var storage = null;
+
+    if (typeof(sessionStorage) == 'undefined' ) {
+        alert('Your browser does not support HTML5 localStorage. Try upgrading.');
+    } else {
+        storage = window['sessionStorage'];
+        cartData = storage.getItem('jsonCart');
+        var parsedData = JSON.parse(cartData);
+        myCart.setCartItems(parsedData.cartItems);
+        myCart.setSavedItems(parsedData.savedItems);
+    }
+
     var productId = 21311919;
     // Router for loading a different item
     var ProductRouter = Backbone.Router.extend({
@@ -21,6 +35,7 @@ $(function () {
 
         getProduct: function(id){
             productId = id;
+
         }
 
     });
@@ -29,6 +44,12 @@ $(function () {
 
     // The model
     var ProductModel = Backbone.Model.extend({
+
+        initialize: function() {
+            console.log(this.options);
+        },
+
+        id: 21311919,
 
         defaults:{
             waitImg: 'http://www.walmart.com/js/jquery/ui/theme/walmart/images/updating.gif'
@@ -80,6 +101,23 @@ $(function () {
             productDetails.description = this.productData[0].genericContent.longDescription;
             productDetails.specifications = this.productData[0].itemAttributes;
             return productDetails;
+        },
+
+        getCartItem: function() {
+            var ret = com.wm.CartItem(
+            {   qty:1,
+                name:this.getProductName(),
+                seller : 0,
+                price : this.getItemPrice(),
+                hasWarranty : false,
+                linkedWarrantyId : 0,
+                isPUT : false,
+                pickupStore : 0,
+                image: this.productData[0].productImageUrl,
+                id: this.productData[0].id,
+                isSavedItem: false
+            })
+            return ret;
         }
 
     });
@@ -105,6 +143,31 @@ $(function () {
     var headerView = new HeaderView({
         template:Handlebars.templates['header']
     });
+
+    // The main header
+    var MainHeaderView = Backbone.View.extend({
+
+        events:{
+            'click .cart': 'goToCart'
+        },
+
+        goToCart: function(){
+            console.log("going to the cart");
+            window.location.href = '/pages/cart/cart.html'
+        },
+
+        render:function () {
+            //console.log(productModel.getAlternateImages());
+            this.$el.html(this.options.template({cartSize:myCart.getCartSize()}));
+            $('.main-header').html(this.el);
+            //return this;
+        }
+    });
+
+    var mainHeaderView = new MainHeaderView({
+        template:Handlebars.templates['main-header']
+    });
+    mainHeaderView.render();
 
     // The carousel
     var CarouselView = Backbone.View.extend({
@@ -172,9 +235,17 @@ $(function () {
 
         click: function(){
             console.log("you clicked add to cart button");
-            offset = this.offset();
-            $('.add-to-cart-confirm').show();
-            $('.add-to-cart-confirm').position({top:50, left:200})
+            cartData = storage.getItem('jsonCart');
+            var toStorage = new Array();
+            // do we have cart data
+            if(cartData != null){
+                toStorage = JSON.parse(cartData);
+                myCart.setCartItems(toStorage.cartItems);
+                myCart.setSavedItems(toStorage.savedItems);
+            }
+            console.log(myCart);
+            myCart.addItem(this.model.getCartItem() );
+            storage.setItem('jsonCart', JSON.stringify(myCart ) );
         },
 
         render:function () {
@@ -185,7 +256,8 @@ $(function () {
     });
 
     var cartOptionsView = new CartOptionsView({
-        template:Handlebars.templates['cart-options']
+        template:Handlebars.templates['cart-options'],
+        model: productModel
     });
     cartOptionsView.render();
 

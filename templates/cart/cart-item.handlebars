@@ -1,0 +1,111 @@
+<script src="../../js/cart/cart-accordion.js"></script>
+<div class="cart-item">
+    <section class="accordionMod">
+        <div>
+
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <div class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1"
+                         data-target="#collapseBox1_1"><span class="icon"></span>
+
+                        <p class="cart-item-count-accordion">{{forPurchaseCount}} For Purchase</p>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="accordion-body collapse" id="collapseBox1_1" >
+                    <section class="accordion-inner">
+                        {{#each items}}
+                        <div class="cart-item-data">
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{{image }}" />
+                                </div>
+                                <div class="span3">
+                                    <section class="cart-item-options-container">
+                                        <header class="cart-item-label">{{name }}</header>
+                                        <div class="cart-item-option">
+                                            <a href="#" itemtosave="{{id}}" class="save-for-later-button">Save For Later</a>
+                                        </div>
+                                        <div class="cart-item-option">
+                                            <a href="#" class="remove-button">Remove</a>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="span1">
+                                    <div class="cart-item-qty-container">
+                                        <label class="cart-item-label text-gray" title="Qty">Quantity</label>
+                                        <span class="h1">{{qty }}</span>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <div class="cart-item-price-container">
+                                        <label class="cart-itm-label text-gray list-price" title="listPrice">List Price ${{number-format price}}</label>
+                                        <span class="h1 item-price">${{number-format price }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each }}
+                    </section>
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <div class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2"
+                         data-target="#collapseBox1_2"><span class="icon"></span>
+
+                        <p class="cart-item-count-accordion">{{savedItemsCount }} Saved Items</p>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <div class="accordion-body collapse" id="collapseBox1_2" >
+                    <section class="accordion-inner">
+                        {{#each savedItems}}
+                        <div class="cart-item-data">
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{{image }}" />
+                                </div>
+                                <div class="span3">
+                                    <section class="cart-item-options-container">
+                                        <header class="cart-item-label">{{name }}</header>
+                                        <div class="cart-item-option">
+                                            <a href="#" itemtosave="{{id}}" class="move-to-cart-button">Move to Cart</a>
+                                        </div>
+                                        <div class="cart-item-option">
+                                            <a href="#" class="remove-button">Remove</a>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="span1">
+                                    <div class="cart-item-qty-container">
+                                        <label class="cart-item-label text-gray" title="Qty">Quantity</label>
+                                        <span class="h1">{{qty }}</span>
+                                    </div>
+                                </div>
+                                <div class="span2">
+                                    <div class="cart-item-price-container">
+                                        <label class="cart-itm-label text-gray list-price" title="listPrice">List Price ${{number-format price}}</label>
+                                        <span class="h1 item-price">${{number-format price }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each }}
+                    </section>
+                </div>
+                <div class="separator"></div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+</div>
+
+

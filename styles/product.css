@@ -275,7 +275,7 @@ b, strong {
 }
 
 .people-viewed-item-name div, .people-viewed-item-specs {
-    padding: 0 0 10px;
+    padding: 0 0 5px;
     text-align: left;
     display: inline-block;
     width:200px;
@@ -283,6 +283,9 @@ b, strong {
     font-size: 14px;
     font-weight: 400;
     color: #4f8ac3;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 
 .text-gray{

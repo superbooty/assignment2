@@ -48,3 +48,6 @@ Handlebars.registerHelper('if_lt', function(context, options) {
     return options.inverse(this);
 });
 
+Handlebars.registerHelper('number-format', function(number, options){
+    return number.toFixed(2);
+});

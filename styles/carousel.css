@@ -58,15 +58,10 @@
     width: 425px;
 }
 
-#slider-code .pager ul {
-    margin: auto;
-    width: 50%;
-}
 
 #slider-code .poverview li {
     float: left;
     height: 12px;
-    margin: 0 2px 0 0;
     padding: 3px;
     width: 12px;
 }
@@ -75,7 +70,7 @@
     clear: both;
     margin: 0 auto;
     overflow: hidden;
-    padding-left:0px;
+    padding-left: 0;
     width: 50%;
 }
 
@@ -103,4 +98,5 @@
     display: inline-block;
     height: 20px;
     width: 530px;
+    padding:30px;
 }

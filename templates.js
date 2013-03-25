@@ -9,7 +9,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   buffer += "\n<section class=\"about\">\n    <header class=\"about-header\">\n        About\n    </header>\n    <div class=\"clear\"></div>\n    <div class=\"about-data\">\n        ";
   options = {hash:{},data:data};
   buffer += escapeExpression(((stack1 = helpers.rawText),stack1 ? stack1.call(depth0, depth0.about, options) : helperMissing.call(depth0, "rawText", depth0.about, options)))
-    + "...<a href=\"#\">read more</a>\n    </div>\n</section>";
+    + "...<a href=\"#\">Continue Reading</a>\n    </div>\n</section>";
   return buffer;
   });
 templates['buying-options'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -52,19 +52,19 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <li><a rel=\""
+  buffer += "\n                    <li><a rel=\""
     + escapeExpression(((stack1 = data.index),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" class=\"pagenum\" href=\"#\"></a></li>\n            ";
+    + "\" class=\"pagenum\" href=\"#\"></a></li>\n                ";
   return buffer;
   }
 
   buffer += "<script type=\"text/javascript\">\n    $(document).ready(function(){\n        $('#slider-code').tinycarousel({pager:true, controls:true});\n    });\n</script>\n<div id=\"slider-code\">\n    <a class=\"buttons prev\" href=\"#\">left</a>\n    <div class=\"viewport\">\n        <ul class=\"overview\">\n            ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        </ul>\n    </div>\n    <a class=\"buttons next\" href=\"#\">right</a>\n    <div class=\"separator\"></div>\n    <ul class=\"pager\">\n        <ul class=\"poverview\">\n            ";
+  buffer += "\n\n        </ul>\n    </div>\n    <a class=\"buttons next\" href=\"#\">right</a>\n    <div class=\"separator\">\n        <ul class=\"pager\">\n            <ul class=\"poverview\">\n                ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        </ul>\n    </ul>\n</div>";
+  buffer += "\n\n            </ul>\n        </ul>\n    </div>\n</div>";
   return buffer;
   });
 templates['cart-options'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -116,6 +116,19 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   else { stack1 = depth0.greeting; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + " world!";
+  return buffer;
+  });
+templates['main-header'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<header class=\"gh-head clearfix\">\n    <div class=\"gh-logo\"><span class=\"text\">Walmart</span><img class=\"spark\" src=\"images/spark.png\"/></div>\n    <div class=\"gh-srch\"></div>\n    <div class=\"gh-links\">\n        <div class=\"gh-link bd\"><span class=\"create\">Create</span><br/><span class=\"text\">a new wish list</span></div>\n        <div class=\"gh-link bd\"><span class=\"signin\">Sign In</span><br/><span class=\"text\">to your account</span></div>\n        <div class=\"gh-link\"><span class=\"cart\">";
+  if (stack1 = helpers.cartSize) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.cartSize; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " Items</span><br/><span class=\"text\">a new wish list</span></div>\n    </div>\n</header>";
   return buffer;
   });
 templates['people-who-viewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
