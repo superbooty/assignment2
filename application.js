@@ -157,7 +157,7 @@ $(function () {
         },
 
         render:function () {
-            //console.log(productModel.getAlternateImages());
+            console.log("mainHeaderView is rendering");
             this.$el.html(this.options.template({cartSize:myCart.getCartSize()}));
             $('.main-header').html(this.el);
             //return this;
@@ -246,6 +246,7 @@ $(function () {
             console.log(myCart);
             myCart.addItem(this.model.getCartItem() );
             storage.setItem('jsonCart', JSON.stringify(myCart ) );
+            mainHeaderView.render();
         },
 
         render:function () {

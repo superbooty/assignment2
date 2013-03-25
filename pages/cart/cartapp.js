@@ -97,14 +97,14 @@ $(function () {
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.setSavedItem(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            cartModel.trigger('change');
+            this.model.trigger('change');
         },
 
         moveToCart: function(event){
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.moveToCart(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            cartModel.trigger('change');
+            this.model.trigger('change');
         },
 
         removeItem: function(event){
@@ -116,13 +116,14 @@ $(function () {
                 myCart.removeItem(itemToRemove, myCart.savedItems);
             }
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            cartModel.trigger('change');
-            console.log("offset parent Id: "+parentId);
+            this.model.trigger('change');
         },
 
         render:function(){
             this.$el.html(this.options.template(this.model.getCartItems()));
             $('.cart-item-container').html(this.el);
+            $('.accordionMod .accordion-toggle').first().trigger('click');
+            console.log("re-rendering");
             this.delegateEvents(this.events);
 
         }
