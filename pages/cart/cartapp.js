@@ -89,11 +89,11 @@ $(function () {
 
         events:{
             'click .save-for-later-button': 'saveForLater',
-            'click .move-to-cart-button': 'moveToCart'
+            'click .move-to-cart-button': 'moveToCart',
+            'click .remove-button': 'removeItem'
         },
 
         saveForLater: function(event){
-            console.log("in save for later");
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.setSavedItem(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
@@ -101,11 +101,24 @@ $(function () {
         },
 
         moveToCart: function(event){
-            console.log("in save for later");
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.moveToCart(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
             cartModel.trigger('change');
+        },
+
+        removeItem: function(event){
+            console.log("in save for later");
+            var itemToRemove = $(event.target)[0].attributes['itemtoremove'].value;
+            var parentId = $(event.target)[0].offsetParent.id;
+            if(parentId == "collapseBox1_1" ){
+                myCart.removeItem(itemToRemove, myCart.cartItems);
+            }else{
+                myCart.removeItem(itemToRemove, myCart.savedItems);
+            }
+            storage.setItem('jsonCart', JSON.stringify(myCart));
+            cartModel.trigger('change');
+            console.log("offset parent Id: "+parentId);
         },
 
         render:function(){

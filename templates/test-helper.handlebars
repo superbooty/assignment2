@@ -1,0 +1,16 @@
+
+<div>
+        {{myData.people.first_name}}
+        <p>This is the famous test helper </p>
+        {{#each myData.people}}
+        <div class="test">
+            {{#equal @index 0 }}
+               <div >I found Nick: {{ email}}</div>
+            {{else}}
+               <div >I found {{first_name}}</div>
+
+            {{/equal}}
+        </div>
+        {{/each}}
+
+</div>

@@ -93,6 +93,19 @@ com.wm.Cart = function(){ return {
         }
     },
 
+    removeItem: function(id, cartType){
+        var item = $.grep(cartType, function(e){ return e.id == id; });
+        if(item.length > 0){
+            for(var counter = 0 ; counter < cartType.length ; counter++){
+                if(cartType[counter].id ==id ){
+                    cartType.splice(counter--, 1);
+                    break;
+                }
+            }
+        }
+    },
+
+
     getSubtotals: function(){
         var runningTotal = 0.00;
         this.cartItems.forEach(function(e){
