@@ -108,7 +108,6 @@ $(function () {
         },
 
         removeItem: function(event){
-            console.log("in save for later");
             var itemToRemove = $(event.target)[0].attributes['itemtoremove'].value;
             var parentId = $(event.target)[0].offsetParent.id;
             if(parentId == "collapseBox1_1" ){
