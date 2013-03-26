@@ -62,7 +62,6 @@ $(function () {
     });
     var cartModel = new CartModel();
 
-
     // check to see if there is data in the
     if(cartData != null){
         var parsedData = JSON.parse(cartData);
@@ -72,8 +71,6 @@ $(function () {
         myCart.setCartItems(parsedData.cartItems);
         myCart.setSavedItems(parsedData.savedItems);
     }
-
-
 
     var CartItemView = Backbone.View.extend({
         initialize:function () {

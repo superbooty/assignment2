@@ -75,6 +75,24 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 
   return "<div class=\"filter\">\n    <div class=\"qty-button\">\n        <span class=\"text\">Qty</span><b class=\"qty-button-arrow\"></b>\n        <div class=\"options\">\n            <ul>\n                <li class=\"opt\">1</li>\n                <li class=\"opt\">2</li>\n                <li class=\"opt\">3</li>\n            </ul>\n\n        </div>\n    </div>\n</div>\n<input class=\"add-to-cart\" type=\"button\" value=\"Add to Cart\">\n<div class=\"add-to-cart-confirm\" style=\"position:absolute; display:none; width:300px; height:300px; border-style:solid; border-width:1px; border-color:#F3F3F3\">\n       Adding item to Cart\n</div>";
   });
+templates['header-cart'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
+
+
+  buffer += "<div class=\"header-cart-item\">\n    <br class=\"clear\" />\n    <span class=\"item-name\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span>\n    <div class=\"item-image\"><img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" width=\"150\" height=\"150\"/></div>\n    <span class=\"item-qty\">Quantity: "
+    + escapeExpression(((stack1 = ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.qty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span>\n    <span class=\"item-price\">Price: $";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers['number-format']),stack1 ? stack1.call(depth0, ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.price), options) : helperMissing.call(depth0, "number-format", ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.price), options)))
+    + "</span>\n</div>";
+  return buffer;
+  });
 templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};

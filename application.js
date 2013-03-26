@@ -160,7 +160,7 @@ $(function () {
             console.log("mainHeaderView is rendering");
             this.$el.html(this.options.template({cartSize:myCart.getCartSize()}));
             $('.main-header').html(this.el);
-            //return this;
+            this.delegateEvents(this.events);
         }
     });
 
@@ -227,6 +227,25 @@ $(function () {
         template:Handlebars.templates['product-details']
     });
 
+    var HeaderCartView = Backbone.View.extend({
+        render:function () {
+            this.$el.html(this.options.template({cartItem:productModel.getCartItem()}));
+            $('.header-cart-container').html(this.el);
+            $("html, body").animate({ scrollTop: 0 }, 0);
+            $(".cart").addClass('cart-blink')
+            setTimeout(function() {
+                $(".cart").removeClass('cart-blink');
+            }, 3500);
+            $('.header-cart-container').slideDown(500);
+
+            return this;
+        }
+    });
+
+    var headerCartView = new HeaderCartView({
+        template:Handlebars.templates['header-cart']
+    });
+
     // cart options (qty and add to cart buttons)
     var CartOptionsView = Backbone.View.extend({
         events:{
@@ -247,6 +266,7 @@ $(function () {
             myCart.addItem(this.model.getCartItem() );
             storage.setItem('jsonCart', JSON.stringify(myCart ) );
             mainHeaderView.render();
+            headerCartView.render();
         },
 
         render:function () {

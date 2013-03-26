@@ -1,0 +1,42 @@
+
+body {
+    width:1024px;
+    margin:0px auto;
+    background-color:#fff;
+}
+
+.review-pricing-container, review-fulfilment-details-container{
+    border-style:solid;
+    border-width:1px;
+    border-color:#d3d3d3;
+    height: 55px;
+    width:1024px;
+    display:inline-block;
+}
+
+.review-fulfilment-details-container {
+    border:solid 1px #ff211a;
+}
+
+.review-fulfilment-details-container .row {
+    text-align:center;
+    margin: 0;
+}
+
+.review-fulfilment-details-container .span4 {
+    text-align: left;
+    padding: 20px 0 10px
+}
+
+.review-cart-container {
+     margin: 10px 0 0 0;
+     padding: 0 0 0 20px;
+ }
+
+.review-cart-items {
+    padding: 20px 0 0 0;
+}
+
+.review-cart-container .span9 {
+    width:680px;
+}

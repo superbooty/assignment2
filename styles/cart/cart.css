@@ -1,8 +1,11 @@
+html {
+    background-color:#333;
+}
+
 body {
-    width: 750px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #d9d9d9
+    width:750px;
+    margin:0px auto;
+    background-color:#fff;
 }
 
 .cart-item-msg {
@@ -75,7 +78,7 @@ body {
 }
 
 .separator {
-    background: linear-gradient(135deg, #FAFAFA 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #FAFAFA 100%) repeat scroll 0 0 transparent;
+    background: linear-gradient(135deg, #faaa25 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #faaa25 100%) repeat scroll 0 0 transparent;
     height: 2px;
     width: 100%;
 }
