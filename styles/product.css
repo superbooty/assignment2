@@ -19,7 +19,7 @@ body {
     padding: 0 0 0 20px;
     border: solid 2px #f58a23;
     z-index: 1000;
-    background: linear-gradient(135deg, #FAFAFA 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #FAFAFA 100%) repeat scroll 0 0 transparent;
+    background-color: #fff !important;
     display:none;
 }
 

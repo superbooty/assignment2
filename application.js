@@ -232,11 +232,13 @@ $(function () {
             this.$el.html(this.options.template({cartItem:productModel.getCartItem()}));
             $('.header-cart-container').html(this.el);
             $("html, body").animate({ scrollTop: 0 }, 0);
-            $(".cart").addClass('cart-blink')
+            $(".cart").addClass('cart-blink');
+            $('.header-cart-container').slideDown(500);
             setTimeout(function() {
+                $('.header-cart-container').slideUp(500);
                 $(".cart").removeClass('cart-blink');
             }, 3500);
-            $('.header-cart-container').slideDown(500);
+
 
             return this;
         }
