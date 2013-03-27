@@ -22,8 +22,10 @@ $(function () {
         storage = window['sessionStorage'];
         cartData = storage.getItem('jsonCart');
         var parsedData = JSON.parse(cartData);
-        myCart.setCartItems(parsedData.cartItems);
-        myCart.setSavedItems(parsedData.savedItems);
+        if(parsedData != null ){
+            myCart.setCartItems(parsedData.cartItems);
+            myCart.setSavedItems(parsedData.savedItems);
+        }
     }
 
     var productId = 21311919;
@@ -35,12 +37,12 @@ $(function () {
 
         getProduct: function(id){
             productId = id;
-
         }
 
     });
-    var productRouter = new ProductRouter;
+    var productRouter = new ProductRouter();
     Backbone.history.start();
+
 
     // The model
     var ProductModel = Backbone.Model.extend({

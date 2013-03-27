@@ -5,19 +5,6 @@ body {
     background-color:#fff;
 }
 
-.review-pricing-container, review-fulfilment-details-container{
-    border-style:solid;
-    border-width:1px;
-    border-color:#d3d3d3;
-    height: 55px;
-    width:1024px;
-    display:inline-block;
-}
-
-.review-fulfilment-details-container {
-    border:solid 1px #ff211a;
-}
-
 .review-fulfilment-details-container .row {
     text-align:center;
     margin: 0;
@@ -39,4 +26,59 @@ body {
 
 .review-cart-container .span9 {
     width:680px;
+}
+
+.cart-item-img {
+    float: left;
+    height: 150px;
+    padding: 0 20px;
+    width: 150px;
+}
+
+.cart-item-label {
+    color: #4F8AC3;
+    display: inline-block;
+    font-family: 'Sintony',sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    padding: 0 0 5px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+}
+
+.review-cart-header, review-pricing {
+    color: rgba(44, 44, 44, 0.94);
+    float: left;
+    font-family: 'Sintony',sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding: 0 0 10px;
+}
+
+.review-pricing .review-pricing-text {
+    display: inline-block;
+    font-size: 26px;
+    padding: 15px 0 0 20px;
+}
+
+.separator {
+    background: linear-gradient(135deg, #F9F9F9 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #FFFFFF 100%) repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+}
+
+.credit-card, .shipping-method {
+    border: 2px solid #D5D5D5;
+    border-radius: 5px 5px 5px 5px;
+    color: #9f9f9f;
+    font-family: 'Sintony',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px;
+    width: 250px;
 }

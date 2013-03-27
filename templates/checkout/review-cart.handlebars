@@ -1,0 +1,33 @@
+<div class="review-cart">
+    <br style="clear:both" />
+    <header class="review-cart-header">
+        <div class="row" >
+            <div class="span9">
+                <header>Your Order</header>
+            </div>
+            <div class="span2">
+                <header>Qty</header>
+            </div>
+            <div class="span2">
+                <header>Price</header>
+            </div>
+        </div>
+    </header>
+    <div class="separator"></div>
+    {{#each checkoutCart }}
+    <div class="review-cart-items" >
+        <div class="row" >
+            <div class="span9">
+                <img class="cart-item-img" src="{{image}}" />
+                <span class="cart-item-label">{{{name}}}</span>
+            </div>
+            <div class="span2">
+                <header>{{qty }}</header>
+            </div>
+            <div class="span2">
+                <header>${{number-format price }}</header>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

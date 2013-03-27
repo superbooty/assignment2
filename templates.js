@@ -146,7 +146,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   if (stack1 = helpers.cartSize) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.cartSize; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " Items</span><br/><span class=\"text\">a new wish list</span></div>\n    </div>\n</header>";
+    + " Items</span><br/><span class=\"text\">in your cart</span></div>\n    </div>\n</header>";
   return buffer;
   });
 templates['people-who-viewed'] = template(function (Handlebars,depth0,helpers,partials,data) {
@@ -169,17 +169,17 @@ function program1(depth0,data) {
 function program2(depth0,data) {
   
   var buffer = "", stack1, options;
-  buffer += "\n    <div class=\"people-viewed-item\">\n        <a href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += "\n    <div class=\"people-viewed-item\">\n        <a href=\"/#";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "\"><img src=\"";
   if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"/></a>\n        <a class=\"people-viewed-item-name\" href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+    + "\"/></a>\n        <a class=\"people-viewed-item-name\" href=\"/#";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "\">\n            <div class=\"\">";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }

@@ -11,36 +11,55 @@
     <script src="../../lib/bootstrap.js"></script>
     <script src="../../templates/checkout/templates.js"></script>
     <script src="../../js/NameSpace.js"></script>
+    <script src="../../js/cart/Cart.js"></script>
     <script src="../../js/helper.js"></script>
     <script src="reviewapp.js"></script>
-    <link rel="stylesheet" media="screen" href="styles/googlefonts.css">
+    <link rel="stylesheet" media="screen" href="../../styles/googlefonts.css">
     <link rel="stylesheet" media="screen" href="../../styles/bootstrap.css">
+    <link rel="stylesheet" media="screen" href="../../styles/index.css">
     <link rel="stylesheet" media="screen" href="../../styles/checkout/review.css">
 </head>
 <body>
 <section class="review-header-container">
 </section>
 <section class="review-pricing-container">
-    <div class="review-pricing">
-        <div class="row" >
-            <div class="span8">........</div>
-            <div class="span4">.....</div>
-        </div>
-    </div>
 </section>
+<div class="separator"></div>
 <section class="review-fulfilment-details-container">
     <div class="review-fulfilment-details">
         <div class="row" >
             <div class="span4">
                 <div class="payment-details">
                     <header>Payment Details</header>
-                    <img src="../../img/av-temp1.png" />
+                    <div class="credit-card">
+                        MasterCard ending in 1234
+                    </div>
+                    <label class="billing-address-label">
+                        Billing Address
+                    </label>
+                    <div class="billing-address-text">
+                        Silky <br>
+                        7000 Marina blvd <br>
+                        Brisbane CA, 94005 <br>
+                        USA
+                    </div>
                 </div>
             </div>
             <div class="span4">
                 <div class="shipping">
-                    <header>Shipping</header>
-                    <img src="../../img/av-temp2.png" />
+                    <header>Shipping (Multiple Addresses)</header>
+                    <div class="shipping-method">
+                        Standard
+                    </div>
+                    <label class="shipping-address-label">
+                        Billing Address
+                    </label>
+                    <div class="billing-address-text">
+                        Silky <br>
+                        7000 Marina blvd <br>
+                        Brisbane CA, 94005 <br>
+                        USA
+                    </div>
                 </div>
             </div>
             <div class="span4">
@@ -52,36 +71,9 @@
         </div>
     </div>
 </section>
+<div class="separator"></div>
 <section class="review-cart-container">
-    <div class="review-cart">
-        <br style="clear:both" />
-        <header>
-            <div class="row" >
-                <div class="span9">
-                    <header>Your Order</header>
-                </div>
-                <div class="span2">
-                    <header>Qty</header>
-                </div>
-                <div class="span2">
-                    <header>Price</header>
-                </div>
-            </div>
-        </header>
-        <div class="review-cart-items" >
-            <div class="row" >
-                <div class="span9">
-                    <img src="../../img/av-temp3.png" />
-                </div>
-                <div class="span2">
-                    <header>1</header>
-                </div>
-                <div class="span2">
-                    <header>$129.98</header>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </section>
 <section class="review-subtotal-container">
 </section>

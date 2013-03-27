@@ -21,6 +21,12 @@ $(function () {
     } else {
         storage = window['sessionStorage'];
         cartData = storage.getItem('jsonCart');
+        var parsedData = JSON.parse(cartData);
+        console.log(parsedData);
+        if(parsedData != null ){
+            myCart.setCartItems(parsedData.cartItems);
+            myCart.setSavedItems(parsedData.savedItems);
+        }
     }
 
     var ReviewHeader = Backbone.View.extend({
@@ -32,7 +38,7 @@ $(function () {
         },
 
         render:function(){
-            this.$el.html(this.options.template() );
+            this.$el.html(this.options.template({cartSize: myCart.getCartSize()}) );
             $('.review-header-container').html(this.el);
             this.delegateEvents(this.events);
         }
@@ -43,9 +49,49 @@ $(function () {
     });
     reviewHeader.render();
 
+    var ReviewCartView = Backbone.View.extend({
+        initialize:function () {
+        },
+
+        events:{
+
+        },
+
+        render:function(){
+            this.$el.html(this.options.template({checkoutCart: myCart.getCartItems()}) );
+            $('.review-cart-container').html(this.el);
+            this.delegateEvents(this.events);
+        }
+    });
+
+    var reviewCartView = new ReviewCartView({
+        template:Handlebars.templates['review-cart']
+    });
+    reviewCartView.render();
+
+    var ReviewPricingView = Backbone.View.extend({
+        initialize:function () {
+        },
+
+        events:{
+
+        },
+
+        render:function(){
+            this.$el.html(this.options.template() );
+            $('.review-pricing-container').html(this.el);
+            this.delegateEvents(this.events);
+        }
+    });
+
+    var reviewPricingView = new ReviewPricingView({
+        template:Handlebars.templates['review-pricing']
+    });
+    reviewPricingView.render();
+
+
     var ReviewSubtotals = Backbone.View.extend({
         initialize:function () {
-            this.listenTo(cartModel, 'change', this.render);
         },
 
         render:function(){
