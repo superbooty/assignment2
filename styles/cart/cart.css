@@ -8,6 +8,7 @@
     display:none;
     position:absolute;
     border: solid 1px #d2d2d2;
+    border-radius: 5px 5px 5px 5px;
     z-index:200;
 }
 
@@ -81,7 +82,7 @@
 }
 
 .separator {
-    background: linear-gradient(135deg, #faaa25 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #faaa25 100%) repeat scroll 0 0 transparent;
+    background: linear-gradient(135deg, #f9f9f9 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #ffffff 100%) repeat scroll 0 0 transparent;
     height: 2px;
     width: 100%;
 }

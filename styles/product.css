@@ -9,6 +9,7 @@
     display:none;
     position:absolute;
     border: solid 1px #d2d2d2;
+    border-radius: 5px 5px 5px 5px;
     z-index:100;
 }
 

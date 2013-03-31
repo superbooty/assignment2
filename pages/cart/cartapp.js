@@ -238,7 +238,8 @@ var cartPage = function () {
             var cart = function () {
                 var o = $('.cart').offset();
                 $('.cart-page').css({ 'top': o.top + 60,
-                    'left': o.left - (750 - 120)
+                    'left': o.left - (750 - 120),
+                    'border-radius':'5px'
                 });
                 $('.cart-page').slideDown(1000);
             }

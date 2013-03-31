@@ -332,7 +332,8 @@ var productPage = function(id){
             var product = function () {
                 var o = $('.cart').offset();
                 $('.selected-product').css({ 'top': o.top + 60,
-                    'left': o.left - (750 - 120)
+                    'left': o.left - (750 - 120),
+                    'border-radius':'5px'
                 });
                 $('.selected-product').slideDown(1000);
             }

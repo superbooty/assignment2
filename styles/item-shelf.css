@@ -49,10 +49,9 @@
 
 .shelf-item-price{
     color: #252627;
-    font-family:  verdana,arial,lucida,sans-serif;
-    font-size: 24px;
-    text-align: left;
-    word-wrap:break-word;
+    font-family: 'Sintony',sans-serif;
+    font-size: 25px;
+    font-weight: 700;
     width:205px;
     padding:5px 0 5px;
 
