@@ -51,3 +51,27 @@ Handlebars.registerHelper('if_lt', function(context, options) {
 Handlebars.registerHelper('number-format', function(number, options){
     return number.toFixed(2);
 });
+
+Handlebars.registerHelper('availability', function(dynamicItem, options){
+    if(dynamicItem.inStock){
+        return options.fn(this)
+    }else{
+        return options.inverse(this);
+    }
+});
+
+Handlebars.registerHelper('everyNth', function (context, every, options) {
+    var fn = options.fn, inverse = options.inverse;
+    var ret = "";
+
+    return (options.data.index ) % every == 0 ? fn(context) : inverse(this);
+});
+
+Handlebars.registerHelper('ratingsHelper', function (ratings) {
+    var val = Math.round(ratings);
+    return (5 - val) * 19;
+});
+
+Handlebars.registerHelper('desc', function (desc) {
+    return desc.split(/<li>/i).slice(1).join(', ');
+});

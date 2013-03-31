@@ -42,6 +42,17 @@ com.wm.Cart = function(){ return {
         return this.cartItems;
     },
 
+    getCartItemIds: function(){
+        var ret = "";
+        for(var index = 0; index < this.cartItems.length; index++){
+            var postfix = "";
+            if(index+1 != this.cartItems.length)
+                postfix = ",";
+            ret += this.cartItems[index].id+postfix;
+        }
+        return ret;
+    },
+
     setCartItems: function(cartItems){
         this.cartItems = cartItems;
     },

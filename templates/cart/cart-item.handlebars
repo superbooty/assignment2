@@ -18,11 +18,18 @@
                         <div class="cart-item-data">
                             <div class="row">
                                 <div class="span2">
-                                    <img src="{{image }}" />
+                                   <a href="/#product/{{id}}"><img src="{{image }}" /></a>
+                                   <div class="item-availability">
+                                       {{#availability dynamicItemData}}
+                                              <label class="in-stock">IN STOCK</label>
+                                          {{else}}
+                                              <label class="out-of-stock">OUT OF STOCK</label>
+                                       {{/availability}}
+                                   </div>
                                 </div>
                                 <div class="span3">
                                     <section class="cart-item-options-container">
-                                        <header class="cart-item-label">{{name }}</header>
+                                        <header class="cart-item-label">{{{name }}}</header>
                                         <div class="cart-item-option">
                                             <a href="#" itemtosave="{{id}}" class="save-for-later-button">Save For Later</a>
                                         </div>
@@ -65,11 +72,11 @@
                         <div class="cart-item-data">
                             <div class="row">
                                 <div class="span2">
-                                    <img src="{{image }}" />
+                                    <a href="/#product/{{id}}"><img src="{{image }}" /></a>
                                 </div>
                                 <div class="span3">
                                     <section class="cart-item-options-container">
-                                        <header class="cart-item-label">{{name }}</header>
+                                        <header class="cart-item-label">{{{name }}}</header>
                                         <div class="cart-item-option">
                                             <a href="#" itemtosave="{{id}}" class="move-to-cart-button">Move to Cart</a>
                                         </div>

@@ -1,0 +1,21 @@
+{{#each items}}
+{{#everyNth @index 4}}
+<div style="clear:both"></div>
+{{/everyNth}}
+<section class="shelf_item">
+    <a href="#/product/{{id}}"><img class="lazy" src="{{image}}"/></a>
+
+    <div class="shelf-item-name">
+        {{name}}
+    </div>
+    <div class="shelf-item-desc">
+        {{{desc description}}}
+    </div>
+    <div class="shelf-item-price">
+        ${{price}}
+    </div>
+    <div class="shelf-item-ratings" style="background-position:-{{ratingsHelper rating}}px" >
+        <div title=""></div>
+    </div>
+</section>
+{{/each}}

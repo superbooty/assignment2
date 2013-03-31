@@ -1,0 +1,111 @@
+.footer {
+    background-color: #326db2;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    border: 1px solid #000000;
+    clear: both;
+    height: 385px;
+    margin: 50px 0 0;
+    padding: 74px 49px 80px 37px;
+    text-align: left;
+}
+
+footer .mailing-list {
+    height: 28px;
+    margin: auto;
+    padding: 0 0 80px 220px;
+    width: 580px;
+}
+
+.mailing-list .email {
+    border: 1px solid #666666;
+    height: 35px;
+    padding: 0 0 3px 15px;
+    width: 320px;
+}
+
+
+.mailing-list .sign-up {
+    background-color: #2084CF;
+    background-image: -webkit-linear-gradient(top, #2698E8, #1B76BC);
+    background-image: -moz-linear-gradient(top, #2698E8, #1B76BC);
+    background-image: -ms-linear-gradient(top, #2698E8, #1B76BC);
+    border: 1px outset #2698E8;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    left: 5px;
+    padding-bottom: 2px;
+    position: relative;
+    width: 80px;
+}
+
+hr.footer {
+    position: relative;
+    height: 5px;
+    margin: 0 0 35px;
+    border-style: none;
+    background-image: -webkit-linear-gradient(top, rgb(0, 87, 132), rgb(0, 120, 184));
+    background-image: -moz-linear-gradient(top, rgb(0, 87, 132), rgb(0, 120, 184));
+    background-image: -ms-linear-gradient(top, rgb(0, 87, 132), rgb(0, 120, 184));
+}
+hr.footer:before,
+hr.footer:after {
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 5px;
+    content: "";
+}
+hr.footer:before {
+    background: -webkit-linear-gradient(left, rgba(0, 120, 184, 1) 0%,rgba(0, 120, 184, 0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -moz-linear-gradient(left, rgba(0, 120, 184, 1) 0%, rgba(0, 120, 184, 0) 100%); /* FF3.6+ */
+    background: -ms-linear-gradient(left, rgba(0, 120, 184, 1) 0%,rgba(0, 120, 184, 0) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(0, 120, 184, 1) 0%,rgba(0, 120, 184, 0) 100%); /* W3C */
+}
+hr.footer:after {
+    right: 0;
+    background: -moz-linear-gradient(left, rgba(0, 120, 184, 0) 0%, rgba(0, 120, 184, 1) 100%); /* FF3.6+ */
+    background: -webkit-linear-gradient(left, rgba(0, 120, 184, 0) 0%,rgba(0, 120, 184, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -ms-linear-gradient(left, rgba(0, 120, 184, 0) 0%,rgba(0, 120, 184, 1) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(0, 120, 184, 0) 0%,rgba(0, 120, 184, 1) 100%); /* W3C */
+}
+footer .column {
+    float: left;
+    padding-left: 25px;
+}
+footer .column:first-child {
+    padding-left: 25px;
+}
+/* Include h3 column headings for screen readers, but hide them visually */
+footer .column h3 {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+footer .link {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 12px;
+    color: rgb(118,183,227);
+}
+footer .link:hover {
+    color: #FFF;
+}
+footer aside {
+    float: right;
+    width: 260px;
+}
+
+footer aside h3 {
+    margin: 0;
+    font:normal normal normal 25px Helvetica, Sans-serif;
+    color: #FFF;
+}
+
+.footer-links {
+    margin:auto;
+    width: 100%;
+}

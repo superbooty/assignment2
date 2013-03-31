@@ -10,11 +10,12 @@ Application.View = Backbone.View.extend({
 });
 
 
-$(function () {
+var productPage = function(id){
 
     var myCart = new com.wm.Cart();
     var cartData = null;
     var storage = null;
+    var productId = id;
 
     if (typeof(sessionStorage) == 'undefined' ) {
         alert('Your browser does not support HTML5 localStorage. Try upgrading.');
@@ -28,21 +29,6 @@ $(function () {
         }
     }
 
-    var productId = 21311919;
-    // Router for loading a different item
-    var ProductRouter = Backbone.Router.extend({
-        routes: {
-            ":id": "getProduct"
-        },
-
-        getProduct: function(id){
-            productId = id;
-        }
-
-    });
-    var productRouter = new ProductRouter();
-    Backbone.history.start();
-
 
     // The model
     var ProductModel = Backbone.Model.extend({
@@ -51,7 +37,9 @@ $(function () {
             console.log(this.options);
         },
 
-        id: 21311919,
+        id: function(){
+            return this.itemId;
+        },
 
         defaults:{
             waitImg: 'http://www.walmart.com/js/jquery/ui/theme/walmart/images/updating.gif'
@@ -142,35 +130,6 @@ $(function () {
         }
     });
 
-    var headerView = new HeaderView({
-        template:Handlebars.templates['header']
-    });
-
-    // The main header
-    var MainHeaderView = Backbone.View.extend({
-
-        events:{
-            'click .cart': 'goToCart'
-        },
-
-        goToCart: function(){
-            console.log("going to the cart");
-            window.location.href = '/pages/cart/cart.html'
-        },
-
-        render:function () {
-            console.log("mainHeaderView is rendering");
-            this.$el.html(this.options.template({cartSize:myCart.getCartSize()}));
-            $('.main-header').html(this.el);
-            this.delegateEvents(this.events);
-        }
-    });
-
-    var mainHeaderView = new MainHeaderView({
-        template:Handlebars.templates['main-header']
-    });
-    mainHeaderView.render();
-
     // The carousel
     var CarouselView = Backbone.View.extend({
 
@@ -184,10 +143,6 @@ $(function () {
             $('.carousel-container').html(this.el);
             //return this;
         }
-    });
-
-    var carouselView = new CarouselView({
-        template:Handlebars.templates['carousel']
     });
 
     // Main
@@ -225,31 +180,6 @@ $(function () {
         }
     });
 
-    var productDetails = new ProductDetails({
-        template:Handlebars.templates['product-details']
-    });
-
-    var HeaderCartView = Backbone.View.extend({
-        render:function () {
-            this.$el.html(this.options.template({cartItem:productModel.getCartItem()}));
-            $('.header-cart-container').html(this.el);
-            $("html, body").animate({ scrollTop: 0 }, 0);
-            $(".cart").addClass('cart-blink');
-            $('.header-cart-container').slideDown(500);
-            setTimeout(function() {
-                $('.header-cart-container').slideUp(500);
-                $(".cart").removeClass('cart-blink');
-            }, 3500);
-
-
-            return this;
-        }
-    });
-
-    var headerCartView = new HeaderCartView({
-        template:Handlebars.templates['header-cart']
-    });
-
     // cart options (qty and add to cart buttons)
     var CartOptionsView = Backbone.View.extend({
         events:{
@@ -257,7 +187,6 @@ $(function () {
         },
 
         click: function(){
-            console.log("you clicked add to cart button");
             cartData = storage.getItem('jsonCart');
             var toStorage = new Array();
             // do we have cart data
@@ -266,25 +195,32 @@ $(function () {
                 myCart.setCartItems(toStorage.cartItems);
                 myCart.setSavedItems(toStorage.savedItems);
             }
-            console.log(myCart);
             myCart.addItem(this.model.getCartItem() );
             storage.setItem('jsonCart', JSON.stringify(myCart ) );
+
+            var cartItemCollection = new CartItemCollection();
+            cartItemCollection.reset(myCart.getCartItems());
+            var mainHeaderView = new MainHeaderView({
+                template:Handlebars.templates['main-header'],
+                model: cartItemCollection
+            });
             mainHeaderView.render();
+
+            var headerCartView = new HeaderCartView({
+                template:Handlebars.templates['header-cart'],
+                model:productModel
+            });
             headerCartView.render();
+
         },
 
         render:function () {
             this.$el.html(this.options.template());
             $('.cart-options-container').html(this.el);
             return this;
+            this.delegateEvents(this.events);
         }
     });
-
-    var cartOptionsView = new CartOptionsView({
-        template:Handlebars.templates['cart-options'],
-        model: productModel
-    });
-    cartOptionsView.render();
 
     // Buying Options
     var BuyingOptionsModel = Backbone.Model.extend({
@@ -307,38 +243,105 @@ $(function () {
         }
     });
 
-    var buyingOptionsView = new BuyingOptionsView({
-        template:Handlebars.templates['buying-options'],
-        model: buyingOptionsModel
+    var PeopleViewedItem = Backbone.Model.extend({
+
     });
-    buyingOptionsView.render();
 
     // People who viewed
-    var PeopleViewedModel= Backbone.Model.extend({
+    var PeopleViewedCollection = Backbone.Collection.extend({
         url: "json/products.json",
+
+        model: PeopleViewedItem,
+
         parse: function(response) {
             return response;
+        },
+
+        bySizeAndHigher: function(minSize) {
+            filtered = this.filter(function(item) {
+                return item.get("size") >= minSize;
+            });
+            console.log(filtered);
+            this.reset(filtered);
+            return new PeopleViewedCollection(filtered);
         }
     });
-    var peopleViewedModel = new PeopleViewedModel();
+    var peopleViewedCollection = new PeopleViewedCollection();
 
     var peopleViewedListView = Backbone.View.extend({
+
+        initialize:function () {
+            this.listenTo(this.model, 'reset', this.render);
+
+        },
+
+        events:{
+            'click .see-more-button': 'click'
+        },
+
+        click: function(){
+            console.log("you clicked see more button");
+            peopleViewedCollection.bySizeAndHigher(50);
+        },
+
         render:function(){
             var data = this.model.toJSON();
-            console.log(data);
-            this.$el.html(this.options.template(data));
-            $('.people-who').append(this.el);
+            console.log(peopleViewedCollection);
+            this.$el.html(this.options.template({items:data}));
+            $('.people-who').html(this.el);
         }
 
     });
 
-    var peopleViewedView = new peopleViewedListView({
-        template: Handlebars.templates['people-who-viewed'],
-        model: peopleViewedModel
+
+    var ProductPageView = Backbone.View.extend({
+
+        render: function(){
+            $('.selected-product').fadeOut(1000);
+            var peopleViewedView = new peopleViewedListView({
+                template: Handlebars.templates['people-who-viewed'],
+                model: peopleViewedCollection
+            });
+            peopleViewedCollection.fetch();
+
+            var buyingOptionsView = new BuyingOptionsView({
+                template:Handlebars.templates['buying-options'],
+                model: buyingOptionsModel
+            });
+            buyingOptionsView.render();
+
+            var cartOptionsView = new CartOptionsView({
+                template:Handlebars.templates['cart-options'],
+                model: productModel
+            });
+            cartOptionsView.render();
+
+            var carouselView = new CarouselView({
+                template:Handlebars.templates['carousel']
+            });
+
+            var productDetails = new ProductDetails({
+                template:Handlebars.templates['product-details']
+            });
+
+            var headerView = new HeaderView({
+                template:Handlebars.templates['header']
+            });
+            $('.cart-page').hide();
+
+            var product = function () {
+                var o = $('.cart').offset();
+                $('.selected-product').css({ 'top': o.top + 60,
+                    'left': o.left - (750 - 120)
+                });
+                $('.selected-product').slideDown(1000);
+            }
+            product();
+        }
+
     });
 
-    peopleViewedModel.fetch({success:function(data){
-        peopleViewedView.render();
-    }});
+    var productPageView = new ProductPageView({});
+    return productPageView;
 
-});
+}

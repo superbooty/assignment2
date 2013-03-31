@@ -2,6 +2,12 @@ html {
     background-color:#333;
 }
 
+body {
+    width:1024px;
+    margin:0px auto;
+    background-color:#fff;
+}
+
 .clearfix {
   *zoom: 1;
 }
@@ -15,15 +21,6 @@ html {
   clear: both;
 }
 
-a:link {
-    color:#1a75cf;
-    text-decoration:none;
-}
-
-a:hover {
-    color: #f47b20;
-    text-decoration:underline;
-}
 
 .gh-head {
     position:relative; padding:8px 10px;
@@ -47,7 +44,8 @@ a:hover {
 }
 
 .gh-logo .text {
-    position:relative; bottom:8px;
+    position:relative;
+    bottom: -15px;
     color:#0c69a6; font-family:Arial,serif;
     font-weight:bold; font-size:34px;
 }
@@ -70,6 +68,7 @@ a:hover {
     background: transparent url(images/spyglass.png) no-repeat 0 center;
 }
 
+
 .gh-links {
     position:relative; float:right;
     margin:25px 10px 0px 0px;
@@ -91,7 +90,7 @@ a:hover {
 
 .gh-link .signin {
     display:inline-block; padding:5px 0px 0px 20px;
-    background:transparent url(images/signin.png) no-repeat;
+    background:transparent url(../img/signin.png) no-repeat;
 }
 
 .gh-link .cart {
@@ -166,7 +165,7 @@ a:hover {
 
 .gh-controls .finder .spark {
     height: 26px; margin-bottom:8px;
-    background: url("images/spark.png") no-repeat scroll center 0px transparent;
+    background: url("../img/spark.png") no-repeat scroll center 0px transparent;
 }
 
 .gh-controls .finder .text {
@@ -439,6 +438,13 @@ a:hover {
 
 .gh-flinks .column.centre a {
     color:#eee; font-family:Arial; font-size:26px; white-space:nowrap;
+}
+
+#screen {
+    background: none repeat scroll 0 0 #000000;
+    left: 0;
+    position: absolute;
+    top: 0;
 }
 
 

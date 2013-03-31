@@ -10,7 +10,7 @@ Application.View = Backbone.View.extend({
 });
 
 
-$(function () {
+var cartPage = function () {
 
     var myCart = new com.wm.Cart();
     var cartData = null;
@@ -42,15 +42,22 @@ $(function () {
             return data;
         },
 
-        getCartItems: function(){
-
+        getCartItems: function(dynamicItemData){
+            console.log(dynamicItemData);
             var items = this.myCartData.cartItems;
             var saved = this.myCartData.savedItems;
             var forPurchaseCount = 0;
             if(items.length >0 )
-                items.forEach(function(e){
-                    forPurchaseCount += e.qty;
+                items.forEach(function(itemIter){
+                    forPurchaseCount += itemIter.qty;
+                    dynamicItemData.forEach(function(dynItemIter){
+                        if(itemIter.id == dynItemIter.id){
+                            itemIter.dynamicItemData = dynItemIter;
+                        }
+                    });
                 });
+
+            console.log(items);
             var savedItemsCount = 0;
             saved.forEach(function(e){
                 savedItemsCount += e.qty;
@@ -73,15 +80,19 @@ $(function () {
     }
 
     var CartItemView = Backbone.View.extend({
+
+        availabilityModel: null,
+
         initialize:function () {
+
             if(!this.model.attributes.fromStorage ){
                 console.log("fetching...");
                 this.model.fetch();
             }else{
                 console.log("model has data from storage");
-                this.render();
+                this.preRender();
             }
-            this.listenTo(this.model, 'change', this.render);
+            this.listenTo(this.model, 'change', this.preRender);
         },
 
         events:{
@@ -94,14 +105,14 @@ $(function () {
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.setSavedItem(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            this.model.trigger('change');
+            cartModel.trigger('change');
         },
 
         moveToCart: function(event){
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.moveToCart(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            this.model.trigger('change');
+            cartModel.trigger('change');
         },
 
         removeItem: function(event){
@@ -113,28 +124,49 @@ $(function () {
                 myCart.removeItem(itemToRemove, myCart.savedItems);
             }
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            this.model.trigger('change');
+            cartModel.trigger('change');
         },
 
-        render:function(){
-            this.$el.html(this.options.template(this.model.getCartItems()));
+        preRender:function() {
+            var myUrl = "http://aguevara-linux.corp.walmart.com/search/inventory/itemIds.ems?itemids="+myCart.getCartItemIds()+"&useCache=true";
+            console.log(myUrl);
+            var that = this;
+            this.availabilityModel = new AvailabilityModel({url:myUrl});
+            //this.availabilityModel.listenTo(this.model, 'change', this.availabilityModel.what);
+            //cartModel.trigger('change');
+            this.availabilityModel.fetch({
+                success: function(response){
+                    console.log(response);
+                    that.render(response);
+                }
+
+            });
+
+
+        },
+
+        render:function(props){
+            this.$el.html(this.options.template(this.model.getCartItems(props.dynamicItemData)));
             $('.cart-item-container').html(this.el);
             $('.accordionMod .accordion-toggle').first().trigger('click');
             console.log("re-rendering");
+
+            var cartItemCollection = new CartItemCollection();
+            cartItemCollection.reset(myCart.getCartItems());
+
+            var mainHeaderView = new MainHeaderView({
+                template:Handlebars.templates['main-header'],
+                model: cartItemCollection
+            });
+            mainHeaderView.render();
             this.delegateEvents(this.events);
 
         }
 
-    })
-
-    var cartItemView = new CartItemView({
-        template:Handlebars.templates['cart-item'],
-        model: cartModel
     });
 
     var CartHeader = Backbone.View.extend({
         initialize:function () {
-
             this.listenTo(this.model, 'change', this.render);
         },
 
@@ -167,11 +199,7 @@ $(function () {
         }
     });
 
-    var cartHeader = new CartHeader({
-        template:Handlebars.templates['cart-header'],
-        model: cartModel
-    });
-    cartHeader.render();
+
 
     var CartSubtotals = Backbone.View.extend({
         initialize:function () {
@@ -184,9 +212,45 @@ $(function () {
         }
     });
 
-    var cartSubtotals = new CartSubtotals({
-        template:Handlebars.templates['cart-subtotal']
-    });
-    cartSubtotals.render();
 
-});
+
+
+    var CartPageView = Backbone.View.extend({
+
+        render: function(){
+
+            var cartItemView = new CartItemView({
+                template:Handlebars.templates['cart-item'],
+                model: cartModel
+            });
+
+            var cartHeader = new CartHeader({
+                template:Handlebars.templates['cart-header'],
+                model: cartModel
+            });
+            cartHeader.render();
+
+            var cartSubtotals = new CartSubtotals({
+            template:Handlebars.templates['cart-subtotal']
+            });
+            cartSubtotals.render();
+
+            var cart = function () {
+                var o = $('.cart').offset();
+                $('.cart-page').css({ 'top': o.top + 60,
+                    'left': o.left - (750 - 120)
+                });
+                $('.cart-page').slideDown(1000);
+            }
+            cart();
+
+            $('.selected-product').hide();
+
+        }
+
+    });
+    var cartPageView = new CartPageView();
+    cartPageView.render();
+
+
+};

@@ -78,6 +78,14 @@
 
 #slider-code .pager li { float: left; }
 
+.pager li > a, .pager li > span {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 0 15px 15px 15px;
+    display: inline-block;
+    padding: 0;
+}
+
 #slider-code .active { color: #fff; background-color:  #555555; }
 
 #slider-code .pagenum {
@@ -95,7 +103,7 @@
     background: url("../img/current-position.png") no-repeat scroll 0 0 transparent;
 }
 
-.separator {
+.carousel-separator {
     display: inline-block;
     height: 20px;
     width: 530px;

@@ -10,11 +10,13 @@ Application.View = Backbone.View.extend({
 });
 
 
-$(function () {
+var reviewsPage = function () {
 
     var myCart = new com.wm.Cart();
     var cartData = null;
     var storage = null;
+
+    var customer = null;
 
     if (typeof(sessionStorage) == 'undefined' ) {
         alert('Your browser does not support HTML5 localStorage. Try upgrading.');
@@ -29,6 +31,12 @@ $(function () {
         }
     }
 
+    var CustomerModel = Backbone.Model.extend({
+        customer: new com.wm.Customer()
+    });
+
+    var customerModel = new CustomerModel();
+
     var ReviewHeader = Backbone.View.extend({
         initialize:function () {
         },
@@ -38,14 +46,15 @@ $(function () {
         },
 
         render:function(){
-            this.$el.html(this.options.template({cartSize: myCart.getCartSize()}) );
+            this.$el.html(this.options.template({cartSize: myCart.getCartSize(), customer:customerModel.customer}) );
             $('.review-header-container').html(this.el);
             this.delegateEvents(this.events);
         }
     });
 
     var reviewHeader = new ReviewHeader({
-        template:Handlebars.templates['review-header']
+        template:Handlebars.templates['review-header'],
+        model:customerModel
     });
     reviewHeader.render();
 
@@ -105,4 +114,8 @@ $(function () {
     });
     reviewSubtotals.render();
 
+};
+
+$(function(){
+    reviewsPage();
 });

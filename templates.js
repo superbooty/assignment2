@@ -61,7 +61,7 @@ function program3(depth0,data) {
   buffer += "<script type=\"text/javascript\">\n    $(document).ready(function(){\n        $('#slider-code').tinycarousel({pager:true, controls:true});\n    });\n</script>\n<div id=\"slider-code\">\n    <a class=\"buttons prev\" href=\"#\">left</a>\n    <div class=\"viewport\">\n        <ul class=\"overview\">\n            ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        </ul>\n    </div>\n    <a class=\"buttons next\" href=\"#\">right</a>\n    <div class=\"separator\">\n        <ul class=\"pager\">\n            <ul class=\"poverview\">\n                ";
+  buffer += "\n\n        </ul>\n    </div>\n    <a class=\"buttons next\" href=\"#\">right</a>\n    <div class=\"carousel-separator\">\n        <ul class=\"pager\">\n            <ul class=\"poverview\">\n                ";
   stack1 = helpers.each.call(depth0, depth0.images, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n\n            </ul>\n        </ul>\n    </div>\n</div>";
@@ -142,7 +142,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<header class=\"gh-head clearfix\">\n    <div class=\"gh-logo\"><span class=\"text\">Walmart</span><img class=\"spark\" src=\"images/spark.png\"/></div>\n    <div class=\"gh-srch\"></div>\n    <div class=\"gh-links\">\n        <div class=\"gh-link bd\"><span class=\"create\">Create</span><br/><span class=\"text\">a new wish list</span></div>\n        <div class=\"gh-link bd\"><span class=\"signin\">Sign In</span><br/><span class=\"text\">to your account</span></div>\n        <div class=\"gh-link\"><span class=\"cart\">";
+  buffer += "<header class=\"gh-head clearfix\">\n    <div class=\"gh-logo\"><span class=\"text\">Walmart</span><img class=\"spark\" src=\"img/spark.png\"/></div>\n    <div class=\"gh-srch\"></div>\n    <div class=\"gh-links\">\n        <div class=\"gh-link bd\"><span class=\"create\">Create</span><br/><span class=\"text\">a new wish list</span></div>\n        <div class=\"gh-link bd\"><span class=\"signin\">Sign In</span><br/><span class=\"text\">to your account</span></div>\n        <div class=\"gh-link\"><span class=\"cart\">";
   if (stack1 = helpers.cartSize) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.cartSize; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -169,7 +169,7 @@ function program1(depth0,data) {
 function program2(depth0,data) {
   
   var buffer = "", stack1, options;
-  buffer += "\n    <div class=\"people-viewed-item\">\n        <a href=\"/#";
+  buffer += "\n    <div class=\"people-viewed-item\">\n        <a href=\"/#product/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -177,7 +177,7 @@ function program2(depth0,data) {
   if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"/></a>\n        <a class=\"people-viewed-item-name\" href=\"/#";
+    + "\"/></a>\n        <a class=\"people-viewed-item-name\" href=\"/#product/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -234,6 +234,54 @@ function program1(depth0,data) {
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n                </tbody></table>\n            </div>\n\n            <div class=\"tab-content\">\n                <div class=\"ItemSectionContent\">\n                    <div class=\"WarrantyService BodyXL\">\n                        <div>\n                            <strong>Product warranty:</strong>\n                            <a onclick=\"s_objectID=&quot;javascript:void(0);_15&quot;;return this.s_oc?this.s_oc(e):true\" href=\"javascript:void(0);\">See details</a>\n                        </div>\n                        <!-- Start: if service plans available -->\n                        <!-- End: if service plans available -->\n                    </div>\n                    <!--start of modify-->\n                    <div class=\"WarrantyServiceMain BodyL\">\n                        <div class=\"multiCol greybar-box\">\n                            <div class=\"greybar-noheader\">\n                                <div class=\"tl mainSpriteBKG\">\n                                    <div class=\"tr mainSpriteBKG\">\n                                        <div class=\"tc mainSpriteBKG\"></div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"greybar-body clearfix\">\n                                <img width=\"110px\" height=\"105px\" border=\"0\" src=\"http://i.walmartimages.com/i/p/00/02/95/15/40/0002951540080_100X100.jpg\" class=\"picleft\" alt=\"Protect it\">\n                                <div class=\"Summary\"><strong>Walmart Product Care Plans</strong>\n                                    <p>A limited product warranty is included free for most items. With an optional Walmart Care Plan you can extend coverage up to 3 additional years. Walmart Care Plan Extended Warranties cover 100% of the cost for repair or replacement, including shipping charges for the exchange. <a onclick=\"s_objectID=&quot;javascript:void(0);_16&quot;;return this.s_oc?this.s_oc(e):true\" href=\"javascript:void(0);\">See Details</a></p>\n                                    <p class=\"mt20\">We'll show you extended warranty options and pricing at checkout if applicable.</p>\n                                </div>\n                            </div>\n                            <div class=\"greybar-footer\">\n                                <div class=\"bl mainSpriteBKG\"><div class=\"br mainSpriteBKG\"><div class=\"bc\"></div></div></div>\n                            </div>\n                        </div>\n                        <span>If you made your purchase in a Walmart store and would like to purchase a warranty <a title=\"Warranty &amp; Installation Plans\" href=\"http://see.walmart.com/walmart/protection-plans/\" onclick=\"s_objectID=&quot;http://see.walmart.com/walmart/protection-plans/_1&quot;;return this.s_oc?this.s_oc(e):true\">Click Here</a></span>\n                    </div>\n                    <!--start of modify-->\n                </div>\n            </div>\n\n            <div class=\"tab-content\">\n                <div class=\"BodyXL ItemSectionContent PaymentOptions\">\n                    <!-- Start: if Bill Me Later applies -->\n                    <h4 style=\"font-family:Verdana,sans-serif;\" class=\"BodyXLBold\">Enjoy Great Financing!</h4>\n                    <img width=\"91\" height=\"51\" src=\"http://i2.walmartimages.com/i/spacer.gif\" class=\"CreditCardImg mainSpriteICN sprite-a111_WMCC_91x51\" alt=\"\">\n                    <div class=\"CreditOffer\">Make the most of your shopping experience with the Walmart Discover<sup>&reg;</sup> or Walmart Credit Card.</div>\n                    <!-- Commented for the new instant credit card offers :19/Dec Svenkataraman-->\n                    <p>Open a Walmart Credit Card, Spend $100 Today and Get $20 Back*</p>\n                    <p>*Offer subject to credit approval</p>\n                    <p><a onclick=\"s_objectID=&quot;http://www.walmart.com/cservice/contextual_help_popup.gsp?modId=447772_1&quot;;return this.s_oc?this.s_oc(e):true\" href=\"/cservice/contextual_help_popup.gsp?modId=447772\">Learn More</a> or <a href=\"/instantcredit\" onclick=\"s_objectID=&quot;http://www.walmart.com/instantcredit_1&quot;;return this.s_oc?this.s_oc(e):true\">Apply Now</a></p>\n                    <div class=\"BodyXLBold NoPayOffer\">No Payments + No Interest <span class=\"BodyXL\">if Paid in Full in 6 Months!</span></div>\n                    <img width=\"100\" height=\"25\" src=\"http://i2.walmartimages.com/i/spacer.gif\" class=\"mainSpriteICN sprite-a112_BMLR\" alt=\"\">\n                    <div class=\"BuyNow\">Enjoy no payments for 6 months. You'll have 6 months with no payments, and no interest if paid in full within 6 months on orders over $250. Otherwise, interest will be charged from the original date of purchase. Bill Me Later is the quick, easy, secure way to buy online without using your credit card. Simply select Bill Me Later at checkout. Subject to credit approval.</div>\n                    <p class=\"clear\"><!-- --></p>\n                    <p><a onclick=\"s_objectID=&quot;https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=28A27SUA&amp;content=/bmlweb_1&quot;;return this.s_oc?this.s_oc(e):true\" href=\"https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=28A27SUA&amp;content=/bmlweb/np90drollingiw.html\">See Terms</a></p>\n                </div>\n            </div>\n            <div class=\"tab-content\">\n\n            </div>\n\n        </div>\n    </div>\n\n</div>";
   return buffer;
+  });
+templates['shelf-view'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var stack1, self=this, helperMissing=helpers.helperMissing, functionType="function", escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n";
+  options = {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.everyNth),stack1 ? stack1.call(depth0, data.index, 4, options) : helperMissing.call(depth0, "everyNth", data.index, 4, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n<section class=\"shelf_item\">\n    <a href=\"#/product/";
+  if (stack2 = helpers.id) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.id; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\"><img class=\"lazy\" src=\"";
+  if (stack2 = helpers.image) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.image; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\"/></a>\n\n    <div class=\"shelf-item-name\">\n        ";
+  if (stack2 = helpers.name) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.name; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\n    </div>\n    <div class=\"shelf-item-desc\">\n        ";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.desc),stack1 ? stack1.call(depth0, depth0.description, options) : helperMissing.call(depth0, "desc", depth0.description, options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    </div>\n    <div class=\"shelf-item-price\">\n        $";
+  if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.price; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\n    </div>\n    <div class=\"shelf-item-ratings\" style=\"background-position:-";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.ratingsHelper),stack1 ? stack1.call(depth0, depth0.rating, options) : helperMissing.call(depth0, "ratingsHelper", depth0.rating, options)))
+    + "px\" >\n        <div title=\"\"></div>\n    </div>\n</section>\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  
+  return "\n<div style=\"clear:both\"></div>\n";
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.items, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { return stack1; }
+  else { return ''; }
   });
 templates['test-helper'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];

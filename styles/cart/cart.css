@@ -1,11 +1,14 @@
-html {
-    background-color:#333;
-}
 
-body {
-    width:750px;
+
+.cart-page {
+    clear:both;
+    width: 750px;
     margin:0px auto;
     background-color:#fff;
+    display:none;
+    position:absolute;
+    border: solid 1px #d2d2d2;
+    z-index:200;
 }
 
 .cart-item-msg {
@@ -324,4 +327,20 @@ body {
 
 .opt:hover {
     background: linear-gradient(to bottom, rgb(61, 138, 235) 0%, rgba(159, 213, 250, 0.63) 100%) repeat scroll 0 0 transparent;
+}
+
+.in-stock {
+    color: #0d840e;
+    font-family: 'Sintony', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 0 0 0;
+}
+
+.out-of-stock {
+    color: #d4d2d2;
+    font-family: 'Sintony', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 0 0 0
 }
