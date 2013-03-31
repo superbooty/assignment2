@@ -1,12 +1,4 @@
-{
-    "maxsize": 73,
-    "minsize": 19,
-    "brandName": ["Vizio", "Sanyo", "Sceptre",
-        "Hannspree", "RCA", "Element",
-        "Toshiba", "Westinghouse", "Samsung",
-        "Philips", "Hiteker", "Sharp",
-        "Emerson", "Proscan", "JVC", "LG", "Mitsubishi"],
-    "item": [
+[
         {
             "url": "http://www.walmart.com/ip/Sceptre-32-X322BV-HD/15739136",
             "name": "Sceptre 32\" Class LCD 720p 60Hz HDTV, X322BV-HD",
@@ -1107,4 +1099,4 @@
             "rating": 0,
             "id": "20854605"
         }
-    ]}
+    ]

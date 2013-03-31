@@ -27,7 +27,7 @@ $(function(){
         getProduct: function(id){
 
             var pop = function(){
-                $('#screen').css({ "display": "block", opacity: 0.7, "width":$(document).width(),"height":$(document).height()});
+                $('#screen').css({ "display": "block", opacity: 0.7, top: "83px", "width":$(document).width(),"height":$(document).height()});
                 productPage(id).render();
             }
             pop();
@@ -36,7 +36,7 @@ $(function(){
 
         loadCart: function(){
             var pop = function(){
-                $('#screen').css({ "display": "block", opacity: 0.7, "width":$(document).width(),"height":$(document).height()});
+                $('#screen').css({ "display": "block", opacity: 0.7, top: "83px", "width":$(document).width(),"height":$(document).height()});
                 cartPage();
             }
             pop();
@@ -126,7 +126,17 @@ var tvFinder = function () {
     var cartData = null;
     var storage = null;
 
-    if (typeof(sessionStorage) == 'undefined') {
+
+    var collectionMeta ={
+        "maxsize": 73,
+        "minsize": 19,
+        "brandName": ["Vizio", "Sanyo", "Sceptre",
+        "Hannspree", "RCA", "Element",
+        "Toshiba", "Westinghouse", "Samsung",
+        "Philips", "Hiteker", "Sharp",
+        "Emerson", "Proscan", "JVC", "LG", "Mitsubishi"]}
+
+        if (typeof(sessionStorage) == 'undefined') {
         alert('Your browser does not support HTML5 localStorage. Try upgrading.');
     } else {
         storage = window['sessionStorage'];
@@ -151,7 +161,10 @@ var tvFinder = function () {
 
         model: ProductModel,
 
+        original: [],
+
         parse: function (response) {
+            this.original = response;
             return response;
         },
 
@@ -161,7 +174,15 @@ var tvFinder = function () {
             });
             console.log(filtered);
             this.reset(filtered);
-            return new PeopleViewedCollection(filtered);
+        },
+
+        filterOnRange: function(range) {
+            console.log(this);
+            filtered = this.filter(function (item) {
+                return item.get("size") >= range.low
+                    && item.get("size") <= range.high;
+            });
+            this.reset(filtered);
         }
     });
     var productCollection = new ProductCollection();
@@ -185,8 +206,7 @@ var tvFinder = function () {
 
         render: function () {
             var data = this.model.toJSON();
-            console.log(data);
-            this.$el.html(this.options.template({items: data[0].item}));
+            this.$el.html(this.options.template({items: data}));
             $('.shelf-view-container').html(this.el);
         }
 
@@ -195,40 +215,46 @@ var tvFinder = function () {
     var ProductFinderFilterView = Backbone.View.extend({
         initialize: function () {
             console.log("i'm here");
-            this.listenTo(this.model, 'reset', this.render);
 
+        },
+
+        events: {
+            'click .product-finder-filter-clear-btn': 'resetFinderCollection'
+        },
+
+        resetFinderCollection: function(){
+            productCollection.reset(productCollection.original);
+            this.render();
         },
 
         render: function () {
             var data = this.model.toJSON();
-            console.log( data[0]);
             //var items = data[0].item;
-            this.$el.html(this.options.template({items: data[0].item}));
+            this.$el.html(this.options.template());
             $('.product-finder-filter-container').html(this.el);
+
+            $("#range-value2").css({left:"-27px", top:"-55px"}).show();
+            $("#range-value1").css({left:"-27px", top:"-55px"}).show()
 
             $("#slider-range").slider({
                 range:true,
                 min:1,
                 max:100,
-                values:[ data[0].minsize, data[0].maxsize ],
+                values:[ collectionMeta.minsize, collectionMeta.maxsize ],
                 slide:function (event, ui) {
                     $("#range-value1").html(ui.values[0]+"\"");
                     $("#range-value2").html(ui.values[1]+"\"");
+                },
+
+                stop: function(event, ui){
+                    var range = {"low":ui.values[0], "high":ui.values[1]};
+                    productCollection.filterOnRange(range);
                 }
             });
 
-            $("#slider-range").find('a:last').append($("#range-value2"))
-                .hover(function()
-                { $("#range-value2").css({left:"-27px", top:"-55px"}).show()}
-            ).css({outline:"0 none"});
-
-            $("#slider-range").find('a:first').append($("#range-value1"))
-                .hover(function()
-                { $("#range-value1").css({left:"-27px", top:"-55px"}).show()}
-            ).css({outline:"0 none"});
-
-
-
+            $("#slider-range").find('a:last').append($("#range-value2")).css({outline:"0 none"});
+            $("#slider-range").find('a:first').append($("#range-value1")).css({outline:"0 none"});
+            this.delegateEvents(this.events);
 
         }
 
@@ -254,6 +280,7 @@ var tvFinder = function () {
                 template: Handlebars.templates['product-finder-filters'],
                 model: productCollection
             });
+            productFinderFilterView.render();
 
 
         }

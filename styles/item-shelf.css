@@ -71,9 +71,11 @@
 }
 
 .product-finder-pov {
-    display:inline-block;
-    width:1000px;
+    display: inline-block;
+    padding: 0 0 30px;
+    width: 1024px;
 }
+
 
 .product-finder-pov img {
     display:block;

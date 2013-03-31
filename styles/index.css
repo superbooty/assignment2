@@ -8,6 +8,14 @@ body {
     background-color:#fff;
 }
 
+.main-header {
+    z-index: 100;
+}
+
+.tv-finder-main {
+    display:inline-block;
+}
+
 .clearfix {
   *zoom: 1;
 }
@@ -444,7 +452,8 @@ body {
     background: none repeat scroll 0 0 #000000;
     left: 0;
     position: absolute;
-    top: 0;
+    top: 100;
+    z-index:90;
 }
 
 
