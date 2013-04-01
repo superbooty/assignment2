@@ -21,6 +21,7 @@ $(function(){
 
         tvFinderMain: function(){
             console.log("loading TV Finder");
+            $('#screen').css({ "display": "none", opacity: 0.7, top: "83px", "width":$(document).width(),"height":$(document).height()});
             tvFinder().render();
         },
 
@@ -112,7 +113,6 @@ var MainHeaderView = Backbone.View.extend({
 
     render:function () {
         console.log("mainHeaderView is rendering");
-        console.log(this.model.toJSON());
         this.$el.html(this.options.template({cartSize:this.model.getCartSize()}));
         $('.main-header').html(this.el);
 
@@ -196,7 +196,13 @@ var tvFinder = function () {
         },
 
         events: {
-            'click .see-more-button': 'click'
+            'click .see-more-button': 'click',
+            'click .product-finder-filter-clear-btn': 'resetFinderCollection'
+        },
+
+        resetFinderCollection: function(){
+            this.model.reset(productCollection.original);
+            productFinderFilterView.render();
         },
 
         click: function () {
@@ -206,8 +212,9 @@ var tvFinder = function () {
 
         render: function () {
             var data = this.model.toJSON();
-            this.$el.html(this.options.template({items: data}));
+            this.$el.html(this.options.template({items: data, matches: data.length}));
             $('.shelf-view-container').html(this.el);
+            this.delegateEvents(this.events);
         }
 
     });
@@ -218,17 +225,9 @@ var tvFinder = function () {
 
         },
 
-        events: {
-            'click .product-finder-filter-clear-btn': 'resetFinderCollection'
-        },
-
-        resetFinderCollection: function(){
-            productCollection.reset(productCollection.original);
-            this.render();
-        },
-
         render: function () {
             var data = this.model.toJSON();
+            console.log(data);
             //var items = data[0].item;
             this.$el.html(this.options.template());
             $('.product-finder-filter-container').html(this.el);
@@ -254,11 +253,15 @@ var tvFinder = function () {
 
             $("#slider-range").find('a:last').append($("#range-value2")).css({outline:"0 none"});
             $("#slider-range").find('a:first').append($("#range-value1")).css({outline:"0 none"});
-            this.delegateEvents(this.events);
 
         }
 
 
+    });
+
+    var productFinderFilterView = new ProductFinderFilterView({
+        template: Handlebars.templates['product-finder-filters'],
+        model: productCollection
     });
 
     var TVFinderMainView = Backbone.View.extend({
@@ -275,11 +278,6 @@ var tvFinder = function () {
                 model: cartItemCollection
             });
             mainHeaderView.render();
-
-            var productFinderFilterView = new ProductFinderFilterView({
-                template: Handlebars.templates['product-finder-filters'],
-                model: productCollection
-            });
             productFinderFilterView.render();
 
 

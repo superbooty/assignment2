@@ -241,4 +241,15 @@
     z-index: 0;
 }
 
+.item-counter {
+    font-family: 'Sintony',sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.item-counter-bold {
+    color: #323232;
+    font-weight: 700;
+}
+
 

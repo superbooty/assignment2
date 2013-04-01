@@ -149,9 +149,11 @@ body {
 }
 
 .gh-splash .banner {
-    padding:10px 0px;
-    color:#ccc; font-family:Arial,serif; font-size:23px;
-    text-align:center;
+    color: #CCCCCC;
+    font-family: Arial,serif;
+    font-size: 23px;
+    padding: 25px 0;
+    text-align: center;
 }
 
 .gh-splash .banner .finder {

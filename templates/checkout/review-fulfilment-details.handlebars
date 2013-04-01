@@ -24,13 +24,13 @@
                     Standard
                 </div>
                 <label class="address-label">
-                    Billing Address
+                    Shipping Address
                 </label>
                 <div class="billing-address-text">
                     {{customer.name.first}} {{customer.name.last}}<br>
-                    {{customer.wallet.billingAddress.streetNumber}} {{customer.wallet.billingAddress.streetName}} <br>
-                    {{customer.wallet.billingAddress.city}} {{customer.wallet.billingAddress.state}}, {{customer.wallet.billingAddress.zipCode}} <br>
-                    {{customer.wallet.billingAddress.country}}
+                    {{customer.addressList.[0].streetNumber}} {{customer.addressList.[0].streetName}} <br>
+                    {{customer.addressList.[0].city}} {{customer.addressList.[0].state}}, {{customer.addressList.[0].zipCode}} <br>
+                    {{customer.addressList.[0].country}}
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div class="delivery-date">
                 <header class="delivery-date-text">Delivery Date</header>
                 <div class="date">April 12, 2013 </div>
-                <div class="delivery-date-notice">Please note: you suck </div>
+                <div class="delivery-date-notice"></div>
             </div>
         </div>
     </div>

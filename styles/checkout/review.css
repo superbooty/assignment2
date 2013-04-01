@@ -132,6 +132,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     padding: 0 0 10px;
+    width: 300px;
 }
 
 .shipping-header-text span {

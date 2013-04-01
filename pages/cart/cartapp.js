@@ -150,7 +150,7 @@ var cartPage = function () {
             $('.cart-item-container').html(this.el);
             console.log("re-rendering");
 
-            $('.accordionMod .accordion-toggle').addClass('current');
+            $('#collapseBox1_1').addClass('in');
 
             var cartItemCollection = new CartItemCollection();
             cartItemCollection.reset(myCart.getCartItems());

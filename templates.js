@@ -112,7 +112,7 @@ function program1(depth0,data) {
   buffer += "\n<section class=\"product-header\">\n    <section class=\"product-name\">\n        ";
   stack1 = helpers['if'].call(depth0, depth0.name, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        <img src=\"/img/close-panel.png\" alt=\"close\" />\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-rating-container\">\n        <div class=\"product-rating\" >\n            <span class=\"gray\">\n                <span class=\"gold\" style=\"width:";
+  buffer += "\n        <a href=\"/\"><img src=\"/img/close-panel.png\" alt=\"close\" /></a>\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-rating-container\">\n        <div class=\"product-rating\" >\n            <span class=\"gray\">\n                <span class=\"gold\" style=\"width:";
   options = {hash:{},data:data};
   buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, ((stack1 = depth0.crr),stack1 == null || stack1 === false ? stack1 : stack1.rating), options) : helperMissing.call(depth0, "crr", ((stack1 = depth0.crr),stack1 == null || stack1 === false ? stack1 : stack1.rating), options)))
     + "\">\n                </span>\n            </span>\n        </div>\n        <span class=\"product-review-links\" id=\"review-links\">&nbsp;&nbsp;"
@@ -241,12 +241,12 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   
 
 
-  return "<section class=\"product-finder-filter-selectors\">\n    <div class=\"product-finder-filter-img\">\n        <div class=\"finder\"><div class=\"spark\"></div><div class=\"text\"><b>TV</b>Finder</div></div>\n    </div>\n    <section class=\"product-finder-filter-slider\">\n        <div id=\"range-value1\" class=\"bubble\">19\"</div>\n        <div id=\"range-value2\" class=\"bubble\">73\"</div>\n        <div id=\"slider-range\"></div>\n    </section>\n</section>\n<section class=\"product-finder-filter-break\" >\n    <h2></h2>\n</section>\n<section class=\"product-finder-filter-results\">\n    <div class=\"product-finder-filter-msg\">\n        <span class=\"item-counter\"></span> matches for televisions fitting that criteria\n    </div>\n    <input type=\"button\" value=\"Clear Filters \" class=\"product-finder-filter-clear-btn\">\n</section>";
+  return "<section class=\"product-finder-filter-selectors\">\n    <div class=\"product-finder-filter-img\">\n        <div class=\"finder\"><div class=\"spark\"></div><div class=\"text\"><b>TV</b>Finder</div></div>\n    </div>\n    <section class=\"product-finder-filter-slider\">\n        <div id=\"range-value1\" class=\"bubble\">19\"</div>\n        <div id=\"range-value2\" class=\"bubble\">73\"</div>\n        <div id=\"slider-range\"></div>\n    </section>\n</section>\n<section class=\"product-finder-filter-break\" >\n    <h2></h2>\n</section>\n";
   });
 templates['shelf-view'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
-  var stack1, self=this, helperMissing=helpers.helperMissing, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, self=this, helperMissing=helpers.helperMissing, functionType="function", escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
   
@@ -287,9 +287,14 @@ function program2(depth0,data) {
   return "\n<div style=\"clear:both\"></div>\n";
   }
 
+  buffer += "<section class=\"product-finder-filter-results\">\n    <div class=\"product-finder-filter-msg\">\n        <span class=\"item-counter item-counter-bold\">";
+  if (stack1 = helpers.matches) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.matches; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span><span class=\"item-counter\"> matches for televisions fitting that criteria</span>\n    </div>\n    <input type=\"button\" value=\"Clear Filters \" class=\"product-finder-filter-clear-btn\">\n</section>\n";
   stack1 = helpers.each.call(depth0, depth0.items, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { return stack1; }
-  else { return ''; }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  return buffer;
   });
 templates['test-helper'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
