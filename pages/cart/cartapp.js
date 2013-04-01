@@ -151,6 +151,7 @@ var cartPage = function () {
             console.log("re-rendering");
 
             $('#collapseBox1_1').addClass('in');
+            $('.accordionMod .accordion-toggle').find('.icon').addClass('iconActive')
 
             var cartItemCollection = new CartItemCollection();
             cartItemCollection.reset(myCart.getCartItems());
