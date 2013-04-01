@@ -8,12 +8,13 @@ com.wm.Customer = function(){ return {
     addressList: [
         {
             type: "home",
-            streetNumber: "7000",
-            streetName: "Marina blvd",
-            city: "Brisbane",
+            streetNumber: "850",
+            streetName: "Cherry ave",
+            city: "San Bruno",
             stateId: "CA",
             stateName: "California",
-            zipCode: "94005"
+            zipCode: "94005",
+            country: "USA"
 
         }
     ],
@@ -30,8 +31,8 @@ com.wm.Customer = function(){ return {
             city: "Brisbane",
             stateId: "CA",
             stateName: "California",
-            zipCode: "94005"
-
+            zipCode: "94005",
+            country: "USA"
         }
     }
 

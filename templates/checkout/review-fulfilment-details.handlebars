@@ -1,0 +1,45 @@
+<div class="review-fulfilment-details">
+    <div class="row" >
+        <div class="span4">
+            <div class="payment-details">
+                <header class="billing-header-text" >Payment Details</header>
+                <div class="credit-card">
+                    MasterCard ending in {{customer.wallet.lastFourDigits}}
+                </div>
+                <label class="address-label">
+                    Billing Address
+                </label>
+                <div class="billing-address-text">
+                    {{customer.name.first}} {{customer.name.last}}<br>
+                    {{customer.wallet.billingAddress.streetNumber}} {{customer.wallet.billingAddress.streetName}} <br>
+                    {{customer.wallet.billingAddress.city}} {{customer.wallet.billingAddress.state}}, {{customer.wallet.billingAddress.zipCode}} <br>
+                    {{customer.wallet.billingAddress.country}}
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="shipping">
+                <header class="shipping-header-text">Shipping <span>(Multiple Addresses?)</span></header>
+                <div class="shipping-method">
+                    Standard
+                </div>
+                <label class="address-label">
+                    Billing Address
+                </label>
+                <div class="billing-address-text">
+                    {{customer.name.first}} {{customer.name.last}}<br>
+                    {{customer.wallet.billingAddress.streetNumber}} {{customer.wallet.billingAddress.streetName}} <br>
+                    {{customer.wallet.billingAddress.city}} {{customer.wallet.billingAddress.state}}, {{customer.wallet.billingAddress.zipCode}} <br>
+                    {{customer.wallet.billingAddress.country}}
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="delivery-date">
+                <header class="delivery-date-text">Delivery Date</header>
+                <div class="date">April 12, 2013 </div>
+                <div class="delivery-date-notice">Please note: you suck </div>
+            </div>
+        </div>
+    </div>
+</div>

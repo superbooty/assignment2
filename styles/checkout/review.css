@@ -11,8 +11,9 @@ body {
 }
 
 .review-fulfilment-details-container .span4 {
+    padding: 20px 0 10px;
     text-align: left;
-    padding: 20px 0 10px
+    width: 320px;
 }
 
 .review-cart-container {
@@ -35,7 +36,7 @@ body {
     width: 150px;
 }
 
-.cart-item-label {
+.cart-item-label, .billing-address-text{
     color: #4F8AC3;
     display: inline-block;
     font-family: 'Sintony',sans-serif;
@@ -47,6 +48,12 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 400px;
+}
+
+.billing-address-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
 }
 
 .review-cart-header, review-pricing {
@@ -75,10 +82,67 @@ body {
 .credit-card, .shipping-method {
     border: 2px solid #D5D5D5;
     border-radius: 5px 5px 5px 5px;
-    color: #9f9f9f;
+    color: #9F9F9F;
+    display: inline-block;
     font-family: 'Sintony',sans-serif;
     font-size: 14px;
     font-weight: 700;
     padding: 5px;
     width: 250px;
 }
+
+.confirm-order-button {
+    -moz-box-shadow:inset 0px 1px 0px 0px #fceaca;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #fceaca;
+    box-shadow:inset 0px 1px 0px 0px #fceaca;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffce79), color-stop(1, #eeaf41) );
+    background:-moz-linear-gradient( center top, #ffce79 5%, #eeaf41 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce79', endColorstr='#eeaf41');
+    background-color:#ffce79;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #eeb44f;
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:16px;
+    font-weight:bold;
+    padding:10px 50px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #ce8e28;
+}.confirm-order-button:hover {
+     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeaf41), color-stop(1, #ffce79) );
+     background:-moz-linear-gradient( center top, #eeaf41 5%, #ffce79 100% );
+     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeaf41', endColorstr='#ffce79');
+     background-color:#eeaf41;
+ }.confirm-order-button:active {
+      position:relative;
+      top:1px;
+  }
+
+.review-pricing .row {
+    padding-top: 15px;
+}
+
+.billing-header-text, .shipping-header-text, .delivery-date-text {
+    color: #999999;
+    float: left;
+    font-family: 'Sintony',sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 0 10px;
+}
+
+.shipping-header-text span {
+    color: #4F8AC3;
+    font-family: 'Sintony',sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.address-label {
+    display: block;
+    padding: 15px 0 0;
+}
+

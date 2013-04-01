@@ -1,5 +1,4 @@
-
-$(document).ready(function(){
+$(document).ready(function () {
     $(function () {
         var items = $('#v-nav ul li').each(function () {
             $(this).click(function () {
@@ -15,9 +14,9 @@ $(document).ready(function(){
                 $('#v-nav>div.tab-content').hide().eq(items.index($(this))).show();
                 //window.location.hash = $(this).attr('tab');
             });
-});
+        });
 
 
-})
+    })
 
 });

@@ -7,8 +7,7 @@ $('.accordionMod .accordion-toggle').click(function() {
         $(this).addClass('current');
         $(this).find('.icon').addClass('iconActive');
     }
-    $(this).parent().parent().siblings().find('.accordion-toggle').removeClass('current');
-    $(this).parent().parent().siblings().find('.accordion-toggle > .icon').removeClass('iconActive');
+    //$(this).parent().parent().siblings().find('.accordion-toggle').removeClass('current');
+    //$(this).parent().parent().siblings().find('.accordion-toggle > .icon').removeClass('iconActive');
 });
 
-$('.accordionMod .accordion-toggle').first().trigger('click');

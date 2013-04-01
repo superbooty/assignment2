@@ -16,8 +16,6 @@ var reviewsPage = function () {
     var cartData = null;
     var storage = null;
 
-    var customer = null;
-
     if (typeof(sessionStorage) == 'undefined' ) {
         alert('Your browser does not support HTML5 localStorage. Try upgrading.');
     } else {
@@ -32,21 +30,27 @@ var reviewsPage = function () {
     }
 
     var CustomerModel = Backbone.Model.extend({
-        customer: new com.wm.Customer()
+        url: "../../json/customer.json",
+
+        parse: function(response){
+            return response
+        }
+
     });
 
     var customerModel = new CustomerModel();
+    customerModel.fetch();
 
     var ReviewHeader = Backbone.View.extend({
         initialize:function () {
+            this.listenTo(this.model, 'change', this.render);
         },
 
         events:{
-
         },
 
         render:function(){
-            this.$el.html(this.options.template({cartSize: myCart.getCartSize(), customer:customerModel.customer}) );
+            this.$el.html(this.options.template({cartSize: myCart.getCartSize(), customer:this.model.toJSON()}) );
             $('.review-header-container').html(this.el);
             this.delegateEvents(this.events);
         }
@@ -57,6 +61,24 @@ var reviewsPage = function () {
         model:customerModel
     });
     reviewHeader.render();
+
+    var ReviewFulfilmentView = Backbone.View.extend({
+        initialize:function () {
+            this.listenTo(this.model, 'change', this.render);
+        },
+
+        render:function(){
+            this.$el.html(this.options.template({"customer": this.model.toJSON()}) );
+            $('.review-fulfilment-details-container').html(this.el);
+        }
+    });
+
+    var reviewFulfilment = new ReviewFulfilmentView({
+        template:Handlebars.templates['review-fulfilment-details'],
+        model: customerModel
+    });
+    reviewFulfilment.render();
+
 
     var ReviewCartView = Backbone.View.extend({
         initialize:function () {
@@ -97,23 +119,6 @@ var reviewsPage = function () {
         template:Handlebars.templates['review-pricing']
     });
     reviewPricingView.render();
-
-
-    var ReviewSubtotals = Backbone.View.extend({
-        initialize:function () {
-        },
-
-        render:function(){
-            this.$el.html(this.options.template({"subtotals": myCart.getSubtotals()}) );
-            $('.review-subtotal-container').html(this.el);
-        }
-    });
-
-    var reviewSubtotals = new ReviewSubtotals({
-        template:Handlebars.templates['review-subtotal']
-    });
-    reviewSubtotals.render();
-
 };
 
 $(function(){

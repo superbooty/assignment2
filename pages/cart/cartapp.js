@@ -148,8 +148,9 @@ var cartPage = function () {
         render:function(props){
             this.$el.html(this.options.template(this.model.getCartItems(props.dynamicItemData)));
             $('.cart-item-container').html(this.el);
-            $('.accordionMod .accordion-toggle').first().trigger('click');
             console.log("re-rendering");
+
+            $('.accordionMod .accordion-toggle').addClass('current');
 
             var cartItemCollection = new CartItemCollection();
             cartItemCollection.reset(myCart.getCartItems());
