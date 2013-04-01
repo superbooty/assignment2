@@ -157,19 +157,19 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2, options;
-  buffer += "\n    ";
+  buffer += "\n                ";
   options = {hash:{
-    'compare': (3)
+    'compare': (20)
   },inverse:self.noop,fn:self.program(2, program2, data),data:data};
   stack2 = ((stack1 = helpers.if_lt),stack1 ? stack1.call(depth0, data.index, options) : helperMissing.call(depth0, "if_lt", data.index, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    ";
+  buffer += "\n                ";
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = "", stack1, options;
-  buffer += "\n    <div class=\"people-viewed-item\">\n        <a href=\"/#product/";
+  buffer += "\n                <div class=\"people-viewed-item\">\n                    <a href=\"/#product/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -177,33 +177,33 @@ function program2(depth0,data) {
   if (stack1 = helpers.image) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.image; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"/></a>\n        <a class=\"people-viewed-item-name\" href=\"/#product/";
+    + "\"/></a>\n                    <a class=\"people-viewed-item-name\" href=\"/#product/";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n            <div class=\"\">";
+    + "\">\n                        <div class=\"\">";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</div>\n        </a>\n        <div class=\"clear\"></div>\n        <span class=\"people-viewed-item-specs text-gray\">";
+    + "</div>\n                    </a>\n                    <div class=\"clear\"></div>\n                    <span class=\"people-viewed-item-specs text-gray\">";
   if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</span>\n        <span class=\"people-viewed-item-price people-viewed-item-specs\">$";
+    + "</span>\n                    <span class=\"people-viewed-item-price people-viewed-item-specs\">$";
   if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "<span class=\"cents\"></span></span>\n        <div class=\"people-viewed-item-specs product-rating\" >\n            <span class=\"gray\">\n                <span class=\"gold\" style=\"width:";
+    + "<span class=\"cents\"></span></span>\n                    <div class=\"people-viewed-item-specs product-rating\" >\n                    <span class=\"gray\">\n                        <span class=\"gold\" style=\"width:";
   options = {hash:{},data:data};
   buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, depth0.rating, options) : helperMissing.call(depth0, "crr", depth0.rating, options)))
-    + "\">\n                </span>\n            </span>\n        </div>\n    </div>\n    ";
+    + "\">\n                        </span>\n                    </span>\n                    </div>\n                </div>\n                ";
   return buffer;
   }
 
-  buffer += "<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\n    People Who Viewed This Item Also Viewed<a href=\"#\" class=\"see-more-button\">see more</a>\n</div>\n<div id=\"people-viewed-container\">\n    ";
+  buffer += "<script type=\"text/javascript\">\n    $(document).ready(function(){\n        $('#slider-code-pwv').tinycarousel({controls:true, display:3});\n    });\n</script>\n<div class=\"horizBorder\"><p class=\"inset\"></p></div>\n<div id=\"people-viewed-title\">\n    People Who Viewed This Item Also Viewed<a href=\"#\" class=\"see-more-button\">see more</a>\n</div>\n<div id=\"people-viewed-container\">\n\n\n    <div id=\"slider-code-pwv\">\n        <a class=\"buttons prev\" href=\"javascript:void(0)\">left</a>\n        <div class=\"viewport-pwv\">\n            <ul class=\"overview\">\n                ";
   stack1 = helpers.each.call(depth0, depth0.items, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    <br class=\"clear\" />\n</div>\n<div class=\"people-viewed-bottom-gradient\"></div>\n\n";
+  buffer += "\n\n            </ul>\n        </div>\n        <a class=\"buttons next\" href=\"javascript:void(0)\">right</a>\n    </div>\n    <br class=\"clear\" />\n</div>\n<div class=\"people-viewed-bottom-gradient\"></div>\n\n\n";
   return buffer;
   });
 templates['product-details'] = template(function (Handlebars,depth0,helpers,partials,data) {

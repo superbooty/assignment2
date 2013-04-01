@@ -278,9 +278,9 @@ b, strong {
 
 .people-viewed-item {
     float: left;
-    padding: 20px 25px;
+    padding: 20px 15px;
     text-align: center;
-    width: 197px;
+    width: 193px;
 }
 
 .people-viewed-item img {
@@ -293,7 +293,7 @@ b, strong {
     padding: 0 0 5px;
     text-align: left;
     display: inline-block;
-    width:200px;
+    width:193px;
     font-family: 'Sintony',sans-serif;
     font-size: 14px;
     font-weight: 400;

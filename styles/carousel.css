@@ -5,16 +5,22 @@
     display:inline-block;
 }
 
-
-#slider-code {
+#slider-code-pwv {
     height: 345px;
     margin: 0 auto;
-    width: 530px;
+    width: 750px;
 }
 
+#slider-code {
+     height: 345px;
+     margin: 0 auto;
+     width: 530px;
+ }
+
 #slider-code .viewport { float: left; width: 430px; height: 330px; overflow: hidden; position: aboslute; }
-#slider-code .buttons { display: block; margin: 30px 10px 0 0; float: left; }
-#slider-code .buttons {
+#slider-code-pwv .viewport-pwv { float: left; width: 664px; height: 330px; overflow: hidden; position: aboslute; }
+#slider-code .buttons, #slider-code-pwv .buttons { display: block; margin: 30px 10px 0 0; float: left; }
+#slider-code .buttons, #slider-code-pwv .buttons {
     background: url("../img/arrow-right.png") no-repeat scroll 0 -38px transparent;
     display: block;
     float: left;
@@ -23,25 +29,25 @@
     overflow: hidden;
     position: relative;
     text-indent: -999em;
-    width: 39px;
+    width: 33px;
 }
 
 
 
-#slider-code .next {
+#slider-code .next, #slider-code-pwv .next{
     background: url("../img/arrow-right.png") no-repeat scroll 0 -38px transparent;
     background-position: 0 0;
     margin: 130px 0 0 10px;
 }
 
-#slider-code .prev {
+#slider-code .prev, #slider-code-pwv .prev {
     background: url("../img/arrow-left.png") no-repeat scroll 0 -38px transparent;
     background-position: 0 0;
     margin: 130px 10px 0 0;
 }
 
-#slider-code .disable {  }
-#slider-code .overview {
+#slider-code .disable, #slider-code-pwv .disable {  }
+#slider-code .overview, #slider-code-pwv .overview {
     left: 0;
     list-style: none outside none;
     margin: auto;
@@ -51,7 +57,7 @@
     top: 0;
 }
 
-#slider-code .overview li {
+#slider-code .overview li, #slider-code-pwv .overview li {
     float: left;
     height: 350px;
     margin: 0 20px 0 0;
@@ -60,7 +66,7 @@
 }
 
 
-#slider-code .poverview li {
+#slider-code .poverview li, #slider-code-pwv .overview li {
     float: left;
     height: 12px;
     padding: 3px;
@@ -86,7 +92,7 @@
     padding: 0;
 }
 
-#slider-code .active { color: #fff; background-color:  #555555; }
+#slider-code .active, #slider-code-pwv .active { color: #fff; background-color:  #555555; }
 
 #slider-code .pagenum {
     background: url("../img/carousel-position.png") no-repeat scroll 0 0 transparent;

@@ -1,28 +1,45 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#slider-code-pwv').tinycarousel({controls:true, display:3});
+    });
+</script>
 <div class="horizBorder"><p class="inset"></p></div>
 <div id="people-viewed-title">
     People Who Viewed This Item Also Viewed<a href="#" class="see-more-button">see more</a>
 </div>
 <div id="people-viewed-container">
-    {{#each items}}
-    {{#if_lt @index compare=3}}
-    <div class="people-viewed-item">
-        <a href="/#product/{{id}}"><img src="{{image}}"/></a>
-        <a class="people-viewed-item-name" href="/#product/{{id}}">
-            <div class="">{{name}}</div>
-        </a>
-        <div class="clear"></div>
-        <span class="people-viewed-item-specs text-gray">{{description}}</span>
-        <span class="people-viewed-item-price people-viewed-item-specs">${{price}}<span class="cents"></span></span>
-        <div class="people-viewed-item-specs product-rating" >
-            <span class="gray">
-                <span class="gold" style="width:{{crr rating}}">
-                </span>
-            </span>
+
+
+    <div id="slider-code-pwv">
+        <a class="buttons prev" href="javascript:void(0)">left</a>
+        <div class="viewport-pwv">
+            <ul class="overview">
+                {{#each items}}
+                {{#if_lt @index compare=20}}
+                <div class="people-viewed-item">
+                    <a href="/#product/{{id}}"><img src="{{image}}"/></a>
+                    <a class="people-viewed-item-name" href="/#product/{{id}}">
+                        <div class="">{{name}}</div>
+                    </a>
+                    <div class="clear"></div>
+                    <span class="people-viewed-item-specs text-gray">{{description}}</span>
+                    <span class="people-viewed-item-price people-viewed-item-specs">${{price}}<span class="cents"></span></span>
+                    <div class="people-viewed-item-specs product-rating" >
+                    <span class="gray">
+                        <span class="gold" style="width:{{crr rating}}">
+                        </span>
+                    </span>
+                    </div>
+                </div>
+                {{/if_lt}}
+                {{/each}}
+
+            </ul>
         </div>
+        <a class="buttons next" href="javascript:void(0)">right</a>
     </div>
-    {{/if_lt}}
-    {{/each}}
     <br class="clear" />
 </div>
 <div class="people-viewed-bottom-gradient"></div>
+
 
