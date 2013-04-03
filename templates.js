@@ -85,7 +85,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
     + escapeExpression(((stack1 = ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</span>\n    <div class=\"item-image\"><img src=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" width=\"150\" height=\"150\"/></div>\n    <span class=\"item-qty\">Quantity: "
+    + "\" width=\"100\" height=\"100\"/></div>\n    <span class=\"item-qty\">Quantity: "
     + escapeExpression(((stack1 = ((stack1 = depth0.cartItem),stack1 == null || stack1 === false ? stack1 : stack1.qty)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</span>\n    <span class=\"item-price\">Price: $";
   options = {hash:{},data:data};
@@ -96,7 +96,7 @@ helpers = helpers || Handlebars.helpers; data = data || {};
 templates['header'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+  var buffer = "", stack1, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
@@ -118,9 +118,8 @@ function program1(depth0,data) {
     + "\">\n                </span>\n            </span>\n        </div>\n        <span class=\"product-review-links\" id=\"review-links\">&nbsp;&nbsp;"
     + escapeExpression(((stack1 = ((stack1 = depth0.crr),stack1 == null || stack1 === false ? stack1 : stack1.count)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + " Reviews  |  <a href=\"#\">Write a Review</a>  | <a href=\"#\">Ask a Question</a></span>\n        <div class=\"clear\"></div>\n    </section>\n    <section class=\"product-price-container\">\n        <section class=\"product-price\">\n            <span>$";
-  if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.price; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers['number-format']),stack1 ? stack1.call(depth0, depth0.price, options) : helperMissing.call(depth0, "number-format", depth0.price, options)))
     + "</span>\n        </section>\n    </section>\n</section>";
   return buffer;
   });
@@ -190,9 +189,8 @@ function program2(depth0,data) {
   else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "</span>\n                    <span class=\"people-viewed-item-price people-viewed-item-specs\">$";
-  if (stack1 = helpers.price) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.price; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers['number-format']),stack1 ? stack1.call(depth0, depth0.price, options) : helperMissing.call(depth0, "number-format", depth0.price, options)))
     + "<span class=\"cents\"></span></span>\n                    <div class=\"people-viewed-item-specs product-rating\" >\n                    <span class=\"gray\">\n                        <span class=\"gold\" style=\"width:";
   options = {hash:{},data:data};
   buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, depth0.rating, options) : helperMissing.call(depth0, "crr", depth0.rating, options)))
@@ -272,13 +270,12 @@ function program1(depth0,data) {
   stack2 = ((stack1 = helpers.desc),stack1 ? stack1.call(depth0, depth0.description, options) : helperMissing.call(depth0, "desc", depth0.description, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n    </div>\n    <div class=\"shelf-item-price\">\n        $";
-  if (stack2 = helpers.price) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.price; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\n    </div>\n    <div class=\"shelf-item-ratings\" style=\"background-position:-";
   options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers.ratingsHelper),stack1 ? stack1.call(depth0, depth0.rating, options) : helperMissing.call(depth0, "ratingsHelper", depth0.rating, options)))
-    + "px\" >\n        <div title=\"\"></div>\n    </div>\n</section>\n";
+  buffer += escapeExpression(((stack1 = helpers['number-format']),stack1 ? stack1.call(depth0, depth0.price, options) : helperMissing.call(depth0, "number-format", depth0.price, options)))
+    + "\n    </div>\n    <div class=\"product-rating shelf-item-rating \" >\n        <span class=\"gray\">\n            <span class=\"gold\" style=\"width:";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, depth0.rating, options) : helperMissing.call(depth0, "crr", depth0.rating, options)))
+    + "\">\n            </span>\n        </span>\n    </div>\n</section>\n";
   return buffer;
   }
 function program2(depth0,data) {

@@ -14,19 +14,19 @@ $(function(){
     // Router for loading a different item
     var ProductRouter = Backbone.Router.extend({
         routes: {
-            "" : "tvFinderMain",
-            "product/:id": "getProduct",
+            "" : "loadTVFinderMain",
+            "product/:id": "loadProduct",
             "cart": "loadCart"
         },
 
-        tvFinderMain: function(){
+        loadTVFinderMain: function(){
             console.log("loading TV Finder");
             $('#screen').css({ "display": "none", opacity: 0.7, top: "83px", "width":$(document).width(),"height":$(document).height()});
             tvFinder().render();
         },
 
-        getProduct: function(id){
-
+        loadProduct: function(id){
+            console.log("loading Product");
             var pop = function(){
                 $('#screen').css({ "display": "block", opacity: 0.7, top: "83px", "width":$(document).width(),"height":$(document).height()});
                 productPage(id).render();
@@ -36,6 +36,7 @@ $(function(){
         },
 
         loadCart: function(){
+            console.log("loading Cart");
             var pop = function(){
                 $('#screen').css({ "display": "block", opacity: 0.7, top: "83px", "width":$(document).width(),"height":$(document).height()});
                 cartPage();
@@ -58,9 +59,8 @@ var HeaderCartView = Backbone.View.extend({
 
         var pCart = function () {
             var o = $('.cart').offset();
-            $('.header-cart-container').css({ 'top': o.top + 54,
-                'left': o.left - 158
-            });
+            $('.header-cart-container').css({ 'top': o.top + 52,
+                'left': o.left - 110 });
             $(".cart").addClass('cart-blink');
             $('.header-cart-container').slideDown(500);
             setTimeout(function() {
@@ -79,7 +79,6 @@ var CartItemCollection = Backbone.Collection.extend({
 
     getCartSize: function(){
         var ret = 0;
-        console.log("CartItemCollection");
         var items = this.toJSON();
         items.forEach(function(e){
             var qty = e.qty;
@@ -172,12 +171,10 @@ var tvFinder = function () {
             filtered = this.filter(function (item) {
                 return item.get("size") >= minSize;
             });
-            console.log(filtered);
             this.reset(filtered);
         },
 
         filterOnRange: function(range) {
-            console.log(this);
             filtered = this.filter(function (item) {
                 return item.get("size") >= range.low
                     && item.get("size") <= range.high;
@@ -190,7 +187,7 @@ var tvFinder = function () {
     var ShelfContainerView = Backbone.View.extend({
 
         initialize: function () {
-            console.log("i'm here");
+            console.log("init ShelfContainerView");
             this.listenTo(this.model, 'reset', this.render);
 
         },
@@ -206,7 +203,6 @@ var tvFinder = function () {
         },
 
         click: function () {
-            console.log("you clicked see more button");
             productCollection.bySizeAndHigher(50);
         },
 
@@ -221,7 +217,7 @@ var tvFinder = function () {
 
     var ProductFinderFilterView = Backbone.View.extend({
         initialize: function () {
-            console.log("i'm here");
+            console.log("init ProductFinderFilterView");
 
         },
 
@@ -277,7 +273,9 @@ var tvFinder = function () {
                 template: Handlebars.templates['main-header'],
                 model: cartItemCollection
             });
-            mainHeaderView.render();
+
+            $('.cart-page').hide();
+            $('.selected-product').hide();
             productFinderFilterView.render();
 
 

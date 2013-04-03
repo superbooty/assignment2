@@ -18,10 +18,13 @@
         {{{desc description}}}
     </div>
     <div class="shelf-item-price">
-        ${{price}}
+        ${{number-format price}}
     </div>
-    <div class="shelf-item-ratings" style="background-position:-{{ratingsHelper rating}}px" >
-        <div title=""></div>
+    <div class="product-rating shelf-item-rating " >
+        <span class="gray">
+            <span class="gold" style="width:{{crr rating}}">
+            </span>
+        </span>
     </div>
 </section>
 {{/each}}

@@ -185,17 +185,17 @@
 }
 
 .accordionMod .accordion-heading .accordion-toggle .icon {
-    background: url('http://dl.dropbox.com/u/1681897/img/glyphicons-halflings.png') no-repeat 0 -96px;
+    background: url('../../img/collapsed-arrow.png') no-repeat ;
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 17px;
+    height: 18px;
     position: absolute;
     left: 5px;
     top: 7px;
 }
 
 .accordionMod .accordion-heading .accordion-toggle .iconActive {
-    background: url('http://dl.dropbox.com/u/1681897/img/glyphicons-halflings-white.png') no-repeat -24px -96px;
+    background: url('../../img/expanded-arrow.png') no-repeat ;
 }
 
 .accordionMod .accordion-heading .current {

@@ -34,7 +34,6 @@ var productPage = function(id){
     var ProductModel = Backbone.Model.extend({
 
         initialize: function() {
-            console.log(this.options);
         },
 
         id: function(){
@@ -261,7 +260,6 @@ var productPage = function(id){
             filtered = this.filter(function(item) {
                 return item.get("size") >= minSize;
             });
-            console.log(filtered);
             this.reset(filtered);
             return new PeopleViewedCollection(filtered);
         }
@@ -286,7 +284,6 @@ var productPage = function(id){
 
         render:function(){
             var data = this.model.toJSON();
-            console.log(peopleViewedCollection);
             this.$el.html(this.options.template({items:data}));
             $('.people-who').html(this.el);
         }

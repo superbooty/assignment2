@@ -136,7 +136,6 @@ var cartPage = function () {
             //cartModel.trigger('change');
             this.availabilityModel.fetch({
                 success: function(response){
-                    console.log(response);
                     that.render(response);
                 }
 
@@ -151,6 +150,7 @@ var cartPage = function () {
             console.log("re-rendering");
 
             $('#collapseBox1_1').addClass('in');
+            $('#collapseBox1_2').addClass('in');
             $('.accordionMod .accordion-toggle').find('.icon').addClass('iconActive')
 
             var cartItemCollection = new CartItemCollection();

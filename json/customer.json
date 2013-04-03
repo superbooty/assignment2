@@ -14,21 +14,44 @@
         "country": "USA"
     }
 ], "wallet": {
-    "cardType": "Visa",
-    "lastFourDigits": "2227",
-    "expirationDate": {
-        "Month": "Dec",
-        "Year": "2015"
-    },
-    "cid": "555",
-    "billingAddress": {
-        "type": "home",
-        "streetNumber": "7000",
-        "streetName": "Marina blvd",
-        "city": "Brisbane",
-        "stateId": "CA",
-        "stateName": "California",
-        "zipCode": "94005",
-        "country": "USA"
-    }
+    "cards":[{
+        "selected":true,
+        "cardType": "Visa",
+        "lastFourDigits": "2227",
+        "expirationDate": {
+            "Month": "Dec",
+            "Year": "2015"
+        },
+        "cid": "671",
+        "billingAddress": {
+            "type": "home",
+            "streetNumber": "7000",
+            "streetName": "Marina blvd",
+            "city": "Brisbane",
+            "stateId": "CA",
+            "stateName": "California",
+            "zipCode": "94005",
+            "country": "USA"
+        }
+    },{
+        "selected": false,
+        "cardType": "MasterCard",
+        "lastFourDigits": "4337",
+        "expirationDate": {
+            "Month": "Dec",
+            "Year": "2015"
+        },
+        "cid": "555",
+        "billingAddress": {
+            "type": "home",
+            "streetNumber": "850",
+            "streetName": "Cherry Ave",
+            "city": "San Bruno",
+            "stateId": "CA",
+            "stateName": "California",
+            "zipCode": "94005",
+            "country": "USA"
+        }
+    }]
+
 }}

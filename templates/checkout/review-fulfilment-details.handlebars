@@ -3,17 +3,26 @@
         <div class="span4">
             <div class="payment-details">
                 <header class="billing-header-text" >Payment Details</header>
-                <div class="credit-card">
-                    MasterCard ending in {{customer.wallet.lastFourDigits}}
+                <div class="filter">
+                    <div class="selected-credit-card">
+                        <span class="text">{{selected.cardType}} ending in {{selected.lastFourDigits}}</span>
+                        <b class="selected-credit-card-arrow"></b>
+                        <div class="options">
+                            {{#each customer.wallet.cards}}
+                                <div class="opt" cardid="{{lastFourDigits}}" selected="{{selected}}">{{cardType}} ending in {{lastFourDigits}}</div>
+                            {{/each }}
+                        </div>
+                    </div>
                 </div>
+
                 <label class="address-label">
                     Billing Address
                 </label>
                 <div class="billing-address-text">
                     {{customer.name.first}} {{customer.name.last}}<br>
-                    {{customer.wallet.billingAddress.streetNumber}} {{customer.wallet.billingAddress.streetName}} <br>
-                    {{customer.wallet.billingAddress.city}} {{customer.wallet.billingAddress.state}}, {{customer.wallet.billingAddress.zipCode}} <br>
-                    {{customer.wallet.billingAddress.country}}
+                    {{selected.billingAddress.streetNumber}} {{selected.billingAddress.streetName}} <br>
+                    {{selected.billingAddress.city}} {{selected.billingAddress.state}}, {{selected.billingAddress.zipCode}} <br>
+                    {{selected.billingAddress.country}}
                 </div>
             </div>
         </div>

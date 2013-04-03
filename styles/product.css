@@ -19,7 +19,7 @@
 
 .header-cart-container {
     position: absolute;
-    width: 250px;
+    width: 200px;
     border-radius: 5px 0 5px 5px;
     padding: 0 0 0 20px;
     border: solid 2px #f58a23;
@@ -102,6 +102,10 @@
     display: inline-block;
     height: 20px;
     width: 100px;
+}
+
+.shelf-item-rating {
+    padding:0;
 }
 
 .product-rating .gold {

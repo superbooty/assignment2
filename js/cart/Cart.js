@@ -142,6 +142,10 @@ com.wm.Cart = function(){ return {
             });
         }
         return ret;
+    },
+
+    getCalculatedTaxes: function(){
+        return this.getSubtotals() * .0925;
     }
 
 };}

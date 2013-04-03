@@ -1,0 +1,27 @@
+
+<div id="review-subtotals" class="row">
+    <div class="span2 detail-labels">
+        <b>Subtotals</b>
+    </div>
+    <div class="span7">
+        <section class="calc-block">
+            <span class="detail-labels">Items ({{cartSize}})</span><br>
+            <span class="review-line-item-price">${{number-format subtotal}}</span>
+            <span class="plus">+</span>
+        </section>
+        <section class="calc-block">
+            <span class="detail-labels">Shipping & Handling</span><br>
+            <span class="review-line-item-price shipping-handling">${{number-format shippingCosts}}</span>
+            <span class="plus">+</span>
+        </section>
+        <section class="calc-block">
+            <span class="detail-labels">Taxes</span><br>
+            <span class="review-line-item-price">${{number-format taxes}}</span>
+        </section>
+    </div>
+    <div class="span2">
+        <span class="detail-labels">Total</span><br>
+        <span class="review-line-item-price">${{number-format totals}}</span>
+    </div>
+</div>
+

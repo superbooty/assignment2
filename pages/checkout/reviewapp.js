@@ -9,6 +9,30 @@ Application.View = Backbone.View.extend({
     }
 });
 
+var CartItemCollection = Backbone.Collection.extend({
+
+    getCartSize: function(){
+        var ret = 0;
+        var items = this.toJSON();
+        items.forEach(function(e){
+            var qty = e.qty;
+            ret += qty;
+        });
+        return ret;
+    },
+
+    getSubtotals: function(){
+        var runningTotal = 0.00;
+        this.toJSON().forEach(function(e){
+            var qty = e.qty;
+            var price = e.price;
+            runningTotal += (price * qty);
+        });
+        return runningTotal;
+    }
+
+});
+
 
 var reviewsPage = function () {
 
@@ -34,6 +58,19 @@ var reviewsPage = function () {
 
         parse: function(response){
             return response
+        },
+
+        getSelected: function(){
+            var cust = this.toJSON();
+            var retCard = null;
+            console.log(cust);
+            cust.wallet.cards.forEach(function(card){
+                if(card.selected){
+                    console.log(card);
+                    retCard = card;
+                }
+            });
+            return retCard;
         }
 
     });
@@ -67,9 +104,41 @@ var reviewsPage = function () {
             this.listenTo(this.model, 'change', this.render);
         },
 
+        events:{
+            'click .selected-credit-card': 'click',
+            'click .opt' : 'select',
+            'mouseleave .options' : 'mouseleave'
+        },
+
+        click : function(event) {
+            this.$el.find('.options').css({visibility:'visible'});
+        },
+
+        select : function(event) {
+            this.$el.find('.options').css({visibility:'hidden'});
+            this.$el.find('.selected-credit-card .text').text($(event.target).text());
+            var cardId = $(event.target)[0].attributes['cardid'].value;
+            this.model.toJSON().wallet.cards.forEach(function(card){
+                if(card.lastFourDigits == cardId){
+                    card.selected = true;
+                }else{
+                    card.selected = false;
+                }
+            });
+            this.model.trigger('change');
+            event.stopPropagation();
+
+        },
+
+        mouseleave : function(event) {
+            this.$el.find('.options').css({visibility:'hidden'});
+            event.stopPropagation();
+        },
+
         render:function(){
-            this.$el.html(this.options.template({"customer": this.model.toJSON()}) );
+            this.$el.html(this.options.template({"customer": this.model.toJSON(), "selected":this.model.getSelected()}) );
             $('.review-fulfilment-details-container').html(this.el);
+            this.delegateEvents(this.events);
         }
     });
 
@@ -77,7 +146,6 @@ var reviewsPage = function () {
         template:Handlebars.templates['review-fulfilment-details'],
         model: customerModel
     });
-    reviewFulfilment.render();
 
 
     var ReviewCartView = Backbone.View.extend({
@@ -119,6 +187,34 @@ var reviewsPage = function () {
         template:Handlebars.templates['review-pricing']
     });
     reviewPricingView.render();
+
+    var ReviewSubtotalView = Backbone.View.extend({
+
+        initialize: function(){
+            this.listenTo(this.model, 'change', this.render)    ;
+        },
+
+        render:function(){
+            var shippingCosts = 68.33;
+            var totals = this.model.getSubtotals() + shippingCosts + myCart.getCalculatedTaxes();
+            this.$el.html(this.options.template(
+                {cartSize:this.model.getCartSize(),
+                    subtotal:this.model.getSubtotals(),
+                    taxes:myCart.getCalculatedTaxes(), shippingCosts: shippingCosts, totals:totals}) );
+            $('.review-subtotal-container').html(this.el);
+        }
+
+    });
+
+    var cartItemCollection = new CartItemCollection();
+    cartItemCollection.reset(myCart.getCartItems());
+
+    var reviewSubtotalView = new ReviewSubtotalView({
+        template:Handlebars.templates['review-subtotal'],
+        model: cartItemCollection
+    });
+    reviewSubtotalView.render();
+
 };
 
 $(function(){
