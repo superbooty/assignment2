@@ -84,6 +84,18 @@ var reviewsPage = function () {
         },
 
         events:{
+            'click .cart': 'goToCart',
+            'click .gh-logo': 'tvFinder'
+        },
+
+        goToCart: function(){
+            console.log("going to the cart");
+            window.location.href = '#/cart';
+        },
+
+        tvFinder: function(){
+            console.log("going to main");
+            window.location.href = '/';
         },
 
         render:function(){
@@ -168,8 +180,12 @@ var reviewsPage = function () {
     });
     reviewCartView.render();
 
+    var cartItemCollection = new CartItemCollection();
+    cartItemCollection.reset(myCart.getCartItems());
+
     var ReviewPricingView = Backbone.View.extend({
-        initialize:function () {
+        initialize: function(){
+            this.listenTo(this.model, 'change', this.render)    ;
         },
 
         events:{
@@ -177,14 +193,16 @@ var reviewsPage = function () {
         },
 
         render:function(){
-            this.$el.html(this.options.template() );
+            this.$el.html(this.options.template({cartSize:this.model.getCartSize(),
+                 totals:this.model.getSubtotals()}) );
             $('.review-pricing-container').html(this.el);
             this.delegateEvents(this.events);
         }
     });
 
     var reviewPricingView = new ReviewPricingView({
-        template:Handlebars.templates['review-pricing']
+        template:Handlebars.templates['review-pricing'],
+        model: cartItemCollection
     });
     reviewPricingView.render();
 
@@ -205,9 +223,6 @@ var reviewsPage = function () {
         }
 
     });
-
-    var cartItemCollection = new CartItemCollection();
-    cartItemCollection.reset(myCart.getCartItems());
 
     var reviewSubtotalView = new ReviewSubtotalView({
         template:Handlebars.templates['review-subtotal'],

@@ -73,6 +73,10 @@ body {
     padding: 15px 0 0 20px;
 }
 
+.bold {
+    font-weight: 600;
+}
+
 .separator {
     background: linear-gradient(135deg, #F9F9F9 0%, #EAEBEE 21%, #D5D6DD 49%, #EAEBEE 80%, #FFFFFF 100%) repeat scroll 0 0 transparent;
     display: inline-block;
