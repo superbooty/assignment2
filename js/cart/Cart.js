@@ -96,7 +96,8 @@ com.wm.Cart = function(){ return {
         if(item.length > 0){
             for(var counter = 0 ; counter < this.savedItems.length ; counter++){
                 if(this.savedItems[counter].id ==id ){
-                    this.cartItems.push(this.savedItems[counter]);
+                    //this.cartItems.push(this.savedItems[counter]);
+                    this.addItem(this.savedItems[counter]);
                     this.savedItems.splice(counter--, 1);
                     break;
                 }
