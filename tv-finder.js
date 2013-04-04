@@ -235,7 +235,10 @@ var tvFinder = function () {
             'click .brand-button': 'click',
             'click .type-button': 'click',
             'click .opt' : 'select',
-            'mouseleave .options' : 'mouseleave'
+            'mouseleave .options' : 'mouseleave',
+            'mouseleave .sort-button' : 'mouseleave',
+            'mouseleave .brand-button' : 'mouseleave',
+            'mouseleave .type-button' : 'mouseleave'
         },
 
         click : function(event) {
@@ -254,7 +257,7 @@ var tvFinder = function () {
 
         mouseleave : function(event) {
             this.$el.find('.options').css({visibility:'hidden'});
-            event.stopPropagation();
+            //event.stopPropagation();
         },
 
         render: function () {
