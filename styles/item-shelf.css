@@ -187,13 +187,10 @@
     padding: 1px 0 6px;
 }
 
-.product-finder-filter-dropdowns span{
-    font-family: Arial;
+.product-finder-filter-dropdowns span {
     color: #262626;
-    font: bold small 'trebuchet ms',helvetica,sans-serif;
-    font-size: 20px;
+    font: bold 14px 'trebuchet ms',helvetica,sans-serif;
 }
-
 
 .bubble
 {

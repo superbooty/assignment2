@@ -105,16 +105,14 @@ var cartPage = function () {
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.setSavedItem(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            //cartModel.trigger('change');
-            this.preRender();
+            cartModel.trigger('change');
         },
 
         moveToCart: function(event){
             var itemToSave = $(event.target)[0].attributes['itemtosave'].value;
             myCart.moveToCart(itemToSave);
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            //cartModel.trigger('change');
-            this.preRender();
+            cartModel.trigger('change');
         },
 
         removeItem: function(event){
@@ -126,8 +124,7 @@ var cartPage = function () {
                 myCart.removeItem(itemToRemove, myCart.savedItems);
             }
             storage.setItem('jsonCart', JSON.stringify(myCart));
-            //cartModel.trigger('change');
-            this.preRender();
+            cartModel.trigger('change');
         },
 
         preRender:function() {

@@ -133,9 +133,9 @@ var tvFinder = function () {
         "Hannspree", "RCA", "Element",
         "Toshiba", "Westinghouse", "Samsung",
         "Philips", "Hiteker", "Sharp",
-        "Emerson", "Proscan", "JVC", "LG", "Mitsubishi"]}
+        "Emerson", "Proscan", "JVC", "LG", "Mitsubishi"]};
 
-        if (typeof(sessionStorage) == 'undefined') {
+    if (typeof(sessionStorage) == 'undefined') {
         alert('Your browser does not support HTML5 localStorage. Try upgrading.');
     } else {
         storage = window['sessionStorage'];
@@ -221,11 +221,36 @@ var tvFinder = function () {
 
         },
 
+        events:{
+            'click .sort-button': 'click',
+            'click .brand-button': 'click',
+            'click .type-button': 'click',
+            'click .opt' : 'select',
+            'mouseleave .options' : 'mouseleave'
+        },
+
+        click : function(event) {
+            console.log(event.currentTarget);
+            $(event.currentTarget).find('.options').css({visibility:'visible'});
+        },
+
+        select : function(event) {
+            var context = this.model.attributes;
+            $(event.currentTarget).parent().parent().find('.text').text($(event.target).text());
+            $(event.currentTarget).parent().find('.options').css({visibility:'hidden'});
+            event.stopPropagation();
+        },
+
+        mouseleave : function(event) {
+            this.$el.find('.options').css({visibility:'hidden'});
+            event.stopPropagation();
+        },
+
         render: function () {
             var data = this.model.toJSON();
             console.log(data);
             //var items = data[0].item;
-            this.$el.html(this.options.template());
+            this.$el.html(this.options.template({brands:collectionMeta.brandName}));
             $('.product-finder-filter-container').html(this.el);
 
             $("#range-value2").css({left:"-27px", top:"-55px"}).show();

@@ -236,10 +236,22 @@ function program1(depth0,data) {
 templates['product-finder-filters'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "";
+  buffer += "\n                            <div class=\"opt\">"
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "</div>\n                        ";
+  return buffer;
+  }
 
-
-  return "<section class=\"product-finder-filter-selectors\">\n    <div class=\"product-finder-filter-img\">\n        <div class=\"finder\"><div class=\"spark\"></div><div class=\"text\"><b>TV</b>Finder</div></div>\n    </div>\n    <section class=\"product-finder-filter-slider\">\n        <div id=\"range-value1\" class=\"bubble\">19\"</div>\n        <div id=\"range-value2\" class=\"bubble\">73\"</div>\n        <div id=\"slider-range\"></div>\n    </section>\n</section>\n<section class=\"product-finder-filter-break\" >\n    <h2></h2>\n</section>\n";
+  buffer += "<section class=\"product-finder-filter-selectors\">\n    <div class=\"product-finder-filter-img\">\n        <div class=\"finder\"><div class=\"spark\"></div><div class=\"text\"><b>TV</b>Finder</div></div>\n    </div>\n    <section class=\"product-finder-filter-slider\">\n        <div id=\"range-value1\" class=\"bubble\">19\"</div>\n        <div id=\"range-value2\" class=\"bubble\">73\"</div>\n        <div id=\"slider-range\"></div>\n    </section>\n    <section class=\"product-finder-filter-dropdowns\">\n        <div class=\"\">\n            <div class=\"filter\">\n                <div class=\"type-button\">\n                    <span class=\"text\">All Types</span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n\n                        <div class=\"opt\">LCD</div>\n                        <div class=\"opt\">LED</div>\n                        <div class=\"opt\">Plasma</div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"\">\n            <div class=\"filter\">\n                <div class=\"brand-button\">\n                    <span class=\"text\">All Brands </span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n                        ";
+  stack1 = helpers.each.call(depth0, depth0.brands, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"\">\n            <div class=\"filter\">\n                <div class=\"sort-button\">\n                    <span class=\"text\">Sort</span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n\n                        <div class=\"opt\">A-Z</div>\n                        <div class=\"opt\">Z-A</div>\n                        <div class=\"opt\">Price</div>\n                        <div class=\"opt\">Rank</div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</section>\n\n<section class=\"product-finder-filter-break\" >\n    <h2></h2>\n</section>";
+  return buffer;
   });
 templates['shelf-view'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
