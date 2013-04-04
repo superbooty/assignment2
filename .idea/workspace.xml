@@ -4,17 +4,12 @@
     <list default="true" id="5ef52bd9-9db8-4cc0-a282-21bb757cf497" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/cart/Cart.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/customer/Customer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cart/cartapp.js" afterPath="$PROJECT_DIR$/pages/cart/cartapp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" afterPath="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars" afterPath="$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout/review-pricing.handlebars" afterPath="$PROJECT_DIR$/templates/checkout/review-pricing.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout/review-subtotal.handlebars" afterPath="$PROJECT_DIR$/templates/checkout/review-subtotal.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/checkout/review.css" afterPath="$PROJECT_DIR$/styles/checkout/review.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assignment2a.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365012594790" ignored="false" />
+    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365044370987" ignored="false" />
     <file path="/cartapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365017145715" ignored="false" />
     <file path="/cart.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364946234867" ignored="false" />
     <file path="/cart-header.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364791937519" ignored="false" />
@@ -33,7 +28,7 @@
     <file path="/carousel.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364838362511" ignored="false" />
     <file path="/review.html" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364582276335" ignored="false" />
     <file path="/reviewapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365012062103" ignored="false" />
-    <file path="/review.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365043647876" ignored="false" />
+    <file path="/review.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365044665564" ignored="false" />
     <file path="/product.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364846936172" ignored="false" />
     <file path="/header-cart.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364333426905" ignored="false" />
     <file path="/index.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364748308388" ignored="false" />
@@ -118,7 +113,7 @@
       <file leaf-file-name="review.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/checkout/review.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="10" selection-start="4088" selection-end="4088" vertical-scroll-proportion="3.4331105">
+            <state line="155" column="19" selection-start="3700" selection-end="3700" vertical-scroll-proportion="0.8528428">
               <folding />
             </state>
           </provider>
@@ -156,7 +151,7 @@
       <file leaf-file-name="review-fulfilment-details.handlebars" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="49" selection-start="2379" selection-end="2389" vertical-scroll-proportion="-16.25">
+            <state line="46" column="49" selection-start="2379" selection-end="2389" vertical-scroll-proportion="-28.75">
               <folding />
             </state>
           </provider>
@@ -618,7 +613,11 @@
       <created>1365012597775</created>
       <updated>1365012597775</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="first commit">
+      <created>1365044374225</created>
+      <updated>1365044374225</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -629,7 +628,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21736062" sideWeight="0.97851" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21736062" sideWeight="0.97851" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -795,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="49" selection-start="2379" selection-end="2389" vertical-scroll-proportion="-16.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/checkout/review-subtotal.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="1096" selection-end="1096" vertical-scroll-proportion="-17.5">
@@ -818,9 +810,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="49" selection-start="2379" selection-end="2389" vertical-scroll-proportion="-28.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/styles/checkout/review.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="10" selection-start="4088" selection-end="4088" vertical-scroll-proportion="3.4331105">
+        <state line="155" column="19" selection-start="3700" selection-end="3700" vertical-scroll-proportion="0.8528428">
           <folding />
         </state>
       </provider>
