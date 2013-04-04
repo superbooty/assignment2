@@ -4,12 +4,13 @@
     <list default="true" id="5ef52bd9-9db8-4cc0-a282-21bb757cf497" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/cart/Cart.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/customer/Customer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/checkout/reviewapp.js" afterPath="$PROJECT_DIR$/pages/checkout/reviewapp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" afterPath="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/checkout/review.css" afterPath="$PROJECT_DIR$/styles/checkout/review.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assignment2a.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365044723724" ignored="false" />
+    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365045514772" ignored="false" />
     <file path="/cartapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365017145715" ignored="false" />
     <file path="/cart.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364946234867" ignored="false" />
     <file path="/cart-header.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364791937519" ignored="false" />
@@ -28,11 +29,11 @@
     <file path="/carousel.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364838362511" ignored="false" />
     <file path="/review.html" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364582276335" ignored="false" />
     <file path="/reviewapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365045223226" ignored="false" />
-    <file path="/review.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365044665564" ignored="false" />
+    <file path="/review.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365046173579" ignored="false" />
     <file path="/product.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364846936172" ignored="false" />
     <file path="/header-cart.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364333426905" ignored="false" />
     <file path="/index.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364748308388" ignored="false" />
-    <file path="/review-cart.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364358212753" ignored="false" />
+    <file path="/review-cart.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365046045014" ignored="false" />
     <file path="/review-pricing.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365041415703" ignored="false" />
     <file path="/people-who-viewed.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365001580964" ignored="false" />
     <file path="/products.json" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364361254843" ignored="false" />
@@ -83,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="review.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="review.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/checkout/review.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="19" selection-start="3700" selection-end="3700" vertical-scroll-proportion="-89.42308">
+            <state line="168" column="17" selection-start="3914" selection-end="3914" vertical-scroll-proportion="0.3979933">
               <folding />
             </state>
           </provider>
@@ -104,7 +105,7 @@
       <file leaf-file-name="review-cart.handlebars" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/checkout/review-cart.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="33" selection-start="990" selection-end="990" vertical-scroll-proportion="-19.375">
+            <state line="27" column="66" selection-start="913" selection-end="913" vertical-scroll-proportion="-16.875">
               <folding>
                 <element signature="n#style#0;n#br#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -112,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reviewapp.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reviewapp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/checkout/reviewapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="10" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.451505">
+            <state line="96" column="44" selection-start="2590" selection-end="2590" vertical-scroll-proportion="-55.384617">
               <folding />
             </state>
           </provider>
@@ -197,9 +198,9 @@
         <option value="$PROJECT_DIR$/templates/checkout/review-pricing.handlebars" />
         <option value="$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars" />
         <option value="$PROJECT_DIR$/templates/checkout/review-subtotal.handlebars" />
+        <option value="$PROJECT_DIR$/pages/checkout/reviewapp.js" />
         <option value="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" />
         <option value="$PROJECT_DIR$/styles/checkout/review.css" />
-        <option value="$PROJECT_DIR$/pages/checkout/reviewapp.js" />
       </list>
     </option>
   </component>
@@ -653,7 +654,11 @@
       <created>1365044726590</created>
       <updated>1365044726590</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="first commit">
+      <created>1365045516772</created>
+      <updated>1365045516772</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -788,25 +793,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/checkout/review-cart.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="33" selection-start="990" selection-end="990" vertical-scroll-proportion="-19.375">
-          <folding>
-            <element signature="n#style#0;n#br#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="49" selection-start="2379" selection-end="2389" vertical-scroll-proportion="-28.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/checkout/review.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="19" selection-start="3700" selection-end="3700" vertical-scroll-proportion="-89.42308">
           <folding />
         </state>
       </provider>
@@ -846,6 +835,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/checkout/reviewapp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="44" selection-start="2590" selection-end="2590" vertical-scroll-proportion="-55.384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tv-finder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="120" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.0">
@@ -853,9 +849,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/checkout/reviewapp.js">
+    <entry file="file://$PROJECT_DIR$/templates/checkout/review-cart.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="10" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.451505">
+        <state line="27" column="66" selection-start="913" selection-end="913" vertical-scroll-proportion="-16.875">
+          <folding>
+            <element signature="n#style#0;n#br#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/checkout/review.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="17" selection-start="3914" selection-end="3914" vertical-scroll-proportion="0.3979933">
           <folding />
         </state>
       </provider>
