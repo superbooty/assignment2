@@ -272,7 +272,7 @@
 .filter {
     display: inline-block;
     position: relative;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .filter .sort-button, .filter .brand-button, .filter .type-button {
@@ -320,6 +320,13 @@
     right: 10px;
     top: 15px;
     width: 0;
+}
+
+.filter-label {
+    color: #666666;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 20px;
 }
 
 .options ul {

@@ -116,7 +116,8 @@
 }
 
 .product-finder-filter-dropdowns {
-    display:inline-block;
+    display: inline-block;
+    margin: 0 0 -10px;
 }
 
 .product-finder-filter-dropdowns > div {

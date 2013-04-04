@@ -4,16 +4,17 @@
     <list default="true" id="5ef52bd9-9db8-4cc0-a282-21bb757cf497" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/cart/Cart.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/customer/Customer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/cart/cart.css" afterPath="$PROJECT_DIR$/styles/cart/cart.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/item-shelf.css" afterPath="$PROJECT_DIR$/styles/item-shelf.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product-finder-filters.handlebars" afterPath="$PROJECT_DIR$/templates/product-finder-filters.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates.js" afterPath="$PROJECT_DIR$/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv-finder.js" afterPath="$PROJECT_DIR$/tv-finder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assignment2a.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365055437927" ignored="false" />
+    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365087201265" ignored="false" />
     <file path="/cartapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365017145715" ignored="false" />
-    <file path="/cart.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365051378540" ignored="false" />
+    <file path="/cart.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365088843813" ignored="false" />
     <file path="/cart-header.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364791937519" ignored="false" />
     <file path="/cart.html" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364410406485" ignored="false" />
     <file path="/bootstrap.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1363984496938" ignored="false" />
@@ -51,7 +52,7 @@
     <file path="/item-shelf.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364796934529" ignored="false" />
     <file path="/index.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364685534487" ignored="false" />
     <file path="$PROJECT_DIR$/../assignment1/routes/index.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364685540624" ignored="false" />
-    <file path="/product-finder-filters.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365086980290" ignored="false" />
+    <file path="/product-finder-filters.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365088990126" ignored="false" />
     <file path="/review-fulfilment-details.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365043703277" ignored="false" />
     <file path="/header.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364791815573" ignored="false" />
     <file path="/review-subtotals.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364926856790" ignored="false" />
@@ -86,19 +87,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="cart.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles/cart/cart.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="265" column="0" selection-start="6448" selection-end="6448" vertical-scroll-proportion="0.0">
+            <state line="274" column="18" selection-start="6597" selection-end="6597" vertical-scroll-proportion="0.21276596">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-finder-filters.handlebars" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="product-finder-filters.handlebars" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/product-finder-filters.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="18" selection-start="1374" selection-end="1374" vertical-scroll-proportion="0.2857143">
+            <state line="40" column="48" selection-start="1564" selection-end="1564" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
@@ -134,7 +135,7 @@
       <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="422" column="10" selection-start="18750" selection-end="18756" vertical-scroll-proportion="-243.46153">
+            <state line="422" column="10" selection-start="18750" selection-end="18756" vertical-scroll-proportion="7.3846154">
               <folding />
             </state>
           </provider>
@@ -143,7 +144,7 @@
       <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/product.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="8" selection-start="3291" selection-end="3292" vertical-scroll-proportion="64.0">
+            <state line="251" column="2" selection-start="4694" selection-end="4695" vertical-scroll-proportion="-4.8076925">
               <folding />
             </state>
           </provider>
@@ -152,7 +153,7 @@
       <file leaf-file-name="item-shelf.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/item-shelf.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="193" column="0" selection-start="4069" selection-end="4069" vertical-scroll-proportion="-9.230769">
+            <state line="116" column="0" selection-start="2129" selection-end="2129" vertical-scroll-proportion="-16.73077">
               <folding />
             </state>
           </provider>
@@ -196,11 +197,11 @@
         <option value="$PROJECT_DIR$/pages/checkout/reviewapp.js" />
         <option value="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" />
         <option value="$PROJECT_DIR$/styles/checkout/review.css" />
-        <option value="$PROJECT_DIR$/styles/item-shelf.css" />
-        <option value="$PROJECT_DIR$/styles/cart/cart.css" />
         <option value="$PROJECT_DIR$/pages/cart/cartapp.js" />
         <option value="$PROJECT_DIR$/tv-finder.js" />
         <option value="$PROJECT_DIR$/templates/product-finder-filters.handlebars" />
+        <option value="$PROJECT_DIR$/styles/item-shelf.css" />
+        <option value="$PROJECT_DIR$/styles/cart/cart.css" />
       </list>
     </option>
   </component>
@@ -703,7 +704,11 @@
       <created>1365055440325</created>
       <updated>1365055440325</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="first commit">
+      <created>1365087204080</created>
+      <updated>1365087204080</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -845,44 +850,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/product.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="8" selection-start="3291" selection-end="3292" vertical-scroll-proportion="64.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="422" column="10" selection-start="18750" selection-end="18756" vertical-scroll-proportion="-243.46153">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/item-shelf.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="0" selection-start="4069" selection-end="4069" vertical-scroll-proportion="-9.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/cart/cart.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="0" selection-start="6448" selection-end="6448" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/cart/cartapp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="107" column="12" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/json/products.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -901,9 +871,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/styles/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="422" column="10" selection-start="18750" selection-end="18756" vertical-scroll-proportion="7.3846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/product-finder-filters.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="18" selection-start="1374" selection-end="1374" vertical-scroll-proportion="0.2857143">
+        <state line="40" column="48" selection-start="1564" selection-end="1564" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json/products.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/product.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="2" selection-start="4694" selection-end="4695" vertical-scroll-proportion="-4.8076925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/item-shelf.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="0" selection-start="2129" selection-end="2129" vertical-scroll-proportion="-16.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/cart/cart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="274" column="18" selection-start="6597" selection-end="6597" vertical-scroll-proportion="0.21276596">
           <folding />
         </state>
       </provider>
