@@ -10,6 +10,19 @@
     <section class="product-finder-filter-dropdowns">
         <div class="">
             <div class="filter">
+                <div class="brand-button">
+                    <span class="text">All Brands </span><b class="sort-button-arrow"></b>
+                    <div class="options">
+                        {{#each brands}}
+                        <div class="opt">{{.}}</div>
+                        {{/each}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="filter">
                 <div class="type-button">
                     <span class="text">All Types</span><b class="sort-button-arrow"></b>
                     <div class="options">
@@ -24,23 +37,9 @@
         </div>
         <div class="">
             <div class="filter">
-                <div class="brand-button">
-                    <span class="text">All Brands </span><b class="sort-button-arrow"></b>
-                    <div class="options">
-                        {{#each brands}}
-                            <div class="opt">{{.}}</div>
-                        {{/each}}
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="">
-            <div class="filter">
                 <div class="sort-button">
                     <span class="text">Sort</span><b class="sort-button-arrow"></b>
                     <div class="options">
-
                         <div class="opt">A-Z</div>
                         <div class="opt">Z-A</div>
                         <div class="opt">Price</div>

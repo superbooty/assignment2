@@ -180,7 +180,16 @@ var tvFinder = function () {
                     && item.get("size") <= range.high;
             });
             this.reset(filtered);
+        },
+
+        filterOnName: function(value){
+            filtered = this.filter(function (item) {
+                console.log(item);
+                return item.get("name").match(value);
+            });
+            return this.reset(filtered);
         }
+
     });
     var productCollection = new ProductCollection();
 
@@ -236,9 +245,11 @@ var tvFinder = function () {
 
         select : function(event) {
             var context = this.model.attributes;
+            var filterOnValue = $(event.target).text();
             $(event.currentTarget).parent().parent().find('.text').text($(event.target).text());
             $(event.currentTarget).parent().find('.options').css({visibility:'hidden'});
             event.stopPropagation();
+            productCollection.filterOnName(filterOnValue);
         },
 
         mouseleave : function(event) {
@@ -275,7 +286,10 @@ var tvFinder = function () {
             $("#slider-range").find('a:last').append($("#range-value2")).css({outline:"0 none"});
             $("#slider-range").find('a:first').append($("#range-value1")).css({outline:"0 none"});
 
+            this.delegateEvents(this.events);
+
         }
+
 
 
     });
