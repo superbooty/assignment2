@@ -78,9 +78,13 @@ var reviewsPage = function () {
     var customerModel = new CustomerModel();
     customerModel.fetch();
 
+    var cartItemCollection = new CartItemCollection();
+    cartItemCollection.reset(myCart.getCartItems());
+
     var ReviewHeader = Backbone.View.extend({
         initialize:function () {
             this.listenTo(this.model, 'change', this.render);
+            this.listenTo(cartItemCollection, 'reset', this.render);
         },
 
         events:{
@@ -99,7 +103,7 @@ var reviewsPage = function () {
         },
 
         render:function(){
-            this.$el.html(this.options.template({cartSize: myCart.getCartSize(), customer:this.model.toJSON()}) );
+            this.$el.html(this.options.template({cartSize: cartItemCollection.getCartSize(), customer:this.model.toJSON()}) );
             $('.review-header-container').html(this.el);
             this.delegateEvents(this.events);
         }
@@ -179,9 +183,6 @@ var reviewsPage = function () {
         template:Handlebars.templates['review-cart']
     });
     reviewCartView.render();
-
-    var cartItemCollection = new CartItemCollection();
-    cartItemCollection.reset(myCart.getCartItems());
 
     var ReviewPricingView = Backbone.View.extend({
         initialize: function(){
