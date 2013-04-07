@@ -1,0 +1,19 @@
+<section class="shelf_item">
+    <a href="#/product/{{item.id}}"><img class="lazy" src="{{item.image}}"/></a>
+
+    <div class="shelf-item-name">
+        {{item.name}}
+    </div>
+    <div class="shelf-item-desc">
+        {{{desc item.description}}}
+    </div>
+    <div class="shelf-item-price">
+        ${{number-format item.price}}
+    </div>
+    <div class="product-rating shelf-item-rating " >
+        <span class="gray">
+            <span class="gold" style="width:{{crr item.rating}}">
+            </span>
+        </span>
+    </div>
+</section>

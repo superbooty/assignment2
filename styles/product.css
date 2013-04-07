@@ -160,8 +160,8 @@
     float: right;
     font: bold 20px 'trebuchet ms',helvetica,sans-serif;
     height: 60px;
-    margin: 20px 30px 0 0;
-    padding: 10px 20px;
+    margin: 15px 30px 0 0;
+    padding: 10px 40px;
     width: 185px;
 }
 
@@ -377,3 +377,4 @@ b, strong {
  text-decoration:blink;
  color: #f58a23;
 }
+

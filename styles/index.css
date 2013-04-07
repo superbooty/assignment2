@@ -458,4 +458,9 @@ body {
     z-index:90;
 }
 
+#range-value1 .text, #range-value2 .text{
+    height: 20px;
+    padding: 10px 0 0 0;
+}
+
 

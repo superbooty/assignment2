@@ -134,6 +134,7 @@ var productPage = function(id){
 
         initialize:function () {
             this.listenTo(productModel, 'change', this.render);
+
         },
 
         render:function () {

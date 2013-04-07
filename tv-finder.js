@@ -162,8 +162,11 @@ var tvFinder = function () {
 
         original: [],
 
+        sortKey: "name",
+        reverse: false,
+
         parse: function (response) {
-            this.original = response;
+            this.original = _.clone(response);
             return response;
         },
 
@@ -188,10 +191,45 @@ var tvFinder = function () {
                 return item.get("name").match(value);
             });
             return this.reset(filtered);
+        },
+
+        comparator: function(a, b) {
+            // Assuming that the sort_key values can be compared with '>' and '<',
+            // modifying this to account for extra processing on the sort_key model
+            // attributes is fairly straight forward.
+            a = a.get(this.sortKey);
+            b = b.get(this.sortKey);
+            if(this.reverse){
+                return a < b ?  1
+                    : a > b ? -1
+                    :          0;
+            }else{
+                return a > b ?  1
+                    : a < b ? -1
+                    :          0;
+            }
+        },
+
+        sortBy: function(sortKey, reverse){
+            this.sortKey = sortKey.toLowerCase();
+            this.reverse = false;
+            this.sort();
+            this.trigger('reset');
         }
 
     });
     var productCollection = new ProductCollection();
+
+
+    var ShelfItem = Backbone.View.extend({
+
+        render: function(){
+            this.$el.html(this.options.template({item: this.model.toJSON()}));
+            //$('.shelf-item-container').html(this.el);
+            return this;
+        }
+
+    });
 
     var ShelfContainerView = Backbone.View.extend({
 
@@ -216,13 +254,32 @@ var tvFinder = function () {
         },
 
         render: function () {
+            console.log("ShelfContainerView.render() got triggered");
             var data = this.model.toJSON();
-            this.$el.html(this.options.template({items: data, matches: data.length}));
-            $('.shelf-view-container').html(this.el);
-            this.delegateEvents(this.events);
+            this.$el.html(this.options.template({matches: data.length}));
+            $('.shelf-view-container').append(this.el);
+            var that = this;
+            this.model.each(function( item ) {
+                var index = that.model.indexOf(item);
+                if(index % 4 == 0){
+                    that.$el.append("<div class='clear'></div>")
+                }
+                that.renderItem( item );
+            });
+            return this;
+        },
+
+        renderItem: function( item ) {
+            var shelfItem = new ShelfItem({
+                template: Handlebars.templates['shelf-item'],
+                model: item
+            });
+            this.$el.append( shelfItem.render().el );
         }
 
     });
+
+
 
     var ProductFinderFilterView = Backbone.View.extend({
         initialize: function () {
@@ -234,7 +291,9 @@ var tvFinder = function () {
             'click .sort-button': 'click',
             'click .brand-button': 'click',
             'click .type-button': 'click',
-            'click .opt' : 'select',
+            'click .brand-button .opt' : 'select',
+            'click .type-button .opt' : 'select',
+            'click .sort-button .opt' : 'sort',
             'mouseleave .options' : 'mouseleave',
             'mouseleave .sort-button' : 'mouseleave',
             'mouseleave .brand-button' : 'mouseleave',
@@ -255,6 +314,11 @@ var tvFinder = function () {
             productCollection.filterOnName(filterOnValue);
         },
 
+        sort : function(event) {
+            console.log($(event.target).text());
+            productCollection.sortBy($(event.target).text(), true);
+        },
+
         mouseleave : function(event) {
             this.$el.find('.options').css({visibility:'hidden'});
             //event.stopPropagation();
@@ -262,7 +326,6 @@ var tvFinder = function () {
 
         render: function () {
             var data = this.model.toJSON();
-            console.log(data);
             //var items = data[0].item;
             this.$el.html(this.options.template({brands:collectionMeta.brandName}));
             $('.product-finder-filter-container').html(this.el);
@@ -276,8 +339,8 @@ var tvFinder = function () {
                 max:100,
                 values:[ collectionMeta.minsize, collectionMeta.maxsize ],
                 slide:function (event, ui) {
-                    $("#range-value1").html(ui.values[0]+"\"");
-                    $("#range-value2").html(ui.values[1]+"\"");
+                    $("#range-value1 .text").html(ui.values[0]+"\"");
+                    $("#range-value2 .text").html(ui.values[1]+"\"");
                 },
 
                 stop: function(event, ui){
@@ -292,9 +355,6 @@ var tvFinder = function () {
             this.delegateEvents(this.events);
 
         }
-
-
-
     });
 
     var productFinderFilterView = new ProductFinderFilterView({
@@ -318,6 +378,7 @@ var tvFinder = function () {
 
             $('.cart-page').hide();
             $('.selected-product').hide();
+            productFinderFilterView.undelegateEvents();
             productFinderFilterView.render();
 
 

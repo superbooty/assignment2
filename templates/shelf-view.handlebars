@@ -1,30 +1,9 @@
 <section class="product-finder-filter-results">
     <div class="product-finder-filter-msg">
-        <span class="item-counter item-counter-bold">{{matches}}</span><span class="item-counter"> matches for televisions fitting that criteria</span>
+        <span class="item-counter item-counter-bold">{{matches}} matches</span><span class="item-counter"> for televisions fitting that criteria</span>
     </div>
     <input type="button" value="Clear Filters " class="product-finder-filter-clear-btn">
 </section>
-{{#each items}}
-{{#everyNth @index 4}}
-<div style="clear:both"></div>
-{{/everyNth}}
-<section class="shelf_item">
-    <a href="#/product/{{id}}"><img class="lazy" src="{{image}}"/></a>
+<section class="shelf-item-container"  >
 
-    <div class="shelf-item-name">
-        {{name}}
-    </div>
-    <div class="shelf-item-desc">
-        {{{desc description}}}
-    </div>
-    <div class="shelf-item-price">
-        ${{number-format price}}
-    </div>
-    <div class="product-rating shelf-item-rating " >
-        <span class="gray">
-            <span class="gold" style="width:{{crr rating}}">
-            </span>
-        </span>
-    </div>
 </section>
-{{/each}}

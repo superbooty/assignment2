@@ -6,6 +6,10 @@
 
 }
 
+.shelf-item-container {
+    display:inline-block;
+}
+
 .shelf-view-container .shelf_item {
     width:210px;
     float:left;
@@ -147,10 +151,10 @@
 }
 
 .product-finder-filter-results {
-    width:950px;
-    height:50px;
-    margin:auto;
-    display:block;
+    display: inline-block;
+    height: 70px;
+    margin: auto;
+    width: 950px;
 }
 
 .product-finder-filter-msg {

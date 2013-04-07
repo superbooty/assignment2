@@ -247,62 +247,48 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<section class=\"product-finder-filter-selectors\">\n    <div class=\"product-finder-filter-img\">\n        <div class=\"finder\"><div class=\"spark\"></div><div class=\"text\"><b>TV</b>Finder</div></div>\n    </div>\n    <section class=\"product-finder-filter-slider\">\n        <div id=\"range-value1\" class=\"bubble\">19\"</div>\n        <div id=\"range-value2\" class=\"bubble\">73\"</div>\n        <div id=\"slider-range\"></div>\n    </section>\n    <section class=\"product-finder-filter-dropdowns\">\n        <div class=\"\">\n            <div class=\"filter-label\">Type</div>\n            <div class=\"filter\">\n                <div class=\"type-button\">\n                    <span class=\"text\">All Types</span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n\n                        <div class=\"opt\">LCD</div>\n                        <div class=\"opt\">LED</div>\n                        <div class=\"opt\">Plasma</div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"\">\n            <div class=\"filter-label\">Brand</div>\n            <div class=\"filter\">\n                <div class=\"brand-button\">\n                    <span class=\"text\">All Brands </span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n                        ";
+  buffer += "<section class=\"product-finder-filter-selectors\">\n    <div class=\"product-finder-filter-img\">\n        <div class=\"finder\"><div class=\"spark\"></div><div class=\"text\"><b>TV</b>Finder</div></div>\n    </div>\n    <section class=\"product-finder-filter-slider\">\n        <div id=\"range-value1\" class=\"bubble\"><div class=\"text\">19\"</div></div>\n        <div id=\"range-value2\" class=\"bubble\"><div class=\"text\">73\"</div></div>\n        <div id=\"slider-range\"></div>\n    </section>\n    <section class=\"product-finder-filter-dropdowns\">\n        <div class=\"\">\n            <div class=\"filter-label\">Type</div>\n            <div class=\"filter\">\n                <div class=\"type-button\">\n                    <span class=\"text\">All Types</span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n\n                        <div class=\"opt\">LCD</div>\n                        <div class=\"opt\">LED</div>\n                        <div class=\"opt\">Plasma</div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"\">\n            <div class=\"filter-label\">Brand</div>\n            <div class=\"filter\">\n                <div class=\"brand-button\">\n                    <span class=\"text\">All Brands </span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n                        ";
   stack1 = helpers.each.call(depth0, depth0.brands, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"\">\n            <div class=\"filter-label\">Sort</div>\n            <div class=\"filter\">\n                <div class=\"sort-button\">\n                    <span class=\"text\">Sort</span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n                        <div class=\"opt\">A-Z</div>\n                        <div class=\"opt\">Z-A</div>\n                        <div class=\"opt\">Price</div>\n                        <div class=\"opt\">Rank</div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</section>\n\n<section class=\"product-finder-filter-break\" >\n    <h2></h2>\n</section>";
+  buffer += "\n\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"\">\n            <div class=\"filter-label\">Sort</div>\n            <div class=\"filter\">\n                <div class=\"sort-button\">\n                    <span class=\"text\">Sort</span><b class=\"sort-button-arrow\"></b>\n                    <div class=\"options\">\n                        <div class=\"opt\">Name</div>\n                        <div class=\"opt\">Price</div>\n                        <div class=\"opt\">Rating</div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</section>\n\n<section class=\"product-finder-filter-break\" >\n    <h2></h2>\n</section>";
+  return buffer;
+  });
+templates['shelf-item'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [2,'>= 1.0.0-rc.3'];
+helpers = helpers || Handlebars.helpers; data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
+
+
+  buffer += "<section class=\"shelf_item\">\n    <a href=\"#/product/"
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"><img class=\"lazy\" src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"/></a>\n\n    <div class=\"shelf-item-name\">\n        "
+    + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n    </div>\n    <div class=\"shelf-item-desc\">\n        ";
+  options = {hash:{},data:data};
+  stack2 = ((stack1 = helpers.desc),stack1 ? stack1.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.description), options) : helperMissing.call(depth0, "desc", ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.description), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    </div>\n    <div class=\"shelf-item-price\">\n        $";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers['number-format']),stack1 ? stack1.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.price), options) : helperMissing.call(depth0, "number-format", ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.price), options)))
+    + "\n    </div>\n    <div class=\"product-rating shelf-item-rating \" >\n        <span class=\"gray\">\n            <span class=\"gold\" style=\"width:";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.rating), options) : helperMissing.call(depth0, "crr", ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.rating), options)))
+    + "\">\n            </span>\n        </span>\n    </div>\n</section>";
   return buffer;
   });
 templates['shelf-view'] = template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [2,'>= 1.0.0-rc.3'];
 helpers = helpers || Handlebars.helpers; data = data || {};
-  var buffer = "", stack1, self=this, helperMissing=helpers.helperMissing, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, stack2, options;
-  buffer += "\n";
-  options = {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data};
-  stack2 = ((stack1 = helpers.everyNth),stack1 ? stack1.call(depth0, data.index, 4, options) : helperMissing.call(depth0, "everyNth", data.index, 4, options));
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n<section class=\"shelf_item\">\n    <a href=\"#/product/";
-  if (stack2 = helpers.id) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.id; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\"><img class=\"lazy\" src=\"";
-  if (stack2 = helpers.image) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.image; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\"/></a>\n\n    <div class=\"shelf-item-name\">\n        ";
-  if (stack2 = helpers.name) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = depth0.name; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\n    </div>\n    <div class=\"shelf-item-desc\">\n        ";
-  options = {hash:{},data:data};
-  stack2 = ((stack1 = helpers.desc),stack1 ? stack1.call(depth0, depth0.description, options) : helperMissing.call(depth0, "desc", depth0.description, options));
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n    <div class=\"shelf-item-price\">\n        $";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers['number-format']),stack1 ? stack1.call(depth0, depth0.price, options) : helperMissing.call(depth0, "number-format", depth0.price, options)))
-    + "\n    </div>\n    <div class=\"product-rating shelf-item-rating \" >\n        <span class=\"gray\">\n            <span class=\"gold\" style=\"width:";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers.crr),stack1 ? stack1.call(depth0, depth0.rating, options) : helperMissing.call(depth0, "crr", depth0.rating, options)))
-    + "\">\n            </span>\n        </span>\n    </div>\n</section>\n";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  
-  return "\n<div style=\"clear:both\"></div>\n";
-  }
 
   buffer += "<section class=\"product-finder-filter-results\">\n    <div class=\"product-finder-filter-msg\">\n        <span class=\"item-counter item-counter-bold\">";
   if (stack1 = helpers.matches) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.matches; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</span><span class=\"item-counter\"> matches for televisions fitting that criteria</span>\n    </div>\n    <input type=\"button\" value=\"Clear Filters \" class=\"product-finder-filter-clear-btn\">\n</section>\n";
-  stack1 = helpers.each.call(depth0, depth0.items, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
+    + " matches</span><span class=\"item-counter\"> for televisions fitting that criteria</span>\n    </div>\n    <input type=\"button\" value=\"Clear Filters \" class=\"product-finder-filter-clear-btn\">\n</section>\n<section class=\"shelf-item-container\"  >\n\n</section>";
   return buffer;
   });
 templates['test-helper'] = template(function (Handlebars,depth0,helpers,partials,data) {
