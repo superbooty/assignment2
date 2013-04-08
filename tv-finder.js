@@ -257,7 +257,7 @@ var tvFinder = function () {
             console.log("ShelfContainerView.render() got triggered");
             var data = this.model.toJSON();
             this.$el.html(this.options.template({matches: data.length}));
-            $('.shelf-view-container').append(this.el);
+            $('.shelf-view-container').html(this.el);
             var that = this;
             this.model.each(function( item ) {
                 var index = that.model.indexOf(item);
@@ -266,7 +266,7 @@ var tvFinder = function () {
                 }
                 that.renderItem( item );
             });
-            return this;
+            this.delegateEvents(this.events);
         },
 
         renderItem: function( item ) {

@@ -4,12 +4,12 @@
     <list default="true" id="5ef52bd9-9db8-4cc0-a282-21bb757cf497" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/cart/Cart.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/customer/Customer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/carousel.css" afterPath="$PROJECT_DIR$/styles/carousel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv-finder.js" afterPath="$PROJECT_DIR$/tv-finder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assignment2a.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365380907563" ignored="false" />
+    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365383066989" ignored="false" />
     <file path="/cartapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365106292485" ignored="false" />
     <file path="/cart.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365088843813" ignored="false" />
     <file path="/cart-header.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364791937519" ignored="false" />
@@ -44,7 +44,7 @@
     <file path="/carousel.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364624406369" ignored="false" />
     <file path="/product.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365001009524" ignored="false" />
     <file path="/products-full.json" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364670389067" ignored="false" />
-    <file path="/tv-finder.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365362614311" ignored="false" />
+    <file path="/tv-finder.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365390255770" ignored="false" />
     <file path="/shelf-view.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365377642685" ignored="false" />
     <file path="/item-shelf.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365359209124" ignored="false" />
     <file path="/index.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365126859758" ignored="false" />
@@ -89,10 +89,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tv-finder.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="tv-finder.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tv-finder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="342" column="69" selection-start="10453" selection-end="10453" vertical-scroll-proportion="18.076923">
+            <state line="255" column="29" selection-start="7210" selection-end="7210" vertical-scroll-proportion="9.935065">
               <folding />
             </state>
           </provider>
@@ -136,10 +136,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carousel.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="carousel.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/carousel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.5620438">
+            <state line="110" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -210,11 +210,11 @@
         <option value="$PROJECT_DIR$/templates/product-finder-filters.handlebars" />
         <option value="$PROJECT_DIR$/styles/item-shelf.css" />
         <option value="$PROJECT_DIR$/product.js" />
-        <option value="$PROJECT_DIR$/tv-finder.js" />
         <option value="$PROJECT_DIR$/templates/shelf-view.handlebars" />
         <option value="$PROJECT_DIR$/templates/shelf-item.handlebars" />
         <option value="$PROJECT_DIR$/styles/product.css" />
         <option value="$PROJECT_DIR$/styles/carousel.css" />
+        <option value="$PROJECT_DIR$/tv-finder.js" />
       </list>
     </option>
   </component>
@@ -583,7 +583,11 @@
       <created>1365380909905</created>
       <updated>1365380909905</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="first commit">
+      <created>1365383068624</created>
+      <updated>1365383068624</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -595,7 +599,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32456142" sideWeight="0.49964714" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17078334" sideWeight="0.6754386" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17078334" sideWeight="0.6754386" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32456142" sideWeight="0.49541286" order="8" side_tool="true" content_ui="tabs" />
@@ -716,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tv-finder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="342" column="69" selection-start="10453" selection-end="10453" vertical-scroll-proportion="18.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/cart/cartapp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="168" column="18" selection-start="5725" selection-end="5735" vertical-scroll-proportion="0.0">
@@ -783,7 +780,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles/carousel.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.5620438">
+        <state line="110" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tv-finder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="255" column="29" selection-start="7210" selection-end="7210" vertical-scroll-proportion="9.935065">
           <folding />
         </state>
       </provider>
