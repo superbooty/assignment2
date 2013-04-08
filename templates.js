@@ -259,11 +259,11 @@ helpers = helpers || Handlebars.helpers; data = data || {};
   var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
 
 
-  buffer += "<section class=\"shelf_item\">\n    <a href=\"#/product/"
+  buffer += "<section class=\"shelf_item\">\n    <div class=\"shelf-item-img\">\n        <a href=\"#/product/"
     + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\"><img class=\"lazy\" src=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\"/></a>\n\n    <div class=\"shelf-item-name\">\n        "
+    + "\"/></a>\n    </div>\n    <div class=\"shelf-item-name\">\n        "
     + escapeExpression(((stack1 = ((stack1 = depth0.item),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\n    </div>\n    <div class=\"shelf-item-desc\">\n        ";
   options = {hash:{},data:data};

@@ -17,8 +17,8 @@
      width: 530px;
  }
 
-#slider-code .viewport { float: left; width: 430px; height: 330px; overflow: hidden; position: aboslute; }
-#slider-code-pwv .viewport-pwv { float: left; width: 664px; height: 330px; overflow: hidden; position: aboslute; }
+#slider-code .viewport { float: left; width: 430px; height: 330px; overflow: hidden;  }
+#slider-code-pwv .viewport-pwv { float: left; width: 664px; height: 330px; overflow: hidden;  }
 #slider-code .buttons, #slider-code-pwv .buttons { display: block; margin: 30px 10px 0 0; float: left; }
 #slider-code .buttons, #slider-code-pwv .buttons {
     background: url("../img/arrow-right.png") no-repeat scroll 0 -38px transparent;

@@ -4,20 +4,15 @@
     <list default="true" id="5ef52bd9-9db8-4cc0-a282-21bb757cf497" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/cart/Cart.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/customer/Customer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/shelf-item.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/index.css" afterPath="$PROJECT_DIR$/styles/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/item-shelf.css" afterPath="$PROJECT_DIR$/styles/item-shelf.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/product-finder-filters.handlebars" afterPath="$PROJECT_DIR$/templates/product-finder-filters.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/carousel.css" afterPath="$PROJECT_DIR$/styles/carousel.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/product.css" afterPath="$PROJECT_DIR$/styles/product.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product.js" afterPath="$PROJECT_DIR$/product.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/shelf-view.handlebars" afterPath="$PROJECT_DIR$/templates/shelf-view.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/shelf-item.handlebars" afterPath="$PROJECT_DIR$/templates/shelf-item.handlebars" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates.js" afterPath="$PROJECT_DIR$/templates.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv-finder.js" afterPath="$PROJECT_DIR$/tv-finder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="assignment2a.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365097552110" ignored="false" />
+    <file path="/Dummy.txt" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365378754097" ignored="false" />
     <file path="/cartapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365106292485" ignored="false" />
     <file path="/cart.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365088843813" ignored="false" />
     <file path="/cart-header.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364791937519" ignored="false" />
@@ -33,11 +28,11 @@
     <file path="/cart-accordion.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364191506304" ignored="false" />
     <file path="/cart.json" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364171593056" ignored="false" />
     <file path="$PROJECT_DIR$/../handlebones/scripts/application.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364183691317" ignored="false" />
-    <file path="/carousel.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364838362511" ignored="false" />
+    <file path="/carousel.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365379325629" ignored="false" />
     <file path="/review.html" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364582276335" ignored="false" />
     <file path="/reviewapp.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365045223226" ignored="false" />
     <file path="/review.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365097377338" ignored="false" />
-    <file path="/product.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364846936172" ignored="false" />
+    <file path="/product.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365378926868" ignored="false" />
     <file path="/header-cart.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1364333426905" ignored="false" />
     <file path="/index.css" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365282855239" ignored="false" />
     <file path="/review-cart.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365046045014" ignored="false" />
@@ -77,7 +72,7 @@
     <file path="/routerules.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365198698756" ignored="false" />
     <file path="$PROJECT_DIR$/../assignment1/templates.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365206737964" ignored="false" />
     <file path="$PROJECT_DIR$/../assignment1/public/js/templates.js" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365206989182" ignored="false" />
-    <file path="/shelf-item.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365352970252" ignored="false" />
+    <file path="/shelf-item.handlebars" changelist="5ef52bd9-9db8-4cc0-a282-21bb757cf497" time="1365378895444" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,31 +101,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-finder-filters.handlebars" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/product-finder-filters.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="14" selection-start="467" selection-end="467" vertical-scroll-proportion="-5.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="shelf-item.handlebars" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/shelf-item.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="10" selection-start="547" selection-end="547" vertical-scroll-proportion="-11.25">
+            <state line="1" column="27" selection-start="45" selection-end="59" vertical-scroll-proportion="-0.625">
               <folding>
-                <element signature="n#style#0;n#span#0;n#span#0;n#div#3;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#0;n#div#4;n#section#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shelf-view.handlebars" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/shelf-view.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="72" selection-start="164" selection-end="164" vertical-scroll-proportion="-1.25">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -153,28 +130,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="product.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/product.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="19" selection-start="2957" selection-end="2957" vertical-scroll-proportion="2.591241">
+            <state line="379" column="0" selection-start="7590" selection-end="7590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json/products.json">
+      <file leaf-file-name="carousel.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles/carousel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="126.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="carousel.handlebars" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/carousel.handlebars">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="20" column="93" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -183,7 +151,34 @@
       <file leaf-file-name="product.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="9" selection-start="3950" selection-end="3950" vertical-scroll-proportion="-60.0">
+            <state line="128" column="9" selection-start="3950" selection-end="3950" vertical-scroll-proportion="-21.346153">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carousel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/carousel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="12" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.tinycarousel.min.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/jquery.tinycarousel.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="110" selection-start="640" selection-end="644" vertical-scroll-proportion="0.5241935">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carousel.handlebars" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/carousel.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5">
               <folding />
             </state>
           </provider>
@@ -207,7 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/templates/checkout/review-pricing.handlebars" />
         <option value="$PROJECT_DIR$/templates/checkout/review-fulfilment-details.handlebars" />
         <option value="$PROJECT_DIR$/pages/checkout/reviewapp.js" />
         <option value="$PROJECT_DIR$/templates/checkout/review-cart.handlebars" />
@@ -217,12 +211,13 @@
         <option value="$PROJECT_DIR$/pages/cart/cartapp.js" />
         <option value="$PROJECT_DIR$/styles/index.css" />
         <option value="$PROJECT_DIR$/templates/product-finder-filters.handlebars" />
-        <option value="$PROJECT_DIR$/templates/shelf-item.handlebars" />
         <option value="$PROJECT_DIR$/styles/item-shelf.css" />
         <option value="$PROJECT_DIR$/product.js" />
         <option value="$PROJECT_DIR$/tv-finder.js" />
         <option value="$PROJECT_DIR$/templates/shelf-view.handlebars" />
+        <option value="$PROJECT_DIR$/templates/shelf-item.handlebars" />
         <option value="$PROJECT_DIR$/styles/product.css" />
+        <option value="$PROJECT_DIR$/styles/carousel.css" />
       </list>
     </option>
   </component>
@@ -313,6 +308,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assignment2a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assignment2a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assignment2a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assignment2a" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -555,7 +578,11 @@
       <created>1365097554028</created>
       <updated>1365097554028</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="first commit">
+      <created>1365378757843</created>
+      <updated>1365378757843</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -567,7 +594,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32456142" sideWeight="0.49964714" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17078334" sideWeight="0.6754386" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17078334" sideWeight="0.6754386" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32456142" sideWeight="0.49541286" order="8" side_tool="true" content_ui="tabs" />
@@ -646,20 +673,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="38" selection-start="1841" selection-end="1853" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/cart/cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.2916665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="12" selection-start="1917" selection-end="1917" vertical-scroll-proportion="20.625">
@@ -681,23 +694,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/carousel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/json/products.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="126.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/carousel.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -709,25 +708,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shelf-item.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="10" selection-start="547" selection-end="547" vertical-scroll-proportion="-11.25">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#3;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/shelf-view.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="72" selection-start="164" selection-end="164" vertical-scroll-proportion="-1.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="9" selection-start="3950" selection-end="3950" vertical-scroll-proportion="-60.0">
           <folding />
         </state>
       </provider>
@@ -753,9 +736,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shelf-item.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="45" selection-end="59" vertical-scroll-proportion="-0.625">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#div#4;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="128" column="9" selection-start="3950" selection-end="3950" vertical-scroll-proportion="-21.346153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/styles/product.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="19" selection-start="2957" selection-end="2957" vertical-scroll-proportion="2.591241">
+        <state line="379" column="0" selection-start="7590" selection-end="7590" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/carousel.handlebars">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/carousel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="93" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="12" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/jquery.tinycarousel.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="110" selection-start="640" selection-end="644" vertical-scroll-proportion="0.5241935">
           <folding />
         </state>
       </provider>
